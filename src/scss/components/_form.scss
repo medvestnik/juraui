@@ -1,0 +1,23 @@
+.jura-form-grid {
+  display: grid;
+  gap: 0.875rem;
+}
+
+.jura-form-group {
+  display: grid;
+  gap: 0.375rem;
+  color: var(--jura-text-muted);
+}
+
+.jura-form-control {
+  border: 1px solid var(--jura-border);
+  background: var(--jura-surface);
+  color: var(--jura-text);
+  border-radius: var(--jura-radius-sm);
+  padding: 0.55rem 0.65rem;
+}
+
+.jura-form-control:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--jura-primary) 35%, white);
+  outline-offset: 1px;
+}

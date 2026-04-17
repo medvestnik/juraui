@@ -1,0 +1,23 @@
+.jura-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.jura-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(2 6 23 / 0.48);
+}
+
+.jura-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 92vw);
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius-md);
+  padding: 1rem;
+}

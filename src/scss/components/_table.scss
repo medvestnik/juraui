@@ -1,0 +1,16 @@
+.jura-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.jura-table th,
+.jura-table td {
+  text-align: left;
+  padding: 0.65rem;
+  border-bottom: 1px solid var(--jura-border);
+}
+
+.jura-table th {
+  color: var(--jura-text-muted);
+  font-weight: 600;
+}

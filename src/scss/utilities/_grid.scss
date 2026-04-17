@@ -1,0 +1,12 @@
+.jura-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.jura-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 920px) {
+  .jura-grid-3 { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Admin Starter</title>
+  </head>
+  <body>
+    <div class="jura-app-shell">
+      <aside class="jura-sidebar">
+        <h1 class="jura-logo">Jura UI</h1>
+        <nav class="jura-nav">
+          <a class="jura-nav-link is-active" href="#">Dashboard</a>
+          <a class="jura-nav-link" href="#">Users</a>
+          <a class="jura-nav-link" href="#">Orders</a>
+          <a class="jura-nav-link" href="#">Settings</a>
+        </nav>
+      </aside>
+
+      <main class="jura-main">
+        <header class="jura-topbar">
+          <div class="jura-breadcrumbs">Home / Dashboard</div>
+          <div class="jura-topbar-actions">
+            <button class="jura-btn jura-btn-secondary" data-jura-theme="toggle">Toggle Theme</button>
+            <div class="jura-dropdown">
+              <button class="jura-btn" data-jura-toggle="dropdown" data-jura-target="#userMenu">User</button>
+              <div id="userMenu" class="jura-dropdown-menu" hidden>
+                <a href="#">Profile</a>
+                <a href="#">Billing</a>
+                <a href="#">Logout</a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="jura-grid jura-grid-3">
+          <article class="jura-card"><h3>Revenue</h3><p>$48,230</p></article>
+          <article class="jura-card"><h3>Clients</h3><p>1,204</p></article>
+          <article class="jura-card"><h3>Conversion</h3><p>3.8%</p></article>
+        </section>
+
+        <section class="jura-card">
+          <div class="jura-tabs" data-jura-tabs>
+            <button class="jura-tab is-active" data-jura-tab="tab-1">Users</button>
+            <button class="jura-tab" data-jura-tab="tab-2">Leads</button>
+          </div>
+          <div id="tab-1" class="jura-tab-panel is-active">
+            <table class="jura-table">
+              <thead>
+                <tr><th>Name</th><th>Role</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Jane Doe</td><td>Manager</td><td>Active</td></tr>
+                <tr><td>John Smith</td><td>Support</td><td>Pending</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="tab-2" class="jura-tab-panel">No leads yet.</div>
+        </section>
+
+        <section class="jura-card">
+          <h3>Quick form</h3>
+          <form class="jura-form-grid">
+            <label class="jura-form-group">
+              <span>Email</span>
+              <input class="jura-form-control" type="email" placeholder="name@company.com" />
+            </label>
+            <label class="jura-form-group">
+              <span>Plan</span>
+              <select class="jura-form-control">
+                <option>Starter</option>
+                <option>Business</option>
+              </select>
+            </label>
+            <button type="button" class="jura-btn" data-jura-toggle="modal" data-jura-target="#demoModal">Open modal</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <div id="demoModal" class="jura-modal" hidden>
+      <div class="jura-modal-backdrop" data-jura-close></div>
+      <div class="jura-modal-dialog">
+        <h3>Demo modal</h3>
+        <p>Jura UI uses a small declarative data API.</p>
+        <button class="jura-btn" data-jura-close>Close</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

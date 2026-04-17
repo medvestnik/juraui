@@ -1,0 +1,24 @@
+.jura-dropdown {
+  position: relative;
+}
+
+.jura-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  min-width: 180px;
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius-sm);
+  box-shadow: var(--jura-shadow-sm);
+  overflow: hidden;
+}
+
+.jura-dropdown-menu a {
+  display: block;
+  padding: 0.55rem 0.75rem;
+}
+
+.jura-dropdown-menu a:hover {
+  background: var(--jura-surface-2);
+}

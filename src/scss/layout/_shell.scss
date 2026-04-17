@@ -1,0 +1,61 @@
+.jura-app-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.jura-sidebar {
+  padding: 1rem;
+  background: var(--jura-surface);
+  border-right: 1px solid var(--jura-border);
+}
+
+.jura-logo {
+  margin-bottom: 1rem;
+}
+
+.jura-nav-link {
+  display: block;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--jura-radius-sm);
+  color: var(--jura-text-muted);
+}
+
+.jura-nav-link.is-active,
+.jura-nav-link:hover {
+  background: var(--jura-surface-2);
+  color: var(--jura-text);
+}
+
+.jura-main {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.jura-topbar {
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius-md);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jura-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 920px) {
+  .jura-app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .jura-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--jura-border);
+  }
+}
