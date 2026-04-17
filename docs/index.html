@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Lightweight Open Source UI System</title>
+    <meta
+      name="description"
+      content="Jura UI is a lightweight open-source UI kit and design system for admin panels, dashboards, and modern frontend/backoffice interfaces."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='52' font-weight='700' fill='%23e2e8f0'%3EJ%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a class="brand" href="https://github.com/medvestnik/juraui" target="_blank" rel="noreferrer noopener">Jura UI</a>
+        <a class="link" href="https://github.com/medvestnik/juraui" target="_blank" rel="noreferrer noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Open Source UI Library</p>
+            <h1>Jura UI</h1>
+            <p class="lead">
+              Lightweight UI kit and design system for frontend and backend interfaces.
+              Build clean admin panels, dashboards, and product UIs faster.
+            </p>
+            <div class="actions">
+              <a
+                class="btn btn-primary"
+                href="https://github.com/medvestnik/juraui"
+                target="_blank"
+                rel="noreferrer noopener"
+                >View on GitHub</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="https://github.com/medvestnik/juraui/releases/latest"
+                target="_blank"
+                rel="noreferrer noopener"
+                >Latest release</a
+              >
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Highlights">
+            <h2>Designed for practical interfaces</h2>
+            <ul>
+              <li>Fast to integrate into existing projects</li>
+              <li>Reusable building blocks and clear structure</li>
+              <li>Great fit for admin tools and internal apps</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <h2>About Jura UI</h2>
+          <p class="section-text">
+            Jura UI is a lightweight, open-source UI system focused on clean visuals and easy adoption.
+            It is convenient for integration into admin panels, dashboards, and both frontend and backend UI workflows.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container">
+          <h2>Features</h2>
+          <div class="cards" role="list">
+            <article class="card" role="listitem">
+              <h3>Lightweight</h3>
+              <p>Minimal overhead and focused components for fast, responsive interfaces.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h3>Reusable Components</h3>
+              <p>Composable patterns you can reuse across pages, products, and teams.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h3>Clean Design</h3>
+              <p>Balanced typography, spacing, and color palette for a clear visual hierarchy.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h3>Fast Integration</h3>
+              <p>Simple structure and predictable styles for straightforward adoption.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h3>Open Source</h3>
+              <p>Transparent development model and collaboration-friendly workflow.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h3>Admin & App Ready</h3>
+              <p>Well suited for admin panels, dashboards, and operational web applications.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="release" aria-labelledby="release-heading">
+        <div class="container">
+          <h2 id="release-heading">Latest release</h2>
+          <article class="release-card" id="release-card" aria-live="polite">
+            <div class="release-loading">Loading latest release info…</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <a href="https://github.com/medvestnik/juraui" target="_blank" rel="noreferrer noopener"
+          >github.com/medvestnik/juraui</a
+        >
+        <p>© <span id="year"></span> Jura UI Project</p>
+      </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
