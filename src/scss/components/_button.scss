@@ -1,0 +1,14 @@
+.jura-btn {
+  border: 1px solid transparent;
+  background: var(--jura-primary);
+  color: var(--jura-primary-contrast);
+  border-radius: var(--jura-radius-sm);
+  padding: 0.5rem 0.875rem;
+  cursor: pointer;
+}
+
+.jura-btn-secondary {
+  background: var(--jura-surface-2);
+  color: var(--jura-text);
+  border-color: var(--jura-border);
+}

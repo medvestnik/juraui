@@ -1,0 +1,21 @@
+:root[data-theme='dark'] {
+  --jura-bg: #020617;
+  --jura-surface: #0f172a;
+  --jura-surface-2: #1e293b;
+  --jura-text: #e2e8f0;
+  --jura-text-muted: #94a3b8;
+  --jura-border: #334155;
+  --jura-primary: #3b82f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme='auto'] {
+    --jura-bg: #020617;
+    --jura-surface: #0f172a;
+    --jura-surface-2: #1e293b;
+    --jura-text: #e2e8f0;
+    --jura-text-muted: #94a3b8;
+    --jura-border: #334155;
+    --jura-primary: #3b82f6;
+  }
+}
