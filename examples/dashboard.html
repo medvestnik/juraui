@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Dashboard example</title>
+    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body class="jura-app">
+    <div class="jura-layout">
+      <aside class="jura-sidebar">
+        <h2>Jura UI</h2>
+        <nav>
+          <a class="is-active" href="dashboard.html">Dashboard</a>
+          <a href="admin-list.html">Users</a>
+          <a href="components.html">Components</a>
+          <a href="landing.html">Landing</a>
+          <a href="../index.html">Back home</a>
+        </nav>
+      </aside>
+      <main class="jura-main">
+        <header class="jura-topbar">
+          <div>
+            <button class="jura-btn jura-mobile-toggle" data-jura-sidebar-toggle>Menu</button>
+            <h1 style="margin:0.5rem 0 0;">Dashboard</h1>
+          </div>
+          <div class="jura-topbar-actions"><button class="jura-btn">Export</button><button class="jura-btn jura-btn-primary">Create report</button></div>
+        </header>
+
+        <section class="jura-grid jura-grid-4">
+          <article class="jura-card jura-stat"><div>Revenue</div><strong>$48,230</strong><span class="jura-badge jura-badge-success">+8.4%</span></article>
+          <article class="jura-card jura-stat"><div>Users</div><strong>2,140</strong><span class="jura-badge">+124 today</span></article>
+          <article class="jura-card jura-stat"><div>Orders</div><strong>684</strong><span class="jura-badge jura-badge-warning">42 pending</span></article>
+          <article class="jura-card jura-stat"><div>Conversion</div><strong>4.3%</strong><span class="jura-badge jura-badge-danger">-0.4%</span></article>
+        </section>
+
+        <section class="jura-card" style="margin-top: 1rem;">
+          <div class="jura-card-header"><h2 class="jura-card-title">Activity overview</h2><span class="jura-badge">Last 7 days</span></div>
+          <p class="demo-lead">Traffic and team activity are stable. Most new orders come from returning users and enterprise plans.</p>
+          <div class="jura-grid jura-grid-3">
+            <article class="jura-card"><strong>14,220</strong><div>Sessions</div></article>
+            <article class="jura-card"><strong>3m 12s</strong><div>Avg. session duration</div></article>
+            <article class="jura-card"><strong>62%</strong><div>Returning visitors</div></article>
+          </div>
+        </section>
+
+        <section class="jura-card" style="margin-top: 1rem;">
+          <div class="jura-card-header"><h2 class="jura-card-title">Recent orders</h2><button class="jura-btn">View all</button></div>
+          <div class="jura-table-wrap">
+            <table class="jura-table">
+              <thead><tr><th>Order ID</th><th>Customer</th><th>Status</th><th>Total</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>#8012</td><td>Atlas Medical</td><td><span class="jura-badge jura-badge-success">Paid</span></td><td>$2,340</td><td><button class="jura-btn">Open</button></td></tr>
+                <tr><td>#8011</td><td>Nova CRM</td><td><span class="jura-badge jura-badge-warning">Pending</span></td><td>$580</td><td><button class="jura-btn">Open</button></td></tr>
+                <tr><td>#8010</td><td>Skyline Labs</td><td><span class="jura-badge jura-badge-danger">Cancelled</span></td><td>$190</td><td><button class="jura-btn">Open</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../assets/js/demo.js"></script>
+  </body>
+</html>

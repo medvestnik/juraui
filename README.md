@@ -1,114 +1,102 @@
 # Jura UI
 
-Jura UI is a lightweight open-source UI kit and skin for dashboards, admin panels, CRM systems, and modern web frontends.
+**Jura UI** is a lightweight open-source UI kit for admin panels, dashboards, CRM systems, SaaS interfaces, and public product pages.
 
-It focuses on clean design, fast integration, minimal dependencies, and easy customization.
+> Status: **First public preview / early alpha**
 
-## Product vision
+Jura UI focuses on practical HTML/CSS patterns that are easy to copy, adapt, and integrate into real projects without heavy dependencies.
 
-Jura UI is designed as a practical base, not a heavy enterprise template monster.
+## Why Jura UI
+
+Jura UI is designed for teams and solo developers who need a clean UI foundation for internal products and client-facing pages.
 
 ### Core principles
-- Lightweight setup and fast integration
-- HTML-first approach
-- Minimal framework coupling (Vanilla JS + SCSS)
-- Works well for PHP/Laravel/OpenCart/static projects
-- Ready for both admin and frontend interfaces
-- Built-in light/dark/auto themes
-- Clean and calm visual language
 
-## Current project structure
-
-```text
-jura-ui/
-├─ src/
-│  ├─ scss/
-│  │  ├─ tokens/
-│  │  ├─ base/
-│  │  ├─ layout/
-│  │  ├─ utilities/
-│  │  ├─ components/
-│  │  ├─ themes/
-│  │  └─ patterns/
-│  └─ js/
-│     ├─ core/
-│     └─ components/
-├─ templates/
-│  └─ admin-dashboard/
-├─ docs/
-│  └─ getting-started/
-├─ dist/
-│  ├─ css/
-│  └─ js/
-├─ index.html
-├─ package.json
-├─ vite.config.js
-├─ CHANGELOG.md
-└─ LICENSE
-```
-
-## Tech stack (v0 foundation)
-
-- HTML5
-- SCSS
-- Vanilla JavaScript
-- Vite
+- **Lightweight**
+- **Framework-agnostic**
+- **Clean admin UI**
+- **Responsive by default**
+- **Easy to copy and customize**
+- **Suitable for dashboards, CRM, SaaS, admin panels, and public product pages**
 
 ## Quick start
 
+Clone the repository and run a static server:
+
+```bash
+git clone https://github.com/medvestnik/juraui.git
+cd juraui
+npm run start
+```
+
+Then open `http://localhost:8080`.
+
+## How to include Jura UI CSS
+
+```html
+<link rel="stylesheet" href="assets/css/jura-ui.css">
+```
+
+## Project structure
+
+```text
+juraui/
+├── README.md
+├── LICENSE
+├── package.json
+├── index.html
+├── assets/
+│   ├── css/
+│   │   ├── jura-ui.css
+│   │   └── demo.css
+│   └── js/
+│       └── demo.js
+├── examples/
+│   ├── index.html
+│   ├── dashboard.html
+│   ├── admin-list.html
+│   ├── auth.html
+│   ├── landing.html
+│   └── components.html
+└── docs/
+    └── getting-started.md
+```
+
+## Available examples
+
+- `examples/index.html` — all examples index page
+- `examples/dashboard.html` — dashboard / backend interface
+- `examples/admin-list.html` — admin entities table with filters
+- `examples/auth.html` — auth/sign in page
+- `examples/landing.html` — public landing page
+- `examples/components.html` — component overview
+
+## Run demo locally
+
 ```bash
 npm install
-npm run dev
+npm run serve
 ```
 
-Build distributable files:
+Or without npm:
 
 ```bash
-npm run build
+python3 -m http.server 8080
 ```
 
-Output:
-- `dist/css/jura-ui.min.css`
-- `dist/js/jura-ui.min.js`
+## Roadmap
 
-## Data API
-
-Jura UI behavior is controlled through declarative data attributes:
-
-- `data-jura-toggle`
-- `data-jura-target`
-- `data-jura-theme`
-
-## MVP components included in this scaffold
-
-- Button
-- Card
-- Input / Select / Textarea
-- Checkbox / Radio / Switch
-- Dropdown
-- Tabs
-- Modal
-- Sidebar / Topbar layout primitives
-- Table shell
-
-## Roadmap snapshot
-
-### Phase 0 — foundation
-- Tokens
-- CSS reset
-- Layout
-- Buttons / forms / cards
-- Theme switcher
-
-### Phase 1 — admin MVP
-- Sidebar/topbar
-- Breadcrumbs/tabs/dropdown/modal/pagination
-- Stat cards + simple table
-
-### Phase 2 — frontend MVP
-- Hero/CTA/features/pricing sections
-- Auth and content pages
+- Expand component set (dropdowns, modals, pagination, breadcrumbs)
+- Add theme variants and dark mode package
+- Add docs pages with copy/paste snippets
+- Prepare first tagged release (`v0.1.x`)
+- Add optional npm distribution workflow
 
 ## License
 
-MIT.
+MIT License. See [LICENSE](LICENSE).
+
+## Links
+
+- GitHub Pages demo: https://medvestnik.github.io/juraui/
+- Repository: https://github.com/medvestnik/juraui

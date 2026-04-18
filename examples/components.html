@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Components overview</title>
+    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body>
+    <header class="demo-nav">
+      <div class="demo-container demo-nav-inner">
+        <a class="demo-brand" href="../index.html">Jura UI</a>
+        <nav class="demo-links"><a class="jura-btn" href="index.html">All examples</a><a class="jura-btn jura-btn-primary" href="../index.html">Home</a></nav>
+      </div>
+    </header>
+
+    <main class="demo-container jura-section">
+      <h1 class="demo-page-title">Components overview</h1>
+      <p class="demo-lead">Core UI blocks included in the first public preview.</p>
+
+      <section class="jura-card" style="margin-bottom:1rem;">
+        <h2>Buttons</h2>
+        <div class="jura-topbar-actions"><button class="jura-btn">Default</button><button class="jura-btn jura-btn-primary">Primary</button><button class="jura-btn jura-btn-secondary">Secondary</button><button class="jura-btn jura-btn-danger">Danger</button></div>
+      </section>
+
+      <section class="jura-card" style="margin-bottom:1rem;">
+        <h2>Badges & alerts</h2>
+        <div class="jura-topbar-actions" style="margin-bottom:0.8rem"><span class="jura-badge">Default</span><span class="jura-badge jura-badge-success">Success</span><span class="jura-badge jura-badge-warning">Warning</span><span class="jura-badge jura-badge-danger">Danger</span></div>
+        <div class="jura-grid">
+          <div class="jura-alert">Heads up: this is a neutral alert container.</div>
+        </div>
+      </section>
+
+      <section class="jura-card" style="margin-bottom:1rem;">
+        <h2>Cards & stats</h2>
+        <div class="jura-grid jura-grid-3">
+          <article class="jura-card"><h3>Card title</h3><p>Reusable card body content.</p></article>
+          <article class="jura-card jura-stat"><div>Monthly Revenue</div><strong>$21,300</strong><span class="jura-badge jura-badge-success">+4.8%</span></article>
+          <article class="jura-card jura-stat"><div>Active tickets</div><strong>18</strong><span class="jura-badge jura-badge-warning">Needs review</span></article>
+        </div>
+      </section>
+
+      <section class="jura-card" style="margin-bottom:1rem;">
+        <h2>Form fields</h2>
+        <div class="jura-grid jura-grid-2">
+          <label class="jura-form-group">Project name<input class="jura-input" placeholder="Jura CRM" /></label>
+          <label class="jura-form-group">Workspace<select class="jura-select"><option>Default workspace</option><option>Marketing</option></select></label>
+        </div>
+      </section>
+
+      <section class="jura-card" style="margin-bottom:1rem;">
+        <h2>Table</h2>
+        <div class="jura-table-wrap">
+          <table class="jura-table"><thead><tr><th>Service</th><th>Plan</th><th>Status</th></tr></thead><tbody><tr><td>Portal</td><td>Growth</td><td><span class="jura-badge jura-badge-success">Active</span></td></tr><tr><td>Analytics</td><td>Starter</td><td><span class="jura-badge jura-badge-warning">Pending</span></td></tr></tbody></table>
+        </div>
+      </section>
+
+      <section class="jura-card" style="margin-bottom:1rem;">
+        <h2>Tabs & empty state</h2>
+        <div data-jura-tabs>
+          <div class="jura-tabs"><button class="jura-tab is-active" data-jura-tab="tab-one">Overview</button><button class="jura-tab" data-jura-tab="tab-two">History</button></div>
+          <div class="jura-tab-panel is-active" id="tab-one"><p>Overview tab with active content.</p></div>
+          <div class="jura-tab-panel" id="tab-two"><div class="jura-empty">No records yet. Create your first event.</div></div>
+        </div>
+      </section>
+    </main>
+    <script src="../assets/js/demo.js"></script>
+  </body>
+</html>

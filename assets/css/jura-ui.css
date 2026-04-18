@@ -1,0 +1,252 @@
+:root {
+  --jura-bg: #f4f6fb;
+  --jura-surface: #ffffff;
+  --jura-surface-muted: #eef2ff;
+  --jura-text: #111827;
+  --jura-text-muted: #6b7280;
+  --jura-border: #d8deea;
+  --jura-primary: #4f46e5;
+  --jura-primary-hover: #4338ca;
+  --jura-success: #16a34a;
+  --jura-warning: #d97706;
+  --jura-danger: #dc2626;
+  --jura-radius: 14px;
+  --jura-radius-sm: 10px;
+  --jura-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --jura-space: 1rem;
+  --jura-font: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--jura-font);
+  background: var(--jura-bg);
+  color: var(--jura-text);
+  line-height: 1.5;
+}
+
+a { color: var(--jura-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.jura-app { min-height: 100vh; }
+
+.jura-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.jura-sidebar {
+  background: var(--jura-surface);
+  border-right: 1px solid var(--jura-border);
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.jura-sidebar nav { display: grid; gap: 0.45rem; margin-top: 1rem; }
+.jura-sidebar a {
+  color: var(--jura-text-muted);
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.jura-sidebar a:hover,
+.jura-sidebar a.is-active {
+  background: var(--jura-surface-muted);
+  color: var(--jura-primary);
+  text-decoration: none;
+}
+
+.jura-main { padding: 1.5rem; }
+
+.jura-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.jura-topbar-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.jura-card {
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius);
+  box-shadow: var(--jura-shadow);
+  padding: 1rem;
+}
+
+.jura-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.jura-card-title {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.jura-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.jura-grid.jura-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.jura-grid.jura-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.jura-grid.jura-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.jura-btn {
+  border: 1px solid var(--jura-border);
+  background: #fff;
+  color: var(--jura-text);
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.jura-btn:hover { text-decoration: none; filter: brightness(0.98); }
+
+.jura-btn-primary {
+  background: var(--jura-primary);
+  border-color: var(--jura-primary);
+  color: #fff;
+}
+.jura-btn-primary:hover { background: var(--jura-primary-hover); border-color: var(--jura-primary-hover); }
+
+.jura-btn-secondary { background: var(--jura-surface-muted); color: var(--jura-primary); border-color: transparent; }
+.jura-btn-danger { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+
+.jura-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #374151;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.jura-badge-success { background: #dcfce7; color: #166534; }
+.jura-badge-warning { background: #fef3c7; color: #92400e; }
+.jura-badge-danger { background: #fee2e2; color: #991b1b; }
+
+.jura-table-wrap { overflow-x: auto; }
+.jura-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+.jura-table th,
+.jura-table td {
+  border-bottom: 1px solid var(--jura-border);
+  text-align: left;
+  padding: 0.75rem;
+}
+.jura-table th { color: var(--jura-text-muted); font-weight: 600; }
+
+.jura-form-group { display: grid; gap: 0.45rem; }
+.jura-input,
+.jura-select {
+  width: 100%;
+  border: 1px solid var(--jura-border);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  background: #fff;
+}
+
+.jura-alert {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--jura-border);
+  background: #f8fafc;
+}
+
+.jura-tabs {
+  display: flex;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--jura-border);
+  margin-bottom: 1rem;
+}
+
+.jura-tab {
+  border: 0;
+  background: transparent;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  color: var(--jura-text-muted);
+  font-weight: 600;
+}
+.jura-tab.is-active {
+  background: var(--jura-surface-muted);
+  color: var(--jura-primary);
+}
+.jura-tab-panel { display: none; }
+.jura-tab-panel.is-active { display: block; }
+
+.jura-stat strong { font-size: 1.65rem; display: block; margin-top: 0.35rem; }
+.jura-empty {
+  border: 1px dashed var(--jura-border);
+  border-radius: var(--jura-radius-sm);
+  padding: 1.1rem;
+  color: var(--jura-text-muted);
+  text-align: center;
+}
+
+.jura-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.jura-section {
+  padding: 2rem 0;
+}
+
+.jura-mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .jura-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .jura-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    z-index: 20;
+    width: min(280px, 82vw);
+  }
+
+  .jura-layout.sidebar-open .jura-sidebar {
+    transform: translateX(0);
+  }
+
+  .jura-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .jura-grid.jura-grid-2,
+  .jura-grid.jura-grid-3,
+  .jura-grid.jura-grid-4,
+  .jura-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .jura-main { padding: 1rem; }
+}
