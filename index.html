@@ -1,92 +1,102 @@
 <!doctype html>
-<html lang="en" data-theme="auto">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jura UI — Admin Starter</title>
+    <title>Jura UI — First public preview</title>
+    <meta name="description" content="Jura UI is a lightweight UI kit for admin panels, dashboards, SaaS interfaces and product pages." />
+    <link rel="stylesheet" href="assets/css/jura-ui.css" />
+    <link rel="stylesheet" href="assets/css/demo.css" />
   </head>
   <body>
-    <div class="jura-app-shell">
-      <aside class="jura-sidebar">
-        <h1 class="jura-logo">Jura UI</h1>
-        <nav class="jura-nav">
-          <a class="jura-nav-link is-active" href="#">Dashboard</a>
-          <a class="jura-nav-link" href="#">Users</a>
-          <a class="jura-nav-link" href="#">Orders</a>
-          <a class="jura-nav-link" href="#">Settings</a>
+    <header class="demo-nav">
+      <div class="demo-container demo-nav-inner">
+        <a class="demo-brand" href="index.html">Jura UI</a>
+        <nav class="demo-links">
+          <a class="jura-btn jura-btn-secondary" href="examples/index.html">Examples</a>
+          <a class="jura-btn" href="docs/getting-started.md">Getting started</a>
+          <a class="jura-btn jura-btn-primary" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
-      </aside>
+      </div>
+    </header>
 
-      <main class="jura-main">
-        <header class="jura-topbar">
-          <div class="jura-breadcrumbs">Home / Dashboard</div>
-          <div class="jura-topbar-actions">
-            <button class="jura-btn jura-btn-secondary" data-jura-theme="toggle">Toggle Theme</button>
-            <div class="jura-dropdown">
-              <button class="jura-btn" data-jura-toggle="dropdown" data-jura-target="#userMenu">User</button>
-              <div id="userMenu" class="jura-dropdown-menu" hidden>
-                <a href="#">Profile</a>
-                <a href="#">Billing</a>
-                <a href="#">Logout</a>
-              </div>
+    <main class="demo-container">
+      <section class="jura-section">
+        <div class="jura-hero">
+          <article class="jura-card">
+            <p class="jura-badge">First public preview / early alpha</p>
+            <h1 class="demo-page-title">Jura UI</h1>
+            <p class="demo-lead">Lightweight UI kit for admin panels, dashboards, SaaS interfaces and product pages. Clean, card-based and framework-agnostic.</p>
+            <div class="jura-topbar-actions">
+              <a class="jura-btn jura-btn-primary" href="examples/index.html">View examples</a>
+              <a class="jura-btn" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+              <a class="jura-btn jura-btn-secondary" href="docs/getting-started.md">Getting started</a>
+            </div>
+          </article>
+          <aside class="jura-card">
+            <h2 class="jura-card-title">Designed for fast interfaces</h2>
+            <p class="demo-lead">Jura UI helps ship admin tools quickly while staying readable and easy to customize.</p>
+            <ul>
+              <li>Lightweight CSS architecture</li>
+              <li>No heavy dependencies</li>
+              <li>Works in static, backend and frontend projects</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="jura-section">
+        <h2>Core benefits</h2>
+        <div class="jura-grid jura-grid-3">
+          <article class="demo-card"><h3>Lightweight</h3><p>Small, practical CSS and HTML patterns.</p></article>
+          <article class="demo-card"><h3>Framework agnostic</h3><p>Works with plain HTML, backend templates and SPA wrappers.</p></article>
+          <article class="demo-card"><h3>Admin-first</h3><p>Built for CRUD interfaces, dashboards and internal tools.</p></article>
+          <article class="demo-card"><h3>Responsive</h3><p>Cards, layouts and tables adapt by default.</p></article>
+          <article class="demo-card"><h3>Easy to customize</h3><p>Theme tokens are exposed as CSS variables.</p></article>
+          <article class="demo-card"><h3>Open source</h3><p>MIT licensed and hosted on GitHub.</p></article>
+        </div>
+      </section>
+
+      <section class="jura-section">
+        <h2>Examples</h2>
+        <div class="demo-example-grid">
+          <article class="demo-card"><h3>Dashboard example</h3><p>Admin shell with stats, activity and recent orders.</p><a href="examples/dashboard.html">Open dashboard</a></article>
+          <article class="demo-card"><h3>Admin list example</h3><p>Entity management view with filters and actions.</p><a href="examples/admin-list.html">Open admin list</a></article>
+          <article class="demo-card"><h3>Auth screen example</h3><p>Sign-in page with brand panel and form state.</p><a href="examples/auth.html">Open auth screen</a></article>
+          <article class="demo-card"><h3>Landing page example</h3><p>Public-facing product layout with pricing cards.</p><a href="examples/landing.html">Open landing</a></article>
+          <article class="demo-card"><h3>Components overview</h3><p>Visual catalog of core Jura UI components.</p><a href="examples/components.html">Open components</a></article>
+        </div>
+      </section>
+
+      <section class="jura-section">
+        <h2>Live preview</h2>
+        <div class="jura-card">
+          <div class="jura-grid jura-grid-4">
+            <article class="jura-card jura-stat"><span class="jura-badge jura-badge-success">+12%</span><strong>$124,980</strong><div>Revenue</div></article>
+            <article class="jura-card jura-stat"><span class="jura-badge">2,840</span><strong>2,840</strong><div>Users</div></article>
+            <article class="jura-card jura-stat"><span class="jura-badge jura-badge-warning">Pending</span><strong>428</strong><div>Orders</div></article>
+            <article class="jura-card jura-stat"><span class="jura-badge jura-badge-danger">-0.7%</span><strong>3.9%</strong><div>Conversion</div></article>
+          </div>
+          <div class="jura-card" style="margin-top: 1rem;">
+            <div class="jura-card-header"><h3 class="jura-card-title">Recent orders</h3><div class="jura-topbar-actions"><button class="jura-btn">Export</button><button class="jura-btn jura-btn-primary">Create order</button></div></div>
+            <div class="jura-table-wrap">
+              <table class="jura-table">
+                <thead><tr><th>Order</th><th>Customer</th><th>Status</th><th>Total</th></tr></thead>
+                <tbody>
+                  <tr><td>#1042</td><td>Nordic Health</td><td><span class="jura-badge jura-badge-success">Paid</span></td><td>$1,240</td></tr>
+                  <tr><td>#1041</td><td>Blue Orbit</td><td><span class="jura-badge jura-badge-warning">Processing</span></td><td>$890</td></tr>
+                  <tr><td>#1040</td><td>Aster Lab</td><td><span class="jura-badge jura-badge-danger">Refunded</span></td><td>$430</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        </header>
+        </div>
+      </section>
+    </main>
 
-        <section class="jura-grid jura-grid-3">
-          <article class="jura-card"><h3>Revenue</h3><p>$48,230</p></article>
-          <article class="jura-card"><h3>Clients</h3><p>1,204</p></article>
-          <article class="jura-card"><h3>Conversion</h3><p>3.8%</p></article>
-        </section>
-
-        <section class="jura-card">
-          <div class="jura-tabs" data-jura-tabs>
-            <button class="jura-tab is-active" data-jura-tab="tab-1">Users</button>
-            <button class="jura-tab" data-jura-tab="tab-2">Leads</button>
-          </div>
-          <div id="tab-1" class="jura-tab-panel is-active">
-            <table class="jura-table">
-              <thead>
-                <tr><th>Name</th><th>Role</th><th>Status</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Jane Doe</td><td>Manager</td><td>Active</td></tr>
-                <tr><td>John Smith</td><td>Support</td><td>Pending</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div id="tab-2" class="jura-tab-panel">No leads yet.</div>
-        </section>
-
-        <section class="jura-card">
-          <h3>Quick form</h3>
-          <form class="jura-form-grid">
-            <label class="jura-form-group">
-              <span>Email</span>
-              <input class="jura-form-control" type="email" placeholder="name@company.com" />
-            </label>
-            <label class="jura-form-group">
-              <span>Plan</span>
-              <select class="jura-form-control">
-                <option>Starter</option>
-                <option>Business</option>
-              </select>
-            </label>
-            <button type="button" class="jura-btn" data-jura-toggle="modal" data-jura-target="#demoModal">Open modal</button>
-          </form>
-        </section>
-      </main>
-    </div>
-
-    <div id="demoModal" class="jura-modal" hidden>
-      <div class="jura-modal-backdrop" data-jura-close></div>
-      <div class="jura-modal-dialog">
-        <h3>Demo modal</h3>
-        <p>Jura UI uses a small declarative data API.</p>
-        <button class="jura-btn" data-jura-close>Close</button>
-      </div>
-    </div>
-
-    <script type="module" src="/src/main.js"></script>
+    <footer class="demo-footer demo-container">
+      <p><strong>Jura UI</strong> · MIT License · <a href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://medvestnik.github.io/juraui/" target="_blank" rel="noopener noreferrer">Demo</a></p>
+    </footer>
+    <script src="assets/js/demo.js"></script>
   </body>
 </html>

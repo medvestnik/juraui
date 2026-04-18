@@ -1,25 +1,21 @@
 {
   "name": "jura-ui",
-  "version": "0.1.0-alpha.0",
-  "private": true,
-  "description": "Lightweight open-source UI kit and skin for dashboards, admin panels, CRM systems, and modern web frontends.",
-  "type": "module",
+  "version": "0.1.0",
+  "description": "Lightweight UI kit for admin panels, dashboards, SaaS interfaces and product pages.",
+  "main": "index.html",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "python3 -m http.server 8080",
+    "serve": "python3 -m http.server 8080"
   },
   "keywords": [
     "ui-kit",
     "css",
-    "scss",
-    "dashboard",
     "admin",
-    "crm"
+    "dashboard",
+    "saas",
+    "frontend",
+    "jura-ui"
   ],
-  "license": "MIT",
-  "devDependencies": {
-    "sass": "^1.93.2",
-    "vite": "^7.1.10"
-  }
+  "author": "medvestnik",
+  "license": "MIT"
 }

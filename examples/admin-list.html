@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Admin list example</title>
+    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body class="jura-app">
+    <div class="jura-layout">
+      <aside class="jura-sidebar">
+        <h2>Jura UI</h2>
+        <nav>
+          <a href="dashboard.html">Dashboard</a>
+          <a class="is-active" href="admin-list.html">Users</a>
+          <a href="components.html">Components</a>
+          <a href="auth.html">Auth</a>
+          <a href="../index.html">Back home</a>
+        </nav>
+      </aside>
+      <main class="jura-main">
+        <header class="jura-topbar">
+          <div>
+            <button class="jura-btn jura-mobile-toggle" data-jura-sidebar-toggle>Menu</button>
+            <h1 style="margin:0.5rem 0 0;">Users</h1>
+          </div>
+          <button class="jura-btn jura-btn-primary">Add user</button>
+        </header>
+
+        <section class="jura-card">
+          <div class="jura-grid jura-grid-3">
+            <label class="jura-form-group">
+              Search
+              <input class="jura-input" placeholder="Search by email or name" />
+            </label>
+            <label class="jura-form-group">
+              Status
+              <select class="jura-select"><option>All statuses</option><option>Active</option><option>Pending</option><option>Blocked</option></select>
+            </label>
+            <label class="jura-form-group">
+              Role
+              <select class="jura-select"><option>All roles</option><option>Admin</option><option>Manager</option><option>Support</option></select>
+            </label>
+          </div>
+        </section>
+
+        <section class="jura-card" style="margin-top: 1rem;">
+          <div class="jura-table-wrap">
+            <table class="jura-table">
+              <thead><tr><th>User</th><th>Role</th><th>Status</th><th>Last login</th><th>Actions</th></tr></thead>
+              <tbody>
+                <tr><td>Olivia Stone<br/><small>olivia@juraui.io</small></td><td>Admin</td><td><span class="jura-badge jura-badge-success">Active</span></td><td>2 hours ago</td><td><button class="jura-btn">Edit</button> <button class="jura-btn jura-btn-danger">Delete</button></td></tr>
+                <tr><td>Liam Park<br/><small>liam@juraui.io</small></td><td>Support</td><td><span class="jura-badge jura-badge-warning">Pending</span></td><td>Yesterday</td><td><button class="jura-btn">Edit</button> <button class="jura-btn jura-btn-danger">Delete</button></td></tr>
+                <tr><td>Emma Cole<br/><small>emma@juraui.io</small></td><td>Manager</td><td><span class="jura-badge jura-badge-danger">Blocked</span></td><td>5 days ago</td><td><button class="jura-btn">Edit</button> <button class="jura-btn jura-btn-danger">Delete</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="jura-topbar" style="margin-top: 1rem; margin-bottom: 0;">
+            <small style="color:var(--jura-text-muted)">Showing 1–3 of 38 users</small>
+            <div class="jura-topbar-actions">
+              <button class="jura-btn">Previous</button>
+              <button class="jura-btn jura-btn-primary">1</button>
+              <button class="jura-btn">2</button>
+              <button class="jura-btn">3</button>
+              <button class="jura-btn">Next</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="../assets/js/demo.js"></script>
+  </body>
+</html>
