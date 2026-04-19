@@ -2,18 +2,26 @@
 
 Jura UI is a lightweight, framework-agnostic UI kit designed for admin dashboards, CRM systems, SaaS interfaces, and public product pages.
 
-## Installation (no build tools)
+## No build step required
 
-You can use Jura UI as plain static files.
+You can use Jura UI as plain static files:
+
+- no build pipeline required
+- no bundler required
+- no Node.js required
+- works in plain HTML and backend-rendered projects (PHP, Laravel, OpenCart, WordPress, custom CMS)
+
+## Installation (static files)
 
 1. Download/clone the repository.
-2. Copy `assets/css/jura-ui.css` to your project.
+2. Copy `assets/css/jura-ui.css` into your project assets.
 3. (Optional) copy `assets/js/demo.js` if you want tabs and mobile sidebar toggle behavior.
 
-## Include CSS
+## Include CSS/JS
 
 ```html
 <link rel="stylesheet" href="assets/css/jura-ui.css">
+<script src="assets/js/demo.js" defer></script>
 ```
 
 ## Basic page skeleton
@@ -72,3 +80,4 @@ Jura UI exposes visual tokens through CSS variables in `:root` (colors, radius, 
 
 - Open `examples/` to review starter layouts.
 - Read the root `README.md` for roadmap and project structure.
+- For backend usage details, read [`docs/php-integration.md`](php-integration.md).

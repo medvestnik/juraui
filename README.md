@@ -6,6 +6,19 @@
 
 Jura UI focuses on practical HTML/CSS patterns that are easy to copy, adapt, and integrate into real projects without heavy dependencies.
 
+## What Jura UI is (and is not)
+
+Jura UI does **not** require Node.js, npm, bundlers, Bootstrap, Tailwind, React, or Vue.
+
+It is a static HTML/CSS/JS UI kit and can be used directly in:
+
+- PHP projects
+- Laravel applications
+- OpenCart stores
+- WordPress themes/plugins
+- plain HTML sites
+- any backend-rendered project
+
 ## Why Jura UI
 
 Jura UI is designed for teams and solo developers who need a clean UI foundation for internal products and client-facing pages.
@@ -19,23 +32,44 @@ Jura UI is designed for teams and solo developers who need a clean UI foundation
 - **Easy to copy and customize**
 - **Suitable for dashboards, CRM, SaaS, admin panels, and public product pages**
 
-## Quick start
+## Quick start (no Node.js required)
 
-Clone the repository and run a static server:
+Clone the repository and include static assets directly:
 
 ```bash
 git clone https://github.com/medvestnik/juraui.git
 cd juraui
-npm run start
 ```
-
-Then open `http://localhost:8080`.
-
-## How to include Jura UI CSS
 
 ```html
 <link rel="stylesheet" href="assets/css/jura-ui.css">
+<script src="assets/js/demo.js" defer></script>
 ```
+
+Then run any static file server, for example:
+
+```bash
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080`.
+
+## Optional npm convenience command
+
+Node.js is optional. If you already use npm in your environment, you can run:
+
+```bash
+npm run serve
+```
+
+This only starts a local static server and is not required for using Jura UI.
+
+## PHP integration
+
+For backend usage examples, see:
+
+- [`docs/php-integration.md`](docs/php-integration.md)
+- [`docs/getting-started.md`](docs/getting-started.md)
 
 ## Project structure
 
@@ -45,6 +79,7 @@ juraui/
 ├── LICENSE
 ├── package.json
 ├── index.html
+├── .nojekyll
 ├── assets/
 │   ├── css/
 │   │   ├── jura-ui.css
@@ -59,7 +94,8 @@ juraui/
 │   ├── landing.html
 │   └── components.html
 └── docs/
-    └── getting-started.md
+    ├── getting-started.md
+    └── php-integration.md
 ```
 
 ## Available examples
@@ -70,19 +106,6 @@ juraui/
 - `examples/auth.html` — auth/sign in page
 - `examples/landing.html` — public landing page
 - `examples/components.html` — component overview
-
-## Run demo locally
-
-```bash
-npm install
-npm run serve
-```
-
-Or without npm:
-
-```bash
-python3 -m http.server 8080
-```
 
 ## Roadmap
 
