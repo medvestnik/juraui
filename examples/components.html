@@ -1,70 +1,828 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jura UI — Components overview</title>
-    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
-  </head>
-  <body>
-    <header class="demo-nav">
-      <div class="demo-container demo-nav-inner">
-        <a class="demo-brand" href="../index.html">Jura UI</a>
-        <nav class="demo-links"><a class="jura-btn" href="index.html">All examples</a><a class="jura-btn jura-btn-primary" href="../index.html">Home</a></nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jura UI — Components</title>
+  <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <style>
+    .comp-grid { display: grid; gap: .75rem; }
+    .comp-row  { display: flex; flex-wrap: wrap; gap: .65rem; align-items: center; }
+    .comp-col  { display: grid; gap: .5rem; }
+    .comp-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--jura-text-subtle); margin-bottom: .15rem; }
+    .swatch-bg  { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .swatch-bg span { display: inline-block; width: 2.5rem; height: 2.5rem; border-radius: var(--jura-radius-sm); border: 1px solid var(--jura-border); }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ────────────────────────────────────────────────────── -->
+  <header class="demo-nav">
+    <div class="demo-container demo-nav-inner">
+      <a class="demo-brand" href="../index.html">
+        <span class="demo-brand-dot"></span>
+        Jura UI
+      </a>
+      <nav class="demo-links">
+        <div class="demo-themes" role="group" aria-label="Pick colour theme">
+          <button title="Indigo" data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"  data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"   data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet" data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"  data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"  data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a class="jura-btn" href="index.html">All examples</a>
+        <a class="jura-btn jura-btn-primary" href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="demo-container" style="padding-top:2.5rem; padding-bottom:4rem">
+    <h1 class="demo-page-title">Components</h1>
+    <p class="demo-lead">Full visual catalog of every Jura UI component. Use the colour swatches above to preview all themes.</p>
+
+    <!-- ══════════════════════════════════════════════════════════
+         1. BUTTONS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Buttons</h2>
+      <p class="demo-component-desc">All variants, sizes and states.</p>
+
+      <div class="comp-grid">
+        <div>
+          <div class="comp-label">Variants</div>
+          <div class="comp-row">
+            <button class="jura-btn">Default</button>
+            <button class="jura-btn jura-btn-primary">Primary</button>
+            <button class="jura-btn jura-btn-secondary">Secondary</button>
+            <button class="jura-btn jura-btn-danger">Danger</button>
+            <button class="jura-btn jura-btn-ghost">Ghost</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label">Sizes</div>
+          <div class="comp-row" style="align-items:flex-end">
+            <button class="jura-btn jura-btn-primary jura-btn-sm">Small</button>
+            <button class="jura-btn jura-btn-primary">Default</button>
+            <button class="jura-btn jura-btn-primary jura-btn-lg">Large</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label">With icons</div>
+          <div class="comp-row">
+            <button class="jura-btn jura-btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Create new
+            </button>
+            <button class="jura-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export
+            </button>
+            <button class="jura-btn jura-btn-danger">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+              Delete
+            </button>
+            <button class="jura-btn jura-btn-icon" title="Settings">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            </button>
+            <button class="jura-btn jura-btn-icon" title="More options">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label">States</div>
+          <div class="comp-row">
+            <button class="jura-btn jura-btn-primary" data-loading>Saving…</button>
+            <button class="jura-btn" data-loading>Loading</button>
+            <button class="jura-btn" disabled>Disabled</button>
+            <button class="jura-btn jura-btn-primary" disabled>Disabled primary</button>
+          </div>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main class="demo-container jura-section">
-      <h1 class="demo-page-title">Components overview</h1>
-      <p class="demo-lead">Core UI blocks included in the first public preview.</p>
+    <!-- ══════════════════════════════════════════════════════════
+         2. BADGES
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Badges</h2>
+      <p class="demo-component-desc">Status indicators and labels in multiple variants.</p>
 
-      <section class="jura-card" style="margin-bottom:1rem;">
-        <h2>Buttons</h2>
-        <div class="jura-topbar-actions"><button class="jura-btn">Default</button><button class="jura-btn jura-btn-primary">Primary</button><button class="jura-btn jura-btn-secondary">Secondary</button><button class="jura-btn jura-btn-danger">Danger</button></div>
-      </section>
-
-      <section class="jura-card" style="margin-bottom:1rem;">
-        <h2>Badges & alerts</h2>
-        <div class="jura-topbar-actions" style="margin-bottom:0.8rem"><span class="jura-badge">Default</span><span class="jura-badge jura-badge-success">Success</span><span class="jura-badge jura-badge-warning">Warning</span><span class="jura-badge jura-badge-danger">Danger</span></div>
-        <div class="jura-grid">
-          <div class="jura-alert">Heads up: this is a neutral alert container.</div>
+      <div class="comp-grid">
+        <div>
+          <div class="comp-label">Filled</div>
+          <div class="comp-row">
+            <span class="jura-badge">Default</span>
+            <span class="jura-badge jura-badge-primary">Primary</span>
+            <span class="jura-badge jura-badge-success">Success</span>
+            <span class="jura-badge jura-badge-warning">Warning</span>
+            <span class="jura-badge jura-badge-danger">Danger</span>
+            <span class="jura-badge jura-badge-info">Info</span>
+          </div>
         </div>
-      </section>
 
-      <section class="jura-card" style="margin-bottom:1rem;">
-        <h2>Cards & stats</h2>
-        <div class="jura-grid jura-grid-3">
-          <article class="jura-card"><h3>Card title</h3><p>Reusable card body content.</p></article>
-          <article class="jura-card jura-stat"><div>Monthly Revenue</div><strong>$21,300</strong><span class="jura-badge jura-badge-success">+4.8%</span></article>
-          <article class="jura-card jura-stat"><div>Active tickets</div><strong>18</strong><span class="jura-badge jura-badge-warning">Needs review</span></article>
+        <div>
+          <div class="comp-label">With dot indicator</div>
+          <div class="comp-row">
+            <span class="jura-badge jura-badge-primary jura-badge-dot">Active</span>
+            <span class="jura-badge jura-badge-success jura-badge-dot">Online</span>
+            <span class="jura-badge jura-badge-warning jura-badge-dot">Away</span>
+            <span class="jura-badge jura-badge-danger  jura-badge-dot">Offline</span>
+            <span class="jura-badge jura-badge-dot">Idle</span>
+          </div>
         </div>
-      </section>
 
-      <section class="jura-card" style="margin-bottom:1rem;">
-        <h2>Form fields</h2>
-        <div class="jura-grid jura-grid-2">
-          <label class="jura-form-group">Project name<input class="jura-input" placeholder="Jura CRM" /></label>
-          <label class="jura-form-group">Workspace<select class="jura-select"><option>Default workspace</option><option>Marketing</option></select></label>
+        <div>
+          <div class="comp-label">Outlined</div>
+          <div class="comp-row">
+            <span class="jura-badge jura-badge-primary jura-badge-outline">Primary</span>
+            <span class="jura-badge jura-badge-success jura-badge-outline">Success</span>
+            <span class="jura-badge jura-badge-warning jura-badge-outline">Warning</span>
+            <span class="jura-badge jura-badge-danger  jura-badge-outline">Danger</span>
+            <span class="jura-badge jura-badge-info    jura-badge-outline">Info</span>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="jura-card" style="margin-bottom:1rem;">
-        <h2>Table</h2>
+    <!-- ══════════════════════════════════════════════════════════
+         3. ALERTS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Alerts</h2>
+      <p class="demo-component-desc">Inline feedback messages for every state.</p>
+
+      <div class="comp-grid">
+        <div class="jura-alert">
+          <svg class="jura-alert-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Note:</strong> Your account is on the free plan. Upgrade to unlock all features.</div>
+        </div>
+        <div class="jura-alert jura-alert-info">
+          <svg class="jura-alert-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Info:</strong> A new version of Jura UI is available. Check the changelog for details.</div>
+        </div>
+        <div class="jura-alert jura-alert-success">
+          <svg class="jura-alert-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div><strong>Done!</strong> Your changes have been saved successfully.</div>
+        </div>
+        <div class="jura-alert jura-alert-warning">
+          <svg class="jura-alert-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div><strong>Warning:</strong> Your API key will expire in 3 days. Please renew it to avoid disruption.</div>
+        </div>
+        <div class="jura-alert jura-alert-danger">
+          <svg class="jura-alert-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <div><strong>Error:</strong> Payment failed. Please check your payment details and try again.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         4. CARDS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Cards</h2>
+      <p class="demo-component-desc">Surface containers in multiple styles.</p>
+
+      <div class="jura-grid jura-grid-3" style="margin-bottom:1rem">
+        <!-- Default card -->
+        <div class="jura-card">
+          <div class="jura-card-header">
+            <div>
+              <h3 class="jura-card-title">Default card</h3>
+              <p class="jura-card-subtitle">Standard surface container</p>
+            </div>
+            <span class="jura-badge jura-badge-success">Active</span>
+          </div>
+          <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">Use cards to group related content. Add a header for titles and actions.</p>
+        </div>
+
+        <!-- Hoverable card -->
+        <div class="jura-card jura-card-hover">
+          <div class="jura-card-header">
+            <div>
+              <h3 class="jura-card-title">Hoverable card</h3>
+              <p class="jura-card-subtitle">Hover to see the effect</p>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--jura-text-subtle)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">Add <code>.jura-card-hover</code> for a lift effect and primary border highlight on hover.</p>
+        </div>
+
+        <!-- Accent card -->
+        <div class="jura-card jura-card-accent">
+          <div class="jura-card-header">
+            <div>
+              <h3 class="jura-card-title">Accent card</h3>
+              <p class="jura-card-subtitle">Left border highlight</p>
+            </div>
+          </div>
+          <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">Add <code>.jura-card-accent</code> for a coloured left border. Use success / warning / danger variants too.</p>
+        </div>
+      </div>
+
+      <!-- Accent variants -->
+      <div class="jura-grid jura-grid-3" style="margin-bottom:1rem">
+        <div class="jura-card jura-card-accent-success" style="padding:.85rem 1rem">
+          <div style="font-weight:700;margin-bottom:.2rem">Success accent</div>
+          <div style="font-size:.8rem;color:var(--jura-text-muted)">All tasks completed</div>
+        </div>
+        <div class="jura-card jura-card-accent-warning" style="padding:.85rem 1rem">
+          <div style="font-weight:700;margin-bottom:.2rem">Warning accent</div>
+          <div style="font-size:.8rem;color:var(--jura-text-muted)">2 items need review</div>
+        </div>
+        <div class="jura-card jura-card-accent-danger" style="padding:.85rem 1rem">
+          <div style="font-weight:700;margin-bottom:.2rem">Danger accent</div>
+          <div style="font-size:.8rem;color:var(--jura-text-muted)">Critical errors found</div>
+        </div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="comp-label" style="margin-bottom:.5rem">Stat cards</div>
+      <div class="jura-grid jura-grid-4">
+        <div class="jura-card">
+          <div class="jura-stat-label">Revenue</div>
+          <span class="jura-stat-value">$48,290</span>
+          <span class="jura-badge jura-badge-success jura-badge-dot" style="margin-top:.35rem">+8.2%</span>
+        </div>
+        <div class="jura-card">
+          <div class="jura-stat-label">Active users</div>
+          <span class="jura-stat-value">2,840</span>
+          <span class="jura-badge jura-badge-primary jura-badge-dot" style="margin-top:.35rem">Live</span>
+        </div>
+        <div class="jura-card">
+          <div class="jura-stat-label">Open tickets</div>
+          <span class="jura-stat-value">42</span>
+          <span class="jura-badge jura-badge-warning jura-badge-dot" style="margin-top:.35rem">Needs review</span>
+        </div>
+        <div class="jura-card">
+          <div class="jura-stat-label">Error rate</div>
+          <span class="jura-stat-value">0.3%</span>
+          <span class="jura-badge jura-badge-success jura-badge-dot" style="margin-top:.35rem">Healthy</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         5. FORM CONTROLS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Form controls</h2>
+      <p class="demo-component-desc">Inputs, selects, textareas, toggles, checkboxes and radio buttons.</p>
+
+      <!-- Text inputs -->
+      <div class="comp-label" style="margin-bottom:.6rem">Text inputs &amp; select</div>
+      <div class="jura-grid jura-grid-3" style="margin-bottom:1.25rem">
+        <label class="jura-form-group">
+          Project name
+          <input class="jura-input" placeholder="Jura CRM" />
+          <span class="jura-form-hint">This will be visible in your dashboard.</span>
+        </label>
+        <label class="jura-form-group">
+          Workspace
+          <select class="jura-select">
+            <option>Default workspace</option>
+            <option>Marketing</option>
+            <option>Engineering</option>
+            <option>Design</option>
+          </select>
+        </label>
+        <label class="jura-form-group">
+          Search
+          <input class="jura-input" placeholder="Search users…" type="search" />
+        </label>
+        <label class="jura-form-group">
+          Email (valid)
+          <input class="jura-input jura-input-success" value="hello@example.com" type="email" />
+        </label>
+        <label class="jura-form-group">
+          Email (error)
+          <input class="jura-input jura-input-error" value="bad-email" type="email" />
+          <span class="jura-form-error">Please enter a valid email address.</span>
+        </label>
+        <label class="jura-form-group">
+          Password
+          <input class="jura-input" placeholder="••••••••" type="password" />
+          <span class="jura-form-hint">Min 8 characters.</span>
+        </label>
+      </div>
+
+      <!-- Textarea -->
+      <div class="comp-label" style="margin-bottom:.6rem">Textarea</div>
+      <div class="jura-grid jura-grid-2" style="margin-bottom:1.25rem">
+        <label class="jura-form-group">
+          Description
+          <textarea class="jura-textarea" placeholder="Write something…"></textarea>
+        </label>
+        <label class="jura-form-group">
+          Notes (error)
+          <textarea class="jura-textarea jura-input-error" placeholder="Required field"></textarea>
+          <span class="jura-form-error">This field is required.</span>
+        </label>
+      </div>
+
+      <!-- Toggles -->
+      <div class="comp-label" style="margin-bottom:.6rem">Toggle switches</div>
+      <div class="comp-row" style="margin-bottom:1.25rem">
+        <label class="jura-toggle">
+          <input type="checkbox" checked />
+          <span class="jura-toggle-track"></span>
+          Notifications enabled
+        </label>
+        <label class="jura-toggle">
+          <input type="checkbox" />
+          <span class="jura-toggle-track"></span>
+          Dark mode
+        </label>
+        <label class="jura-toggle">
+          <input type="checkbox" checked />
+          <span class="jura-toggle-track"></span>
+          Two-factor auth
+        </label>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="comp-label" style="margin-bottom:.6rem">Checkboxes</div>
+      <div class="comp-row" style="margin-bottom:1.25rem">
+        <label class="jura-checkbox">
+          <input type="checkbox" checked />
+          Accept terms &amp; conditions
+        </label>
+        <label class="jura-checkbox">
+          <input type="checkbox" />
+          Subscribe to newsletter
+        </label>
+        <label class="jura-checkbox">
+          <input type="checkbox" checked />
+          Remember me
+        </label>
+      </div>
+
+      <!-- Radio buttons -->
+      <div class="comp-label" style="margin-bottom:.6rem">Radio buttons</div>
+      <div class="comp-row">
+        <label class="jura-radio">
+          <input type="radio" name="plan" checked />
+          Free plan
+        </label>
+        <label class="jura-radio">
+          <input type="radio" name="plan" />
+          Pro plan
+        </label>
+        <label class="jura-radio">
+          <input type="radio" name="plan" />
+          Enterprise
+        </label>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         6. TABLES
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Tables</h2>
+      <p class="demo-component-desc">Default, striped and compact variants with hover rows.</p>
+
+      <div class="comp-label" style="margin-bottom:.6rem">Default table</div>
+      <div class="jura-card" style="margin-bottom:1.25rem">
         <div class="jura-table-wrap">
-          <table class="jura-table"><thead><tr><th>Service</th><th>Plan</th><th>Status</th></tr></thead><tbody><tr><td>Portal</td><td>Growth</td><td><span class="jura-badge jura-badge-success">Active</span></td></tr><tr><td>Analytics</td><td>Starter</td><td><span class="jura-badge jura-badge-warning">Pending</span></td></tr></tbody></table>
+          <table class="jura-table">
+            <thead>
+              <tr><th>Name</th><th>Role</th><th>Status</th><th>Last active</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:.65rem"><span class="jura-avatar" style="background:var(--jura-primary-lt);color:var(--jura-primary)">AK</span>Anna Kim</div></td>
+                <td>Admin</td>
+                <td><span class="jura-badge jura-badge-success jura-badge-dot">Active</span></td>
+                <td style="color:var(--jura-text-muted);font-size:.875rem">2 min ago</td>
+                <td><button class="jura-btn jura-btn-ghost jura-btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:.65rem"><span class="jura-avatar" style="background:#fef3c7;color:#92400e">TL</span>Tom Lee</div></td>
+                <td>Editor</td>
+                <td><span class="jura-badge jura-badge-warning jura-badge-dot">Away</span></td>
+                <td style="color:var(--jura-text-muted);font-size:.875rem">1 hour ago</td>
+                <td><button class="jura-btn jura-btn-ghost jura-btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:.65rem"><span class="jura-avatar" style="background:#fee2e2;color:#991b1b">MR</span>Maya Ross</div></td>
+                <td>Viewer</td>
+                <td><span class="jura-badge jura-badge-danger jura-badge-dot">Suspended</span></td>
+                <td style="color:var(--jura-text-muted);font-size:.875rem">3 days ago</td>
+                <td><button class="jura-btn jura-btn-ghost jura-btn-sm">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </section>
+      </div>
 
-      <section class="jura-card" style="margin-bottom:1rem;">
-        <h2>Tabs & empty state</h2>
-        <div data-jura-tabs>
-          <div class="jura-tabs"><button class="jura-tab is-active" data-jura-tab="tab-one">Overview</button><button class="jura-tab" data-jura-tab="tab-two">History</button></div>
-          <div class="jura-tab-panel is-active" id="tab-one"><p>Overview tab with active content.</p></div>
-          <div class="jura-tab-panel" id="tab-two"><div class="jura-empty">No records yet. Create your first event.</div></div>
+      <div class="jura-grid jura-grid-2">
+        <div>
+          <div class="comp-label" style="margin-bottom:.6rem">Striped table</div>
+          <div class="jura-card">
+            <div class="jura-table-wrap">
+              <table class="jura-table jura-table-striped">
+                <thead><tr><th>Service</th><th>Plan</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>Portal</td><td>Growth</td><td><span class="jura-badge jura-badge-success">Active</span></td></tr>
+                  <tr><td>Analytics</td><td>Starter</td><td><span class="jura-badge jura-badge-warning">Pending</span></td></tr>
+                  <tr><td>CRM</td><td>Pro</td><td><span class="jura-badge jura-badge-success">Active</span></td></tr>
+                  <tr><td>Mailer</td><td>Free</td><td><span class="jura-badge">Inactive</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
-    <script src="../assets/js/demo.js"></script>
-  </body>
+
+        <div>
+          <div class="comp-label" style="margin-bottom:.6rem">Compact table</div>
+          <div class="jura-card">
+            <div class="jura-table-wrap">
+              <table class="jura-table jura-table-compact">
+                <thead><tr><th>Event</th><th>Time</th><th>Level</th></tr></thead>
+                <tbody>
+                  <tr><td>Deploy started</td><td>14:32</td><td><span class="jura-badge jura-badge-info jura-badge-sm">Info</span></td></tr>
+                  <tr><td>Tests passed</td><td>14:34</td><td><span class="jura-badge jura-badge-success">OK</span></td></tr>
+                  <tr><td>Build complete</td><td>14:37</td><td><span class="jura-badge jura-badge-success">OK</span></td></tr>
+                  <tr><td>Memory warning</td><td>14:40</td><td><span class="jura-badge jura-badge-warning">Warn</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         7. NAVIGATION — TABS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Tabs</h2>
+      <p class="demo-component-desc">Line tabs and pill / segmented control variants.</p>
+
+      <div class="jura-grid jura-grid-2">
+        <div class="jura-card">
+          <div class="comp-label" style="margin-bottom:.75rem">Line tabs</div>
+          <div data-jura-tabs data-jura-tabs-scope>
+            <div class="jura-tabs">
+              <button class="jura-tab is-active" data-jura-tab="t1-overview">Overview</button>
+              <button class="jura-tab" data-jura-tab="t1-activity">Activity</button>
+              <button class="jura-tab" data-jura-tab="t1-settings">Settings</button>
+            </div>
+            <div class="jura-tab-panel is-active" id="t1-overview">
+              <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">This is the <strong>Overview</strong> tab content. Show summary metrics or a description here.</p>
+            </div>
+            <div class="jura-tab-panel" id="t1-activity">
+              <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">Recent <strong>Activity</strong> feed would appear here — logs, events, timeline items.</p>
+            </div>
+            <div class="jura-tab-panel" id="t1-settings">
+              <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)"><strong>Settings</strong> and configuration options for this item.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="jura-card">
+          <div class="comp-label" style="margin-bottom:.75rem">Pill / segmented control</div>
+          <div data-jura-tabs data-jura-tabs-scope>
+            <div class="jura-tabs jura-tabs-pill">
+              <button class="jura-tab is-active" data-jura-tab="t2-day">Day</button>
+              <button class="jura-tab" data-jura-tab="t2-week">Week</button>
+              <button class="jura-tab" data-jura-tab="t2-month">Month</button>
+            </div>
+            <div class="jura-tab-panel is-active" id="t2-day">
+              <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">Showing data for <strong>today</strong>. 284 events recorded.</p>
+            </div>
+            <div class="jura-tab-panel" id="t2-week">
+              <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">Showing data for the <strong>past week</strong>. 1,840 events recorded.</p>
+            </div>
+            <div class="jura-tab-panel" id="t2-month">
+              <p style="margin:0;font-size:.875rem;color:var(--jura-text-muted)">Showing data for this <strong>month</strong>. 7,290 events recorded.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         8. PROGRESS & LOADING
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Progress &amp; loading</h2>
+      <p class="demo-component-desc">Progress bars, spinners and skeleton loaders.</p>
+
+      <div class="jura-grid jura-grid-2">
+        <div class="jura-card">
+          <div class="comp-label" style="margin-bottom:1rem">Progress bars</div>
+          <div class="comp-grid" style="gap:.85rem">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;font-weight:600;margin-bottom:.4rem"><span>Storage used</span><span>74%</span></div>
+              <div class="jura-progress"><div class="jura-progress-bar" style="width:74%"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;font-weight:600;margin-bottom:.4rem"><span>CPU load</span><span>38%</span></div>
+              <div class="jura-progress jura-progress-warning"><div class="jura-progress-bar" style="width:38%"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;font-weight:600;margin-bottom:.4rem"><span>Error rate</span><span>92%</span></div>
+              <div class="jura-progress jura-progress-danger"><div class="jura-progress-bar" style="width:92%"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;font-weight:600;margin-bottom:.4rem"><span>Uptime</span><span>100%</span></div>
+              <div class="jura-progress jura-progress-success"><div class="jura-progress-bar" style="width:100%"></div></div>
+            </div>
+            <div>
+              <div style="font-size:.8rem;font-weight:600;margin-bottom:.4rem">Thin progress (sm)</div>
+              <div class="jura-progress jura-progress-sm"><div class="jura-progress-bar" style="width:60%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="jura-card">
+          <div class="comp-label" style="margin-bottom:1rem">Spinners &amp; skeletons</div>
+
+          <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1.25rem">
+            <div class="comp-col" style="align-items:center">
+              <span class="jura-spinner-sm" style="display:inline-block;width:.9rem;height:.9rem;border:2px solid var(--jura-border);border-top-color:var(--jura-primary);border-radius:50%;animation:jura-spin .7s linear infinite"></span>
+              <span style="font-size:.75rem;color:var(--jura-text-subtle)">sm</span>
+            </div>
+            <div class="comp-col" style="align-items:center">
+              <span class="jura-spinner"></span>
+              <span style="font-size:.75rem;color:var(--jura-text-subtle)">default</span>
+            </div>
+            <div class="comp-col" style="align-items:center">
+              <span class="jura-spinner jura-spinner-lg"></span>
+              <span style="font-size:.75rem;color:var(--jura-text-subtle)">lg</span>
+            </div>
+          </div>
+
+          <div class="comp-label" style="margin-bottom:.5rem">Skeleton loaders</div>
+          <div class="comp-grid" style="gap:.5rem">
+            <div class="jura-skeleton" style="height:1rem;width:60%"></div>
+            <div class="jura-skeleton" style="height:1rem;width:90%"></div>
+            <div class="jura-skeleton" style="height:1rem;width:75%"></div>
+            <div style="display:flex;gap:.75rem;align-items:center;margin-top:.25rem">
+              <div class="jura-skeleton" style="width:2.5rem;height:2.5rem;border-radius:50%;flex-shrink:0"></div>
+              <div style="flex:1;display:grid;gap:.4rem">
+                <div class="jura-skeleton" style="height:.85rem;width:55%"></div>
+                <div class="jura-skeleton" style="height:.75rem;width:80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         9. AVATARS
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Avatars</h2>
+      <p class="demo-component-desc">User representations in multiple sizes, with image or initials, including groups.</p>
+
+      <div class="jura-grid jura-grid-2">
+        <div class="jura-card">
+          <div class="comp-label" style="margin-bottom:.75rem">Sizes</div>
+          <div class="comp-row" style="align-items:flex-end;gap:1rem">
+            <div class="comp-col" style="align-items:center;gap:.35rem">
+              <span class="jura-avatar jura-avatar-sm">AK</span>
+              <span style="font-size:.72rem;color:var(--jura-text-subtle)">sm</span>
+            </div>
+            <div class="comp-col" style="align-items:center;gap:.35rem">
+              <span class="jura-avatar">TL</span>
+              <span style="font-size:.72rem;color:var(--jura-text-subtle)">default</span>
+            </div>
+            <div class="comp-col" style="align-items:center;gap:.35rem">
+              <span class="jura-avatar jura-avatar-lg">MR</span>
+              <span style="font-size:.72rem;color:var(--jura-text-subtle)">lg</span>
+            </div>
+            <div class="comp-col" style="align-items:center;gap:.35rem">
+              <span class="jura-avatar jura-avatar-xl">JD</span>
+              <span style="font-size:.72rem;color:var(--jura-text-subtle)">xl</span>
+            </div>
+          </div>
+
+          <div class="comp-label" style="margin-top:1.25rem;margin-bottom:.75rem">Colour variants</div>
+          <div class="comp-row">
+            <span class="jura-avatar" style="background:var(--jura-primary-lt);color:var(--jura-primary)">AK</span>
+            <span class="jura-avatar" style="background:#d1fae5;color:#065f46">TL</span>
+            <span class="jura-avatar" style="background:#fef3c7;color:#92400e">MR</span>
+            <span class="jura-avatar" style="background:#fee2e2;color:#991b1b">JD</span>
+            <span class="jura-avatar" style="background:#ede9fe;color:#6d28d9">SW</span>
+            <span class="jura-avatar" style="background:#e0f2fe;color:#0c4a6e">PR</span>
+          </div>
+        </div>
+
+        <div class="jura-card">
+          <div class="comp-label" style="margin-bottom:.75rem">Avatar group</div>
+          <div class="jura-avatar-group" style="margin-bottom:1rem">
+            <span class="jura-avatar" style="background:var(--jura-primary-lt);color:var(--jura-primary)">AK</span>
+            <span class="jura-avatar" style="background:#d1fae5;color:#065f46">TL</span>
+            <span class="jura-avatar" style="background:#fef3c7;color:#92400e">MR</span>
+            <span class="jura-avatar" style="background:#fee2e2;color:#991b1b">JD</span>
+            <span class="jura-avatar" style="background:var(--jura-surface-2);color:var(--jura-text-muted)">+4</span>
+          </div>
+
+          <div class="comp-label" style="margin-bottom:.75rem">User row card</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 0;border-bottom:1px solid var(--jura-border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span class="jura-avatar" style="background:var(--jura-primary-lt);color:var(--jura-primary)">AK</span>
+              <div>
+                <div style="font-weight:600;font-size:.9rem">Anna Kim</div>
+                <div style="font-size:.8rem;color:var(--jura-text-muted)">anna@example.com</div>
+              </div>
+            </div>
+            <span class="jura-badge jura-badge-success jura-badge-dot">Active</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:.65rem 0">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span class="jura-avatar" style="background:#fef3c7;color:#92400e">MR</span>
+              <div>
+                <div style="font-weight:600;font-size:.9rem">Maya Ross</div>
+                <div style="font-size:.8rem;color:var(--jura-text-muted)">maya@example.com</div>
+              </div>
+            </div>
+            <span class="jura-badge jura-badge-warning jura-badge-dot">Away</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         10. DROPDOWN
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Dropdown</h2>
+      <p class="demo-component-desc">Context menus and action menus. Click to open, click away to close.</p>
+
+      <div class="comp-row">
+        <!-- Dropdown 1 -->
+        <div class="jura-dropdown">
+          <button class="jura-btn" data-jura-dropdown>
+            Actions
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="jura-dropdown-menu">
+            <button class="jura-dropdown-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Edit
+            </button>
+            <button class="jura-dropdown-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Duplicate
+            </button>
+            <button class="jura-dropdown-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export
+            </button>
+            <div class="jura-dropdown-divider"></div>
+            <button class="jura-dropdown-item jura-dropdown-item-danger">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+              Delete
+            </button>
+          </div>
+        </div>
+
+        <!-- Dropdown 2 — primary -->
+        <div class="jura-dropdown">
+          <button class="jura-btn jura-btn-primary" data-jura-dropdown>
+            New item
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="jura-dropdown-menu">
+            <button class="jura-dropdown-item">New project</button>
+            <button class="jura-dropdown-item">New folder</button>
+            <button class="jura-dropdown-item">Import from CSV</button>
+          </div>
+        </div>
+
+        <!-- Dropdown 3 — icon only -->
+        <div class="jura-dropdown">
+          <button class="jura-btn jura-btn-icon" data-jura-dropdown title="More options">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+          </button>
+          <div class="jura-dropdown-menu">
+            <button class="jura-dropdown-item">View details</button>
+            <button class="jura-dropdown-item">Share link</button>
+            <div class="jura-dropdown-divider"></div>
+            <button class="jura-dropdown-item jura-dropdown-item-danger">Archive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         11. MODAL
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Modal</h2>
+      <p class="demo-component-desc">Dialog overlay with backdrop blur. Click the button to open, ESC or backdrop to close.</p>
+
+      <div class="comp-row">
+        <button class="jura-btn jura-btn-primary" data-jura-modal-open="modal-confirm">Open confirm dialog</button>
+        <button class="jura-btn" data-jura-modal-open="modal-form">Open form dialog</button>
+      </div>
+
+      <!-- Modal 1 — confirm -->
+      <div class="jura-modal-backdrop" id="modal-confirm">
+        <div class="jura-modal" style="max-width:26rem">
+          <div class="jura-modal-header">
+            <h2 class="jura-modal-title">Delete this item?</h2>
+            <button class="jura-btn jura-btn-ghost jura-btn-icon" data-jura-modal-close>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <p style="color:var(--jura-text-muted);font-size:.9rem;margin:0">This action is permanent. The item and all its data will be deleted and cannot be recovered.</p>
+          <div class="jura-modal-footer">
+            <button class="jura-btn" data-jura-modal-close>Cancel</button>
+            <button class="jura-btn jura-btn-danger" data-jura-modal-close>Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2 — form -->
+      <div class="jura-modal-backdrop" id="modal-form">
+        <div class="jura-modal">
+          <div class="jura-modal-header">
+            <h2 class="jura-modal-title">Create new project</h2>
+            <button class="jura-btn jura-btn-ghost jura-btn-icon" data-jura-modal-close>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div class="jura-grid" style="gap:.85rem">
+            <label class="jura-form-group">
+              Project name
+              <input class="jura-input" placeholder="My awesome project" />
+            </label>
+            <label class="jura-form-group">
+              Workspace
+              <select class="jura-select">
+                <option>Default workspace</option>
+                <option>Marketing</option>
+                <option>Engineering</option>
+              </select>
+            </label>
+            <label class="jura-form-group">
+              Description
+              <textarea class="jura-textarea" placeholder="What is this project about?"></textarea>
+            </label>
+          </div>
+          <div class="jura-modal-footer">
+            <button class="jura-btn" data-jura-modal-close>Cancel</button>
+            <button class="jura-btn jura-btn-primary" data-jura-modal-close>Create project</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         12. EMPTY STATES
+         ══════════════════════════════════════════════════════════ -->
+    <section class="demo-component-section">
+      <h2 class="demo-component-title">Empty states</h2>
+      <p class="demo-component-desc">Placeholder screens for lists and tables with no data yet.</p>
+
+      <div class="jura-grid jura-grid-3">
+        <!-- Basic -->
+        <div class="jura-empty">
+          <svg class="jura-empty-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          <p class="jura-empty-title">No documents</p>
+          <p class="jura-empty-desc">Create your first document to get started.</p>
+          <button class="jura-btn jura-btn-primary jura-btn-sm">Create document</button>
+        </div>
+
+        <!-- Search empty -->
+        <div class="jura-empty">
+          <svg class="jura-empty-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p class="jura-empty-title">No results found</p>
+          <p class="jura-empty-desc">We couldn't find anything matching your search. Try different keywords.</p>
+          <button class="jura-btn jura-btn-sm">Clear search</button>
+        </div>
+
+        <!-- Simple inline -->
+        <div class="jura-card">
+          <div class="jura-card-header">
+            <h3 class="jura-card-title">Recent orders</h3>
+          </div>
+          <div class="jura-empty" style="border-style:dashed">
+            <p class="jura-empty-desc">No orders have been placed yet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="demo-footer demo-container">
+    <p><strong>Jura UI</strong> · MIT License · <a href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="../index.html">Home</a></p>
+  </footer>
+
+  <script src="../assets/js/demo.js"></script>
+</body>
 </html>

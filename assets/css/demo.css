@@ -1,95 +1,355 @@
+/* ================================================================
+   Jura UI — Demo site styles (not part of the library)
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   Layout container
+   ---------------------------------------------------------------- */
 .demo-container {
-  max-width: 1160px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
+/* ----------------------------------------------------------------
+   Navigation
+   ---------------------------------------------------------------- */
 .demo-nav {
   position: sticky;
   top: 0;
-  background: rgba(244, 246, 251, 0.88);
-  backdrop-filter: blur(6px);
+  background: rgba(248,250,252,.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--jura-border);
-  z-index: 10;
+  z-index: 40;
 }
 
 .demo-nav-inner {
-  min-height: 64px;
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.demo-brand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--jura-text);
+  letter-spacing: -.03em;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.demo-brand:hover { text-decoration: none; opacity: .85; }
+
+.demo-brand-dot {
+  width: .6rem;
+  height: .6rem;
+  border-radius: 50%;
+  background: var(--jura-primary);
+  display: block;
+  flex-shrink: 0;
+  transition: background .15s;
+}
+
+.demo-links {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Theme color swatches in nav */
+.demo-themes {
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+  padding: 0 .4rem;
+  border-right: 1px solid var(--jura-border);
+  margin-right: .15rem;
+}
+
+.demo-theme-swatch {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  transition: transform .12s, box-shadow .12s, border-color .12s;
+  flex-shrink: 0;
+  padding: 0;
+  outline: none;
+  appearance: none;
+}
+.demo-theme-swatch:hover { transform: scale(1.25); }
+.demo-theme-swatch.is-active {
+  border-color: var(--jura-text);
+  box-shadow: 0 0 0 2px var(--jura-bg), 0 0 0 4px var(--jura-text);
+}
+
+/* ----------------------------------------------------------------
+   Hero section
+   ---------------------------------------------------------------- */
+.demo-hero {
+  padding: 5rem 0 3.5rem;
+}
+
+.demo-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--jura-primary);
+  background: var(--jura-primary-lt);
+  padding: .3rem .85rem;
+  border-radius: var(--jura-radius-full);
+  margin-bottom: 1.5rem;
+}
+
+.demo-hero-title {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  margin: 0 0 1.1rem;
+  color: var(--jura-text);
+}
+.demo-hero-title span { color: var(--jura-primary); }
+
+.demo-hero-lead {
+  font-size: 1.1rem;
+  color: var(--jura-text-muted);
+  max-width: 580px;
+  margin: 0 0 2rem;
+  line-height: 1.7;
+}
+
+.demo-hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; margin-bottom: 2.5rem; }
+
+.demo-hero-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--jura-border);
+}
+.demo-hero-stat { }
+.demo-hero-stat strong { display: block; font-size: 1.2rem; font-weight: 800; color: var(--jura-text); letter-spacing: -.03em; }
+.demo-hero-stat span   { font-size: .8rem; color: var(--jura-text-muted); font-weight: 500; }
+
+/* ----------------------------------------------------------------
+   Section headers
+   ---------------------------------------------------------------- */
+.demo-section-header { margin-bottom: 2rem; }
+
+.demo-section-label {
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--jura-primary);
+  margin-bottom: .5rem;
+  display: block;
+}
+
+.demo-section-title {
+  font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  margin: 0 0 .5rem;
+}
+
+.demo-section-lead {
+  color: var(--jura-text-muted);
+  font-size: .95rem;
+  max-width: 560px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ----------------------------------------------------------------
+   Page title (examples pages)
+   ---------------------------------------------------------------- */
+.demo-page-title { margin: 0 0 .5rem; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -.035em; }
+.demo-lead       { color: var(--jura-text-muted); max-width: 720px; font-size: .975rem; margin: 0 0 1.75rem; }
+
+/* ----------------------------------------------------------------
+   Feature grid (home page)
+   ---------------------------------------------------------------- */
+.demo-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.demo-brand { font-size: 1.1rem; font-weight: 800; color: var(--jura-text); }
-.demo-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-
-.demo-page-title { margin: 0; font-size: clamp(2rem, 3.5vw, 2.8rem); }
-.demo-lead { color: var(--jura-text-muted); max-width: 780px; }
-
-.demo-card {
+.demo-feature {
+  background: var(--jura-surface);
   border: 1px solid var(--jura-border);
   border-radius: var(--jura-radius);
-  background: var(--jura-surface);
-  box-shadow: var(--jura-shadow);
-  padding: 1rem;
+  padding: 1.5rem;
+  transition: box-shadow .15s, transform .15s, border-color .15s;
+}
+.demo-feature:hover { box-shadow: var(--jura-shadow); transform: translateY(-2px); border-color: var(--jura-border-strong); }
+
+.demo-feature-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--jura-radius-sm);
+  background: var(--jura-primary-lt);
+  color: var(--jura-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+.demo-feature h3 { font-size: .95rem; margin-bottom: .35rem; }
+.demo-feature p  { font-size: .875rem; color: var(--jura-text-muted); margin: 0; line-height: 1.6; }
+
+/* ----------------------------------------------------------------
+   Preview panel (home page)
+   ---------------------------------------------------------------- */
+.demo-preview-wrap {
+  background: linear-gradient(135deg, var(--jura-primary-lt) 0%, var(--jura-bg) 60%);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius-lg);
+  padding: 1.75rem;
 }
 
+/* ----------------------------------------------------------------
+   Examples & cards
+   ---------------------------------------------------------------- */
 .demo-example-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 1rem;
 }
 
+.demo-card {
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius);
+  box-shadow: var(--jura-shadow-xs);
+  padding: 1.5rem;
+  transition: box-shadow .15s, transform .15s, border-color .15s;
+}
+.demo-card:hover { box-shadow: var(--jura-shadow); transform: translateY(-2px); border-color: var(--jura-primary); }
+.demo-card h3 { font-size: 1rem; margin-bottom: .35rem; }
+.demo-card p  { font-size: .875rem; color: var(--jura-text-muted); margin: 0 0 1rem; }
+.demo-card a  { font-size: .875rem; font-weight: 600; }
+
+/* ----------------------------------------------------------------
+   Component showcase sections
+   ---------------------------------------------------------------- */
+.demo-component-section {
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--jura-border);
+}
+.demo-component-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+.demo-component-title { font-size: 1.35rem; font-weight: 800; margin: 0 0 .25rem; letter-spacing: -.025em; }
+.demo-component-desc  { font-size: .875rem; color: var(--jura-text-muted); margin: 0 0 1.5rem; }
+
+/* Variant rows */
+.demo-variant-row {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.demo-variant-col {
+  display: grid;
+  gap: .6rem;
+}
+
+/* Colour row (for badge color palette demo) */
+.demo-palette {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* ----------------------------------------------------------------
+   Code block
+   ---------------------------------------------------------------- */
 .demo-code {
   margin: 0;
   background: #0f172a;
   color: #e2e8f0;
-  border-radius: 12px;
-  padding: 0.9rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.87rem;
+  border-radius: var(--jura-radius);
+  padding: 1.1rem 1.4rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: .85rem;
   overflow-x: auto;
+  line-height: 1.8;
 }
+.demo-code .c-tag { color: #7dd3fc; }
+.demo-code .c-attr { color: #86efac; }
+.demo-code .c-val  { color: #fde68a; }
 
-.demo-footer {
-  margin-top: 2rem;
-  padding: 1.5rem 0 2.2rem;
-  border-top: 1px solid var(--jura-border);
-  color: var(--jura-text-muted);
-}
-
-.demo-footer a { color: inherit; }
-
+/* ----------------------------------------------------------------
+   Auth page layout
+   ---------------------------------------------------------------- */
 .demo-auth {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
 .demo-auth-panel,
 .demo-auth-form {
-  padding: 2rem;
+  padding: 2.5rem;
   display: grid;
   align-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
-
 .demo-auth-panel {
-  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+  background: linear-gradient(145deg, var(--jura-primary-lt) 0%, var(--jura-bg) 100%);
   border-right: 1px solid var(--jura-border);
 }
 
+/* ----------------------------------------------------------------
+   Pricing
+   ---------------------------------------------------------------- */
 .demo-pricing {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 1rem;
 }
 
+/* ----------------------------------------------------------------
+   Footer
+   ---------------------------------------------------------------- */
+.demo-footer {
+  margin-top: 4rem;
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--jura-border);
+  color: var(--jura-text-muted);
+  font-size: .875rem;
+}
+.demo-footer a       { color: inherit; }
+.demo-footer a:hover { color: var(--jura-primary); text-decoration: none; }
+
+/* ----------------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------------- */
 @media (max-width: 960px) {
+  .demo-hero { padding: 3rem 0 2rem; }
+  .demo-feature-grid { grid-template-columns: 1fr 1fr; }
   .demo-example-grid,
   .demo-pricing,
-  .demo-auth {
-    grid-template-columns: 1fr;
-  }
+  .demo-auth { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .demo-feature-grid { grid-template-columns: 1fr; }
+  .demo-hero-title   { font-size: 2.3rem; }
+  .demo-themes       { display: none; }
 }

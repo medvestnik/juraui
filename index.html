@@ -1,104 +1,316 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jura UI — First public preview</title>
-    <meta name="description" content="Jura UI is a lightweight UI kit for admin panels, dashboards, SaaS interfaces and product pages." />
-    <link rel="stylesheet" href="assets/css/jura-ui.css" />
-    <link rel="stylesheet" href="assets/css/demo.css" />
-  </head>
-  <body>
-    <header class="demo-nav">
-      <div class="demo-container demo-nav-inner">
-        <a class="demo-brand" href="index.html">Jura UI</a>
-        <nav class="demo-links">
-          <a class="jura-btn jura-btn-secondary" href="examples/index.html">Examples</a>
-          <a class="jura-btn" href="docs/getting-started.md">Getting started</a>
-          <a class="jura-btn" href="docs/php-integration.md">PHP integration</a>
-          <a class="jura-btn jura-btn-primary" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jura UI — Lightweight UI kit for admin panels &amp; dashboards</title>
+  <meta name="description" content="Jura UI is a lightweight, framework-agnostic UI kit for admin panels, dashboards, SaaS interfaces and product pages. No build step, no dependencies." />
+  <link rel="stylesheet" href="assets/css/jura-ui.css" />
+  <link rel="stylesheet" href="assets/css/demo.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ───────────────────────────────────────────── -->
+  <header class="demo-nav">
+    <div class="demo-container demo-nav-inner">
+      <a class="demo-brand" href="index.html">
+        <span class="demo-brand-dot"></span>
+        Jura UI
+      </a>
+      <nav class="demo-links">
+        <!-- Color theme picker -->
+        <div class="demo-themes" role="group" aria-label="Pick colour theme">
+          <button title="Indigo (default)" data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"            data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald"          data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"             data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"           data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"            data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"            data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a class="jura-btn" href="examples/components.html">Components</a>
+        <a class="jura-btn" href="examples/index.html">Examples</a>
+        <a class="jura-btn jura-btn-primary" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section class="demo-hero demo-container">
+    <div class="demo-hero-eyebrow">
+      <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+      First public preview · v0.2
+    </div>
+    <h1 class="demo-hero-title">
+      Ship beautiful<br>
+      <span>admin interfaces</span><br>
+      faster.
+    </h1>
+    <p class="demo-hero-lead">
+      Lightweight UI kit for dashboards, admin panels and SaaS interfaces.
+      No build step, no dependencies — just clean HTML&nbsp;&amp;&nbsp;CSS.
+    </p>
+    <div class="demo-hero-actions">
+      <a class="jura-btn jura-btn-primary jura-btn-lg" href="examples/index.html">View examples</a>
+      <a class="jura-btn jura-btn-lg" href="examples/components.html">Components</a>
+      <a class="jura-btn jura-btn-ghost jura-btn-lg" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        GitHub
+      </a>
+    </div>
+    <div class="demo-hero-stats">
+      <div class="demo-hero-stat">
+        <strong>&lt; 8 KB</strong>
+        <span>CSS (gzipped)</span>
       </div>
-    </header>
+      <div class="demo-hero-stat">
+        <strong>0</strong>
+        <span>dependencies</span>
+      </div>
+      <div class="demo-hero-stat">
+        <strong>7</strong>
+        <span>colour themes</span>
+      </div>
+      <div class="demo-hero-stat">
+        <strong>MIT</strong>
+        <span>open source</span>
+      </div>
+    </div>
+  </section>
 
-    <main class="demo-container">
-      <section class="jura-section">
-        <div class="jura-hero">
-          <article class="jura-card">
-            <p class="jura-badge">First public preview / early alpha</p>
-            <h1 class="demo-page-title">Jura UI</h1>
-            <p class="demo-lead">Lightweight UI kit for admin panels, dashboards, SaaS interfaces and product pages. Clean, card-based and framework-agnostic.</p>
-            <div class="jura-topbar-actions">
-              <a class="jura-btn jura-btn-primary" href="examples/index.html">View examples</a>
-              <a class="jura-btn" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub repository</a>
-              <a class="jura-btn jura-btn-secondary" href="docs/getting-started.md">Getting started</a>
-              <a class="jura-btn jura-btn-secondary" href="docs/php-integration.md">PHP integration</a>
-            </div>
-          </article>
-          <aside class="jura-card">
-            <h2 class="jura-card-title">Designed for fast interfaces</h2>
-            <p class="demo-lead">Jura UI helps ship admin tools quickly while staying readable and easy to customize.</p>
-            <ul>
-              <li>Lightweight CSS architecture</li>
-              <li>No heavy dependencies</li>
-              <li>Works in static, backend and frontend projects</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
+  <!-- ── Live Preview ──────────────────────────────────────────── -->
+  <section class="jura-section demo-container">
+    <div class="demo-section-header">
+      <span class="demo-section-label">Live preview</span>
+      <h2 class="demo-section-title">Real components, all themes</h2>
+      <p class="demo-section-lead">Switch the colour swatches in the header to see every theme applied instantly across all components.</p>
+    </div>
 
-      <section class="jura-section">
-        <h2>Core benefits</h2>
-        <div class="jura-grid jura-grid-3">
-          <article class="demo-card"><h3>Lightweight</h3><p>Small, practical CSS and HTML patterns.</p></article>
-          <article class="demo-card"><h3>Framework agnostic</h3><p>Works with plain HTML, backend templates and SPA wrappers.</p></article>
-          <article class="demo-card"><h3>Admin-first</h3><p>Built for CRUD interfaces, dashboards and internal tools.</p></article>
-          <article class="demo-card"><h3>Responsive</h3><p>Cards, layouts and tables adapt by default.</p></article>
-          <article class="demo-card"><h3>Easy to customize</h3><p>Theme tokens are exposed as CSS variables.</p></article>
-          <article class="demo-card"><h3>Open source</h3><p>MIT licensed and hosted on GitHub.</p></article>
-        </div>
-      </section>
-
-      <section class="jura-section">
-        <h2>Examples</h2>
-        <div class="demo-example-grid">
-          <article class="demo-card"><h3>Dashboard example</h3><p>Admin shell with stats, activity and recent orders.</p><a href="examples/dashboard.html">Open dashboard</a></article>
-          <article class="demo-card"><h3>Admin list example</h3><p>Entity management view with filters and actions.</p><a href="examples/admin-list.html">Open admin list</a></article>
-          <article class="demo-card"><h3>Auth screen example</h3><p>Sign-in page with brand panel and form state.</p><a href="examples/auth.html">Open auth screen</a></article>
-          <article class="demo-card"><h3>Landing page example</h3><p>Public-facing product layout with pricing cards.</p><a href="examples/landing.html">Open landing</a></article>
-          <article class="demo-card"><h3>Components overview</h3><p>Visual catalog of core Jura UI components.</p><a href="examples/components.html">Open components</a></article>
-        </div>
-      </section>
-
-      <section class="jura-section">
-        <h2>Live preview</h2>
+    <div class="demo-preview-wrap">
+      <!-- Stats row -->
+      <div class="jura-grid jura-grid-4" style="margin-bottom:1rem">
         <div class="jura-card">
-          <div class="jura-grid jura-grid-4">
-            <article class="jura-card jura-stat"><span class="jura-badge jura-badge-success">+12%</span><strong>$124,980</strong><div>Revenue</div></article>
-            <article class="jura-card jura-stat"><span class="jura-badge">2,840</span><strong>2,840</strong><div>Users</div></article>
-            <article class="jura-card jura-stat"><span class="jura-badge jura-badge-warning">Pending</span><strong>428</strong><div>Orders</div></article>
-            <article class="jura-card jura-stat"><span class="jura-badge jura-badge-danger">-0.7%</span><strong>3.9%</strong><div>Conversion</div></article>
+          <div class="jura-stat-label">Revenue</div>
+          <span class="jura-stat-value">$124,980</span>
+          <span class="jura-badge jura-badge-success jura-badge-dot">+12%</span>
+        </div>
+        <div class="jura-card">
+          <div class="jura-stat-label">Users</div>
+          <span class="jura-stat-value">2,840</span>
+          <span class="jura-badge jura-badge-primary jura-badge-dot">Active</span>
+        </div>
+        <div class="jura-card">
+          <div class="jura-stat-label">Orders</div>
+          <span class="jura-stat-value">428</span>
+          <span class="jura-badge jura-badge-warning jura-badge-dot">Pending</span>
+        </div>
+        <div class="jura-card">
+          <div class="jura-stat-label">Conversion</div>
+          <span class="jura-stat-value">3.9%</span>
+          <span class="jura-badge jura-badge-danger jura-badge-dot">-0.7%</span>
+        </div>
+      </div>
+
+      <!-- Table card -->
+      <div class="jura-card" style="margin-bottom:1rem">
+        <div class="jura-card-header">
+          <div>
+            <h3 class="jura-card-title">Recent orders</h3>
+            <p class="jura-card-subtitle">Last 7 days</p>
           </div>
-          <div class="jura-card" style="margin-top: 1rem;">
-            <div class="jura-card-header"><h3 class="jura-card-title">Recent orders</h3><div class="jura-topbar-actions"><button class="jura-btn">Export</button><button class="jura-btn jura-btn-primary">Create order</button></div></div>
-            <div class="jura-table-wrap">
-              <table class="jura-table">
-                <thead><tr><th>Order</th><th>Customer</th><th>Status</th><th>Total</th></tr></thead>
-                <tbody>
-                  <tr><td>#1042</td><td>Nordic Health</td><td><span class="jura-badge jura-badge-success">Paid</span></td><td>$1,240</td></tr>
-                  <tr><td>#1041</td><td>Blue Orbit</td><td><span class="jura-badge jura-badge-warning">Processing</span></td><td>$890</td></tr>
-                  <tr><td>#1040</td><td>Aster Lab</td><td><span class="jura-badge jura-badge-danger">Refunded</span></td><td>$430</td></tr>
-                </tbody>
-              </table>
+          <div class="jura-topbar-actions">
+            <button class="jura-btn jura-btn-sm">Export</button>
+            <button class="jura-btn jura-btn-primary jura-btn-sm">New order</button>
+          </div>
+        </div>
+        <div class="jura-table-wrap">
+          <table class="jura-table">
+            <thead>
+              <tr><th>Order</th><th>Customer</th><th>Date</th><th>Status</th><th>Total</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#1042</td><td>Nordic Health</td><td>May 23</td>
+                <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                <td><strong>$1,240</strong></td>
+              </tr>
+              <tr>
+                <td>#1041</td><td>Blue Orbit</td><td>May 22</td>
+                <td><span class="jura-badge jura-badge-warning">Processing</span></td>
+                <td><strong>$890</strong></td>
+              </tr>
+              <tr>
+                <td>#1040</td><td>Aster Lab</td><td>May 21</td>
+                <td><span class="jura-badge jura-badge-danger">Refunded</span></td>
+                <td><strong>$430</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Buttons & badges row -->
+      <div class="jura-grid jura-grid-2">
+        <div class="jura-card">
+          <p class="jura-card-title" style="margin-bottom:.85rem">Buttons</p>
+          <div class="demo-variant-row" style="margin-bottom:.65rem">
+            <button class="jura-btn">Default</button>
+            <button class="jura-btn jura-btn-primary">Primary</button>
+            <button class="jura-btn jura-btn-secondary">Secondary</button>
+            <button class="jura-btn jura-btn-ghost">Ghost</button>
+          </div>
+          <div class="demo-variant-row">
+            <button class="jura-btn jura-btn-sm">Small</button>
+            <button class="jura-btn jura-btn-primary jura-btn-sm">Small primary</button>
+            <button class="jura-btn jura-btn-danger jura-btn-sm">Danger</button>
+            <button class="jura-btn" data-loading>Loading</button>
+          </div>
+        </div>
+        <div class="jura-card">
+          <p class="jura-card-title" style="margin-bottom:.85rem">Badges &amp; Progress</p>
+          <div class="demo-variant-row" style="margin-bottom:.85rem">
+            <span class="jura-badge">Default</span>
+            <span class="jura-badge jura-badge-primary">Primary</span>
+            <span class="jura-badge jura-badge-success jura-badge-dot">Success</span>
+            <span class="jura-badge jura-badge-warning jura-badge-dot">Warning</span>
+            <span class="jura-badge jura-badge-danger jura-badge-dot">Danger</span>
+            <span class="jura-badge jura-badge-info">Info</span>
+          </div>
+          <div style="display:grid;gap:.6rem">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.35rem"><span>Performance</span><span>74%</span></div>
+              <div class="jura-progress"><div class="jura-progress-bar" style="width:74%"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.35rem"><span>Storage</span><span>38%</span></div>
+              <div class="jura-progress jura-progress-warning"><div class="jura-progress-bar" style="width:38%"></div></div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+  </section>
 
-    <footer class="demo-footer demo-container">
-      <p><strong>Jura UI</strong> · MIT License · <a href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://medvestnik.github.io/juraui/" target="_blank" rel="noopener noreferrer">Demo</a> · <a href="docs/php-integration.md">PHP integration</a></p>
-    </footer>
-    <script src="assets/js/demo.js"></script>
-  </body>
+  <!-- ── Features ─────────────────────────────────────────────── -->
+  <section class="jura-section demo-container">
+    <div class="demo-section-header">
+      <span class="demo-section-label">Why Jura UI</span>
+      <h2 class="demo-section-title">Built for real admin work</h2>
+      <p class="demo-section-lead">Everything you need to ship admin interfaces quickly, without the overhead of large frameworks.</p>
+    </div>
+
+    <div class="demo-feature-grid">
+      <div class="demo-feature">
+        <div class="demo-feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <h3>Lightweight</h3>
+        <p>Under 8 KB of CSS. No runtime, no bundler, no Node.js required to use it.</p>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Framework agnostic</h3>
+        <p>Works with plain HTML, Laravel Blade, Twig, PHP, Django, Rails — any backend.</p>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Admin-first</h3>
+        <p>Designed for CRUD interfaces, data tables, forms and dashboards — not marketing sites.</p>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <h3>7 colour themes</h3>
+        <p>Switch themes with one attribute. Indigo, Ocean, Emerald, Rose, Violet, Amber or Slate.</p>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>CSS-variable tokens</h3>
+        <p>All colours, radii and shadows exposed as CSS custom properties for easy override.</p>
+      </div>
+      <div class="demo-feature">
+        <div class="demo-feature-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <h3>MIT &amp; open source</h3>
+        <p>Free for personal and commercial use. Hosted on GitHub, contributions welcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Examples ─────────────────────────────────────────────── -->
+  <section class="jura-section demo-container">
+    <div class="demo-section-header">
+      <span class="demo-section-label">Templates</span>
+      <h2 class="demo-section-title">Ready-to-use examples</h2>
+      <p class="demo-section-lead">Copy-paste HTML templates for the most common admin interface patterns.</p>
+    </div>
+
+    <div class="demo-example-grid">
+      <div class="demo-card">
+        <h3>Dashboard</h3>
+        <p>Admin shell with stats cards, activity overview and recent orders table.</p>
+        <a href="examples/dashboard.html">Open dashboard →</a>
+      </div>
+      <div class="demo-card">
+        <h3>Admin list</h3>
+        <p>Entity management view with search filters, bulk actions and pagination.</p>
+        <a href="examples/admin-list.html">Open admin list →</a>
+      </div>
+      <div class="demo-card">
+        <h3>Auth screen</h3>
+        <p>Sign-in page with split-panel layout, brand side and form state.</p>
+        <a href="examples/auth.html">Open auth screen →</a>
+      </div>
+      <div class="demo-card">
+        <h3>Landing page</h3>
+        <p>Public-facing product page with hero, features and pricing cards.</p>
+        <a href="examples/landing.html">Open landing →</a>
+      </div>
+      <div class="demo-card">
+        <h3>Components overview</h3>
+        <p>Full visual catalog: buttons, badges, forms, tables, modals and more.</p>
+        <a href="examples/components.html">Open components →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Quick start ───────────────────────────────────────────── -->
+  <section class="jura-section demo-container">
+    <div class="demo-section-header">
+      <span class="demo-section-label">Quick start</span>
+      <h2 class="demo-section-title">One&nbsp;line to get started</h2>
+      <p class="demo-section-lead">Drop a stylesheet link into your HTML. No npm, no build step, no configuration.</p>
+    </div>
+
+    <pre class="demo-code"><span class="c-tag">&lt;link</span> <span class="c-attr">rel</span>=<span class="c-val">"stylesheet"</span>
+      <span class="c-attr">href</span>=<span class="c-val">"https://medvestnik.github.io/juraui/assets/css/jura-ui.css"</span><span class="c-tag">&gt;</span>
+
+<span class="c-tag">&lt;!-- Apply a colour theme --&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">data-jura-theme</span>=<span class="c-val">"ocean"</span><span class="c-tag">&gt;</span>
+
+<span class="c-tag">&lt;!-- Use it --&gt;</span>
+<span class="c-tag">&lt;button</span> <span class="c-attr">class</span>=<span class="c-val">"jura-btn jura-btn-primary"</span><span class="c-tag">&gt;</span>Get started<span class="c-tag">&lt;/button&gt;</span></pre>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────── -->
+  <footer class="demo-footer demo-container">
+    <p>
+      <strong>Jura UI</strong> · MIT License ·
+      <a href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+      <a href="examples/components.html">Components</a> ·
+      <a href="examples/index.html">Examples</a> ·
+      <a href="docs/getting-started.md">Getting started</a>
+    </p>
+  </footer>
+
+  <script src="assets/js/demo.js"></script>
+</body>
 </html>
