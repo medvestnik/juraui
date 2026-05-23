@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Analytics</title>
+    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body class="jura-app">
+
+    <div class="demo-exam-bar">
+      <div class="demo-exam-bar-left">
+        <a href="index.html">← Examples</a>
+        <span class="demo-exam-bar-sep">/</span>
+        <span style="font-weight:700;color:var(--jura-text)">Analytics</span>
+      </div>
+      <div class="demo-exam-bar-right">
+        <div class="demo-themes">
+          <button title="Indigo"  data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"   data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"    data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"  data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"   data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"   data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a href="../index.html">Jura UI</a>
+      </div>
+    </div>
+
+    <div class="jura-layout">
+
+      <!-- Sidebar -->
+      <aside class="jura-sidebar">
+        <a class="jura-sidebar-brand" href="../index.html">
+          <span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--jura-primary);display:block;flex-shrink:0"></span>
+          Jura UI
+        </a>
+        <span class="jura-sidebar-label">Main</span>
+        <nav>
+          <a href="dashboard.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="analytics.html" class="is-active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Analytics
+          </a>
+          <a href="admin-list.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Users
+          </a>
+          <a href="billing.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Billing
+          </a>
+        </nav>
+        <span class="jura-sidebar-label">Account</span>
+        <nav>
+          <a href="inbox.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Inbox
+            <span class="jura-badge jura-badge-primary" style="margin-left:auto">3</span>
+          </a>
+          <a href="settings.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Settings
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="jura-main">
+        <div class="jura-topbar">
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <button class="jura-btn jura-btn-ghost jura-btn-icon jura-mobile-toggle" data-jura-sidebar-toggle aria-label="Toggle sidebar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <h1 class="jura-topbar-title">Analytics</h1>
+          </div>
+          <div class="jura-topbar-actions">
+            <!-- Date range pill tabs -->
+            <div class="jura-tabs jura-tabs-pill" data-jura-tabs style="gap:0">
+              <button class="jura-tab is-active" data-jura-tab="range-7d">7d</button>
+              <button class="jura-tab" data-jura-tab="range-30d">30d</button>
+              <button class="jura-tab" data-jura-tab="range-90d">90d</button>
+            </div>
+            <button class="jura-btn jura-btn-ghost jura-btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export
+            </button>
+          </div>
+        </div>
+
+        <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem">
+
+          <!-- Stat cards -->
+          <div class="jura-grid jura-grid-4">
+            <div class="jura-card jura-card-accent">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Pageviews</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="jura-stat-value">284,910</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-success);font-weight:600;font-size:.8rem">+14.2%</span>
+                <span>vs prior period</span>
+              </div>
+            </div>
+            <div class="jura-card jura-card-accent jura-card-accent-success">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Sessions</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="jura-stat-value">91,280</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-success);font-weight:600;font-size:.8rem">+9.7%</span>
+                <span>vs prior period</span>
+              </div>
+            </div>
+            <div class="jura-card jura-card-accent jura-card-accent-warning">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Bounce Rate</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><line x1="17" y1="7" x2="7" y2="17"/><polyline points="7 7 7 17 17 17"/></svg>
+              </div>
+              <div class="jura-stat-value">38.4%</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-success);font-weight:600;font-size:.8rem">-2.1%</span>
+                <span>improvement</span>
+              </div>
+            </div>
+            <div class="jura-card jura-card-accent">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Avg. Session</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="jura-stat-value">4m 12s</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-success);font-weight:600;font-size:.8rem">+18s</span>
+                <span>vs prior period</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts row -->
+          <div class="jura-grid jura-grid-2">
+
+            <!-- Weekly traffic chart -->
+            <div class="jura-card">
+              <div class="jura-card-header" style="margin-bottom:1.25rem">
+                <div>
+                  <h2 class="jura-card-title">Weekly Traffic</h2>
+                  <p class="jura-card-subtitle">Sessions per day, last 7 days</p>
+                </div>
+                <span class="jura-badge jura-badge-success jura-badge-outline">+9.7%</span>
+              </div>
+              <div class="demo-chart-bars" style="align-items:flex-end;height:160px">
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:60%"></div>
+                  <div class="demo-chart-label">Mon</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:40%"></div>
+                  <div class="demo-chart-label">Tue</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:75%"></div>
+                  <div class="demo-chart-label">Wed</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:55%"></div>
+                  <div class="demo-chart-label">Thu</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:85%"></div>
+                  <div class="demo-chart-label">Fri</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:70%"></div>
+                  <div class="demo-chart-label">Sat</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:45%"></div>
+                  <div class="demo-chart-label">Sun</div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--jura-border)">
+                <div style="text-align:center">
+                  <div style="font-size:.75rem;color:var(--jura-text-muted);font-weight:600">Peak day</div>
+                  <div style="font-weight:700;color:var(--jura-text);font-size:.9rem">Friday</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:.75rem;color:var(--jura-text-muted);font-weight:600">Peak sessions</div>
+                  <div style="font-weight:700;color:var(--jura-text);font-size:.9rem">18,420</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:.75rem;color:var(--jura-text-muted);font-weight:600">Daily avg</div>
+                  <div style="font-weight:700;color:var(--jura-text);font-size:.9rem">13,040</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Revenue by channel chart -->
+            <div class="jura-card">
+              <div class="jura-card-header" style="margin-bottom:1.25rem">
+                <div>
+                  <h2 class="jura-card-title">Revenue by Channel</h2>
+                  <p class="jura-card-subtitle">Last 30 days, across all sources</p>
+                </div>
+                <span class="jura-badge jura-badge-primary jura-badge-outline">$48,230</span>
+              </div>
+              <div class="demo-chart-bars" style="align-items:flex-end;height:160px">
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:80%"></div>
+                  <div class="demo-chart-label">Direct</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:65%"></div>
+                  <div class="demo-chart-label">Search</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:50%"></div>
+                  <div class="demo-chart-label">Social</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:35%"></div>
+                  <div class="demo-chart-label">Email</div>
+                </div>
+                <div class="demo-chart-bar-wrap">
+                  <div class="demo-chart-bar" style="height:20%"></div>
+                  <div class="demo-chart-label">Referral</div>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--jura-border)">
+                <div style="text-align:center">
+                  <div style="font-size:.75rem;color:var(--jura-text-muted);font-weight:600">Top channel</div>
+                  <div style="font-weight:700;color:var(--jura-text);font-size:.9rem">Direct</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:.75rem;color:var(--jura-text-muted);font-weight:600">Direct revenue</div>
+                  <div style="font-weight:700;color:var(--jura-text);font-size:.9rem">$19,240</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:.75rem;color:var(--jura-text-muted);font-weight:600">Channels</div>
+                  <div style="font-weight:700;color:var(--jura-text);font-size:.9rem">5 active</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Traffic sources table -->
+          <div class="jura-card">
+            <div class="jura-card-header" style="margin-bottom:1rem">
+              <div>
+                <h2 class="jura-card-title">Traffic Sources</h2>
+                <p class="jura-card-subtitle">Session breakdown by acquisition channel</p>
+              </div>
+              <button class="jura-btn jura-btn-ghost jura-btn-sm">View full report</button>
+            </div>
+            <div class="jura-table-wrap">
+              <table class="jura-table">
+                <thead>
+                  <tr>
+                    <th>Source</th>
+                    <th>Sessions</th>
+                    <th>Share</th>
+                    <th>Avg. Duration</th>
+                    <th>Bounce Rate</th>
+                    <th>Change</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div style="width:2rem;height:2rem;border-radius:var(--jura-radius-sm);background:var(--jura-primary-lt);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--jura-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                        </div>
+                        <span style="font-weight:600">Direct</span>
+                      </div>
+                    </td>
+                    <td style="font-weight:600">36,512</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.5rem">
+                        <div style="flex:1;height:4px;background:var(--jura-border);border-radius:99px;min-width:60px">
+                          <div style="width:40%;height:100%;background:var(--jura-primary);border-radius:99px"></div>
+                        </div>
+                        <span style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);white-space:nowrap">40%</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">5m 21s</td>
+                    <td style="color:var(--jura-text-muted)">29.1%</td>
+                    <td><span class="jura-badge jura-badge-success jura-badge-outline">+11.2%</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div style="width:2rem;height:2rem;border-radius:var(--jura-radius-sm);background:#fef3c7;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        </div>
+                        <span style="font-weight:600">Organic Search</span>
+                      </div>
+                    </td>
+                    <td style="font-weight:600">27,384</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.5rem">
+                        <div style="flex:1;height:4px;background:var(--jura-border);border-radius:99px;min-width:60px">
+                          <div style="width:30%;height:100%;background:#d97706;border-radius:99px"></div>
+                        </div>
+                        <span style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);white-space:nowrap">30%</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">4m 08s</td>
+                    <td style="color:var(--jura-text-muted)">41.5%</td>
+                    <td><span class="jura-badge jura-badge-success jura-badge-outline">+7.4%</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div style="width:2rem;height:2rem;border-radius:var(--jura-radius-sm);background:#fce7f3;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                        </div>
+                        <span style="font-weight:600">Social Media</span>
+                      </div>
+                    </td>
+                    <td style="font-weight:600">13,692</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.5rem">
+                        <div style="flex:1;height:4px;background:var(--jura-border);border-radius:99px;min-width:60px">
+                          <div style="width:15%;height:100%;background:#be185d;border-radius:99px"></div>
+                        </div>
+                        <span style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);white-space:nowrap">15%</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">2m 44s</td>
+                    <td style="color:var(--jura-text-muted)">55.3%</td>
+                    <td><span class="jura-badge jura-badge-danger jura-badge-outline">-3.1%</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div style="width:2rem;height:2rem;border-radius:var(--jura-radius-sm);background:#d1fae5;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <span style="font-weight:600">Email</span>
+                      </div>
+                    </td>
+                    <td style="font-weight:600">9,128</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.5rem">
+                        <div style="flex:1;height:4px;background:var(--jura-border);border-radius:99px;min-width:60px">
+                          <div style="width:10%;height:100%;background:#059669;border-radius:99px"></div>
+                        </div>
+                        <span style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);white-space:nowrap">10%</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">6m 02s</td>
+                    <td style="color:var(--jura-text-muted)">22.7%</td>
+                    <td><span class="jura-badge jura-badge-success jura-badge-outline">+22.8%</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div style="width:2rem;height:2rem;border-radius:var(--jura-radius-sm);background:#ede9fe;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#5b21b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </div>
+                        <span style="font-weight:600">Referral</span>
+                      </div>
+                    </td>
+                    <td style="font-weight:600">4,564</td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.5rem">
+                        <div style="flex:1;height:4px;background:var(--jura-border);border-radius:99px;min-width:60px">
+                          <div style="width:5%;height:100%;background:#7c3aed;border-radius:99px"></div>
+                        </div>
+                        <span style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);white-space:nowrap">5%</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">3m 38s</td>
+                    <td style="color:var(--jura-text-muted)">48.9%</td>
+                    <td><span class="jura-badge jura-badge-warning jura-badge-outline">+0.6%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/js/demo.js"></script>
+  </body>
+</html>

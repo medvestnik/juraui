@@ -3,70 +3,400 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jura UI — Landing example</title>
+    <title>Jura UI — Landing Page</title>
     <link rel="stylesheet" href="../assets/css/jura-ui.css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
+    <style>
+      .landing-hero {
+        padding: 5rem 0 4rem;
+        text-align: center;
+      }
+      .landing-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 900;
+        letter-spacing: -.05em;
+        line-height: 1.1;
+        color: var(--jura-text);
+        margin: 0 0 1.25rem;
+      }
+      .landing-hero p {
+        font-size: 1.15rem;
+        color: var(--jura-text-muted);
+        max-width: 540px;
+        margin: 0 auto 2rem;
+        line-height: 1.65;
+      }
+      .landing-section {
+        padding: 4rem 0;
+      }
+      .landing-section-title {
+        font-size: 1.75rem;
+        font-weight: 800;
+        letter-spacing: -.04em;
+        color: var(--jura-text);
+        text-align: center;
+        margin: 0 0 .6rem;
+      }
+      .landing-section-sub {
+        font-size: 1rem;
+        color: var(--jura-text-muted);
+        text-align: center;
+        margin: 0 0 2.5rem;
+      }
+      .logo-strip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        padding: 1.75rem 0;
+        border-top: 1px solid var(--jura-border);
+        border-bottom: 1px solid var(--jura-border);
+        margin-top: 2.5rem;
+      }
+      .logo-strip span {
+        font-weight: 800;
+        font-size: .95rem;
+        letter-spacing: -.02em;
+        color: var(--jura-text-muted);
+        opacity: .55;
+      }
+      .feature-card {
+        padding: 1.5rem;
+        border-radius: var(--jura-radius);
+        background: var(--jura-surface);
+        border: 1px solid var(--jura-border);
+      }
+      .feature-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: var(--jura-radius);
+        background: var(--jura-primary-lt);
+        color: var(--jura-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+      .pricing-card {
+        padding: 2rem;
+        border-radius: var(--jura-radius-lg);
+        background: var(--jura-surface);
+        border: 1px solid var(--jura-border);
+        display: flex;
+        flex-direction: column;
+      }
+      .pricing-card.is-featured {
+        border-color: var(--jura-primary);
+        background: var(--jura-surface);
+        box-shadow: 0 0 0 3px var(--jura-primary-lt), var(--jura-shadow-lg);
+      }
+      .pricing-feature {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .88rem;
+        color: var(--jura-text-muted);
+        padding: .3rem 0;
+      }
+      .pricing-feature svg { color: var(--jura-success); flex-shrink: 0; }
+      .testimonial-card {
+        padding: 1.75rem;
+        background: var(--jura-surface);
+        border: 1px solid var(--jura-border);
+        border-radius: var(--jura-radius-lg);
+        box-shadow: var(--jura-shadow-sm);
+      }
+      .cta-section {
+        padding: 5rem 0;
+        text-align: center;
+        background: var(--jura-surface);
+        border-radius: var(--jura-radius-lg);
+        margin: 2rem 0 4rem;
+        border: 1px solid var(--jura-border);
+      }
+    </style>
   </head>
   <body>
-    <header class="demo-nav">
-      <div class="demo-container demo-nav-inner">
-        <a class="demo-brand" href="../index.html">Jura UI</a>
-        <nav class="demo-links">
-          <a class="jura-btn" href="index.html">All examples</a>
-          <a class="jura-btn jura-btn-primary" href="../docs/getting-started.md">Get started</a>
-        </nav>
+
+    <div class="demo-exam-bar">
+      <div class="demo-exam-bar-left">
+        <a href="index.html">← Examples</a>
+        <span class="demo-exam-bar-sep">/</span>
+        <span style="font-weight:700;color:var(--jura-text)">Landing Page</span>
       </div>
-    </header>
+      <div class="demo-exam-bar-right">
+        <div class="demo-themes">
+          <button title="Indigo"  data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"   data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"    data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"  data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"   data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"   data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a href="../index.html">Jura UI</a>
+      </div>
+    </div>
 
-    <main class="demo-container">
-      <section class="jura-section">
-        <div class="jura-hero">
-          <article class="jura-card">
-            <h1 class="demo-page-title">Launch product pages faster</h1>
-            <p class="demo-lead">Jura UI is not only for admin interfaces. Use the same design language for public pages, marketing blocks and CTAs.</p>
-            <div class="jura-topbar-actions">
-              <button class="jura-btn jura-btn-primary">Start free trial</button>
-              <button class="jura-btn">Book demo</button>
+    <!-- Nav -->
+    <nav class="demo-nav">
+      <div class="demo-container demo-nav-inner">
+        <a class="demo-brand" href="../index.html">
+          <span class="demo-brand-dot" style="background:var(--jura-primary)"></span>
+          Jura UI
+        </a>
+        <div style="display:flex;align-items:center;gap:1.5rem">
+          <a href="#features" style="font-size:.88rem;font-weight:600;color:var(--jura-text-muted);text-decoration:none">Features</a>
+          <a href="#testimonials" style="font-size:.88rem;font-weight:600;color:var(--jura-text-muted);text-decoration:none">Testimonials</a>
+          <a href="#pricing" style="font-size:.88rem;font-weight:600;color:var(--jura-text-muted);text-decoration:none">Pricing</a>
+          <a href="auth.html" style="font-size:.88rem;font-weight:600;color:var(--jura-text-muted);text-decoration:none">Sign in</a>
+          <a href="auth.html" class="jura-btn jura-btn-primary jura-btn-sm">Get started free</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="demo-container">
+
+        <!-- Hero -->
+        <section class="landing-hero">
+          <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--jura-primary-lt);color:var(--jura-primary);font-size:.8rem;font-weight:700;padding:.3rem .8rem;border-radius:999px;margin-bottom:1.5rem;letter-spacing:.01em">
+            <span style="width:.45rem;height:.45rem;border-radius:50%;background:var(--jura-primary);display:block"></span>
+            Now with 7 color themes
+          </div>
+          <h1>Build beautiful admin<br/>interfaces — faster.</h1>
+          <p>Jura UI is a lightweight, production-ready UI library for dashboards, admin panels, and product pages. One CSS file. Zero dependencies.</p>
+          <div style="display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap">
+            <a href="dashboard.html" class="jura-btn jura-btn-primary jura-btn-lg">
+              Explore demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="../index.html" class="jura-btn jura-btn-lg">
+              View components
+            </a>
+          </div>
+
+          <!-- Logo strip -->
+          <div class="logo-strip">
+            <span>Streamline</span>
+            <span>NovaCorp</span>
+            <span>Arcway</span>
+            <span>Pulsify</span>
+            <span>Lattice</span>
+            <span>Helixport</span>
+            <span>Driftmark</span>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section class="landing-section" id="features">
+          <p style="text-align:center;font-size:.8rem;font-weight:700;letter-spacing:.08em;color:var(--jura-primary);text-transform:uppercase;margin:0 0 .6rem">Features</p>
+          <h2 class="landing-section-title">Everything you need to ship</h2>
+          <p class="landing-section-sub">A complete design system in one lightweight file — no build step required.</p>
+          <div class="jura-grid jura-grid-3">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <h3 style="font-weight:700;font-size:1rem;margin:0 0 .4rem;color:var(--jura-text)">Instant setup</h3>
+              <p style="font-size:.88rem;color:var(--jura-text-muted);margin:0;line-height:1.6">Drop one CSS link tag and you're ready to build. No npm install, no config files.</p>
             </div>
-          </article>
-          <aside class="jura-card">
-            <h3 class="jura-card-title">What you get</h3>
-            <ul>
-              <li>Unified visual system for app + website</li>
-              <li>Predictable spacing and typography</li>
-              <li>Easy customization using CSS variables</li>
-            </ul>
-          </aside>
-        </div>
-      </section>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <h3 style="font-weight:700;font-size:1rem;margin:0 0 .4rem;color:var(--jura-text)">Framework agnostic</h3>
+              <p style="font-size:.88rem;color:var(--jura-text-muted);margin:0;line-height:1.6">Works with React, Vue, Svelte, or plain HTML. Jura UI doesn't care how you ship.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+              <h3 style="font-weight:700;font-size:1rem;margin:0 0 .4rem;color:var(--jura-text)">Fully customizable</h3>
+              <p style="font-size:.88rem;color:var(--jura-text-muted);margin:0;line-height:1.6">Override any CSS variable to match your brand. 7 built-in color themes to start from.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+              </div>
+              <h3 style="font-weight:700;font-size:1rem;margin:0 0 .4rem;color:var(--jura-text)">Mobile-first responsive</h3>
+              <p style="font-size:.88rem;color:var(--jura-text-muted);margin:0;line-height:1.6">Every layout and component adapts gracefully from mobile to widescreen.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 style="font-weight:700;font-size:1rem;margin:0 0 .4rem;color:var(--jura-text)">Accessible by default</h3>
+              <p style="font-size:.88rem;color:var(--jura-text-muted);margin:0;line-height:1.6">Semantic HTML, ARIA labels, and keyboard navigation built in from the start.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3 style="font-weight:700;font-size:1rem;margin:0 0 .4rem;color:var(--jura-text)">50+ components</h3>
+              <p style="font-size:.88rem;color:var(--jura-text-muted);margin:0;line-height:1.6">Buttons, tables, modals, tabs, badges, charts, avatars, progress bars and more.</p>
+            </div>
+          </div>
+        </section>
 
-      <section class="jura-section">
-        <h2>Features</h2>
-        <div class="jura-grid jura-grid-3">
-          <article class="jura-card"><h3>Quick setup</h3><p>Drop a CSS file and start building.</p></article>
-          <article class="jura-card"><h3>Component-ready</h3><p>Cards, buttons, forms and tables included.</p></article>
-          <article class="jura-card"><h3>Responsive</h3><p>Layouts adapt for mobile-first delivery.</p></article>
-        </div>
-      </section>
+        <!-- Testimonials -->
+        <section class="landing-section" id="testimonials">
+          <p style="text-align:center;font-size:.8rem;font-weight:700;letter-spacing:.08em;color:var(--jura-primary);text-transform:uppercase;margin:0 0 .6rem">Testimonials</p>
+          <h2 class="landing-section-title">Loved by teams worldwide</h2>
+          <p class="landing-section-sub">Here's what builders say about shipping with Jura UI.</p>
+          <div class="jura-grid jura-grid-3">
+            <div class="testimonial-card">
+              <div style="display:flex;gap:.2rem;margin-bottom:1rem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p style="font-size:.9rem;color:var(--jura-text);line-height:1.65;margin:0 0 1.25rem">"We replaced a bulky component library with Jura UI and cut our bundle size by 60%. The design quality is outstanding — it looks like we hired a professional designer."</p>
+              <div style="display:flex;align-items:center;gap:.75rem">
+                <div class="jura-avatar jura-avatar-sm" style="background:#e0e7ff;color:#4338ca;font-weight:700">RH</div>
+                <div>
+                  <div style="font-weight:700;font-size:.85rem;color:var(--jura-text)">Rafael Hartmann</div>
+                  <div style="font-size:.78rem;color:var(--jura-text-muted)">CTO, Streamline</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div style="display:flex;gap:.2rem;margin-bottom:1rem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p style="font-size:.9rem;color:var(--jura-text);line-height:1.65;margin:0 0 1.25rem">"The color theme system is pure magic. We let enterprise customers pick their brand color and it just works. Our sales team loves showing this off in demos."</p>
+              <div style="display:flex;align-items:center;gap:.75rem">
+                <div class="jura-avatar jura-avatar-sm" style="background:#d1fae5;color:#065f46;font-weight:700">YM</div>
+                <div>
+                  <div style="font-weight:700;font-size:.85rem;color:var(--jura-text)">Yuki Matsuda</div>
+                  <div style="font-size:.78rem;color:var(--jura-text-muted)">Product Lead, Pulsify</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div style="display:flex;gap:.2rem;margin-bottom:1rem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--jura-warning)" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p style="font-size:.9rem;color:var(--jura-text);line-height:1.65;margin:0 0 1.25rem">"I built our entire internal tool suite in a weekend using Jura UI. The docs are clear, the components are consistent, and it looks polished out of the box. Highly recommend."</p>
+              <div style="display:flex;align-items:center;gap:.75rem">
+                <div class="jura-avatar jura-avatar-sm" style="background:#fce7f3;color:#be185d;font-weight:700">CF</div>
+                <div>
+                  <div style="font-weight:700;font-size:.85rem;color:var(--jura-text)">Camille Fontaine</div>
+                  <div style="font-size:.78rem;color:var(--jura-text-muted)">Founder, Arcway</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <section class="jura-section">
-        <h2>Plans</h2>
-        <div class="demo-pricing">
-          <article class="jura-card"><h3>Starter</h3><p><strong>$0</strong> / month</p><p>For prototypes and side projects.</p><button class="jura-btn">Choose</button></article>
-          <article class="jura-card" style="border-color:var(--jura-primary)"><h3>Growth</h3><p><strong>$29</strong> / month</p><p>For small products and internal tools.</p><button class="jura-btn jura-btn-primary">Choose</button></article>
-          <article class="jura-card"><h3>Scale</h3><p><strong>$99</strong> / month</p><p>For teams with multi-project workflows.</p><button class="jura-btn">Choose</button></article>
-        </div>
-      </section>
+        <!-- Pricing -->
+        <section class="landing-section" id="pricing">
+          <p style="text-align:center;font-size:.8rem;font-weight:700;letter-spacing:.08em;color:var(--jura-primary);text-transform:uppercase;margin:0 0 .6rem">Pricing</p>
+          <h2 class="landing-section-title">Simple, honest pricing</h2>
+          <p class="landing-section-sub">Start free, upgrade when you're ready. No hidden fees.</p>
+          <div class="demo-pricing">
 
-      <section class="jura-section">
-        <article class="jura-card" style="text-align:center;">
-          <h2>Ready to ship your next interface?</h2>
-          <p class="demo-lead" style="margin: 0 auto 1rem;">Use Jura UI to create dashboard + marketing pages with one lightweight style foundation.</p>
-          <a class="jura-btn jura-btn-primary" href="../index.html">Go to Jura UI home</a>
-        </article>
-      </section>
+            <!-- Starter -->
+            <div class="pricing-card">
+              <div style="margin-bottom:1.5rem">
+                <div style="font-weight:800;font-size:.95rem;color:var(--jura-text);margin-bottom:.4rem">Starter</div>
+                <div style="font-size:2.25rem;font-weight:900;letter-spacing:-.05em;color:var(--jura-text)">$0</div>
+                <div style="font-size:.83rem;color:var(--jura-text-muted);margin-top:.2rem">Free forever, no card required</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:.1rem;margin-bottom:1.75rem">
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>All core components</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>3 color themes</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Community support</div>
+                <div class="pricing-feature" style="opacity:.4"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Priority support</div>
+                <div class="pricing-feature" style="opacity:.4"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Custom themes</div>
+              </div>
+              <a href="auth.html" class="jura-btn" style="width:100%;justify-content:center">Get started free</a>
+            </div>
+
+            <!-- Growth (featured) -->
+            <div class="pricing-card is-featured">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem">
+                <div>
+                  <div style="font-weight:800;font-size:.95rem;color:var(--jura-text);margin-bottom:.4rem">Growth</div>
+                  <div style="font-size:2.25rem;font-weight:900;letter-spacing:-.05em;color:var(--jura-text)">$29<span style="font-size:1rem;font-weight:600;color:var(--jura-text-muted)">/mo</span></div>
+                  <div style="font-size:.83rem;color:var(--jura-text-muted);margin-top:.2rem">Billed monthly</div>
+                </div>
+                <span class="jura-badge jura-badge-primary">Most popular</span>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:.1rem;margin-bottom:1.75rem">
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>All core components</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>All 7 color themes</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Priority email support</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Up to 5 projects</div>
+                <div class="pricing-feature" style="opacity:.4"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Custom themes</div>
+              </div>
+              <a href="auth.html" class="jura-btn jura-btn-primary" style="width:100%;justify-content:center">Start free trial</a>
+            </div>
+
+            <!-- Scale -->
+            <div class="pricing-card">
+              <div style="margin-bottom:1.5rem">
+                <div style="font-weight:800;font-size:.95rem;color:var(--jura-text);margin-bottom:.4rem">Scale</div>
+                <div style="font-size:2.25rem;font-weight:900;letter-spacing:-.05em;color:var(--jura-text)">$99<span style="font-size:1rem;font-weight:600;color:var(--jura-text-muted)">/mo</span></div>
+                <div style="font-size:.83rem;color:var(--jura-text-muted);margin-top:.2rem">For teams building at scale</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:.1rem;margin-bottom:1.75rem">
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Growth</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited projects</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Custom color themes</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dedicated Slack support</div>
+                <div class="pricing-feature"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SLA guarantee</div>
+              </div>
+              <a href="auth.html" class="jura-btn" style="width:100%;justify-content:center">Contact sales</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-section">
+          <div style="display:inline-flex;align-items:center;gap:.5rem;background:var(--jura-primary-lt);color:var(--jura-primary);font-size:.78rem;font-weight:700;padding:.3rem .8rem;border-radius:999px;margin-bottom:1.25rem">
+            Ready to ship?
+          </div>
+          <h2 style="font-size:clamp(1.5rem,4vw,2.5rem);font-weight:900;letter-spacing:-.05em;color:var(--jura-text);margin:0 0 .75rem;line-height:1.15">Start building with Jura UI today</h2>
+          <p style="font-size:1rem;color:var(--jura-text-muted);max-width:440px;margin:0 auto 2rem;line-height:1.6">
+            Join hundreds of developers and teams shipping beautiful interfaces with one simple CSS library.
+          </p>
+          <div style="display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap">
+            <a href="auth.html" class="jura-btn jura-btn-primary jura-btn-lg">Get started for free</a>
+            <a href="dashboard.html" class="jura-btn jura-btn-lg">See live demo</a>
+          </div>
+        </div>
+
+      </div>
     </main>
 
-    <footer class="demo-footer demo-container"><p>Landing example · <a href="../index.html">Jura UI</a></p></footer>
+    <!-- Footer -->
+    <footer style="border-top:1px solid var(--jura-border);background:var(--jura-surface)">
+      <div class="demo-container" style="padding-top:2rem;padding-bottom:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+        <div style="display:flex;align-items:center;gap:.5rem">
+          <div style="width:.5rem;height:.5rem;border-radius:50%;background:var(--jura-primary)"></div>
+          <span style="font-weight:800;font-size:.9rem;color:var(--jura-text)">Jura UI</span>
+        </div>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
+          <a href="../index.html" style="font-size:.85rem;color:var(--jura-text-muted);text-decoration:none">Components</a>
+          <a href="dashboard.html" style="font-size:.85rem;color:var(--jura-text-muted);text-decoration:none">Examples</a>
+          <a href="auth.html" style="font-size:.85rem;color:var(--jura-text-muted);text-decoration:none">Sign in</a>
+        </div>
+        <div style="font-size:.8rem;color:var(--jura-text-subtle)">© 2026 Jura UI. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/demo.js"></script>
   </body>
 </html>

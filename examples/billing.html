@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Billing</title>
+    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body class="jura-app">
+
+    <div class="demo-exam-bar">
+      <div class="demo-exam-bar-left">
+        <a href="index.html">← Examples</a>
+        <span class="demo-exam-bar-sep">/</span>
+        <span style="font-weight:700;color:var(--jura-text)">Billing</span>
+      </div>
+      <div class="demo-exam-bar-right">
+        <div class="demo-themes">
+          <button title="Indigo"  data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"   data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"    data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"  data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"   data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"   data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a href="../index.html">Jura UI</a>
+      </div>
+    </div>
+
+    <div class="jura-layout">
+
+      <!-- Sidebar -->
+      <aside class="jura-sidebar">
+        <a class="jura-sidebar-brand" href="../index.html">
+          <span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--jura-primary);display:block;flex-shrink:0"></span>
+          Jura UI
+        </a>
+        <span class="jura-sidebar-label">Main</span>
+        <nav>
+          <a href="dashboard.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="analytics.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Analytics
+          </a>
+          <a href="admin-list.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Users
+          </a>
+          <a href="billing.html" class="is-active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Billing
+          </a>
+        </nav>
+        <span class="jura-sidebar-label">Account</span>
+        <nav>
+          <a href="inbox.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Inbox
+            <span class="jura-badge jura-badge-primary" style="margin-left:auto">3</span>
+          </a>
+          <a href="settings.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Settings
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="jura-main">
+        <div class="jura-topbar">
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <button class="jura-btn jura-btn-ghost jura-btn-icon jura-mobile-toggle" data-jura-sidebar-toggle aria-label="Toggle sidebar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <h1 class="jura-topbar-title">Billing</h1>
+          </div>
+          <div class="jura-topbar-actions">
+            <button class="jura-btn jura-btn-ghost jura-btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download all
+            </button>
+          </div>
+        </div>
+
+        <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem">
+
+          <!-- Summary cards -->
+          <div class="jura-grid jura-grid-3">
+            <div class="jura-card jura-card-accent">
+              <div class="jura-card-subtitle" style="margin-bottom:.35rem">Current Plan</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem">
+                <div>
+                  <div style="font-size:1.3rem;font-weight:800;color:var(--jura-text);letter-spacing:-.03em">Growth</div>
+                  <div style="font-size:.85rem;color:var(--jura-text-muted)">$29.00 / month</div>
+                </div>
+                <span class="jura-badge jura-badge-success">Active</span>
+              </div>
+              <button class="jura-btn jura-btn-primary jura-btn-sm" style="margin-top:.85rem;width:100%;justify-content:center">Upgrade to Scale</button>
+            </div>
+            <div class="jura-card">
+              <div class="jura-card-subtitle" style="margin-bottom:.35rem">Next Payment</div>
+              <div style="font-size:1.3rem;font-weight:800;color:var(--jura-text);letter-spacing:-.03em">$29.00</div>
+              <div style="font-size:.85rem;color:var(--jura-text-muted);margin-top:.1rem">Due June 1, 2026</div>
+              <div style="margin-top:.85rem;display:flex;align-items:center;gap:.5rem">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <span style="font-size:.82rem;color:var(--jura-text-muted)">Visa ending 4242</span>
+              </div>
+            </div>
+            <div class="jura-card">
+              <div class="jura-card-subtitle" style="margin-bottom:.35rem">Total Spent</div>
+              <div style="font-size:1.3rem;font-weight:800;color:var(--jura-text);letter-spacing:-.03em">$580.00</div>
+              <div style="font-size:.85rem;color:var(--jura-text-muted);margin-top:.1rem">Year to date (2026)</div>
+              <div style="margin-top:.85rem">
+                <span class="jura-badge jura-badge-info jura-badge-outline">20 invoices total</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan details + usage -->
+          <div class="jura-card">
+            <div class="jura-card-header" style="margin-bottom:1.25rem">
+              <div>
+                <h2 class="jura-card-title">Plan Details</h2>
+                <p class="jura-card-subtitle" style="margin-top:.15rem">Growth plan — renews June 1, 2026</p>
+              </div>
+              <div style="display:flex;gap:.5rem">
+                <button class="jura-btn jura-btn-ghost jura-btn-sm">Change plan</button>
+                <button class="jura-btn jura-btn-danger jura-btn-sm">Cancel plan</button>
+              </div>
+            </div>
+
+            <div class="jura-grid jura-grid-2" style="margin-bottom:1.5rem">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+                  <div>
+                    <span style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Storage usage</span>
+                    <span style="color:var(--jura-text-muted);font-size:.8rem;margin-left:.5rem">3.2 GB of 10 GB</span>
+                  </div>
+                  <span style="font-weight:700;font-size:.85rem;color:var(--jura-primary)">32%</span>
+                </div>
+                <div class="jura-progress">
+                  <div class="jura-progress-bar" style="width:32%"></div>
+                </div>
+                <p style="font-size:.78rem;color:var(--jura-text-muted);margin:.4rem 0 0">6.8 GB remaining</p>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+                  <div>
+                    <span style="font-weight:600;font-size:.9rem;color:var(--jura-text)">API calls</span>
+                    <span style="color:var(--jura-text-muted);font-size:.8rem;margin-left:.5rem">82,410 of 100,000</span>
+                  </div>
+                  <span style="font-weight:700;font-size:.85rem;color:var(--jura-warning)">82%</span>
+                </div>
+                <div class="jura-progress jura-progress-warning">
+                  <div class="jura-progress-bar" style="width:82%"></div>
+                </div>
+                <p style="font-size:.78rem;color:var(--jura-text-muted);margin:.4rem 0 0">Consider upgrading — approaching limit</p>
+              </div>
+            </div>
+
+            <div style="background:linear-gradient(135deg,var(--jura-primary-lt) 0%,var(--jura-surface-2) 100%);border-radius:var(--jura-radius);padding:1.25rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+              <div>
+                <div style="font-weight:700;color:var(--jura-text)">Upgrade to Scale — $99/month</div>
+                <div style="font-size:.85rem;color:var(--jura-text-muted);margin-top:.2rem">Unlimited API calls, custom themes, dedicated support, SLA</div>
+              </div>
+              <button class="jura-btn jura-btn-primary">Upgrade now</button>
+            </div>
+          </div>
+
+          <!-- Payment methods -->
+          <div class="jura-card">
+            <div class="jura-card-header" style="margin-bottom:1.25rem">
+              <div>
+                <h2 class="jura-card-title">Payment Methods</h2>
+                <p class="jura-card-subtitle" style="margin-top:.15rem">Manage your saved payment methods</p>
+              </div>
+              <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Add method
+              </button>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.75rem">
+              <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem;border:1px solid var(--jura-primary);border-radius:var(--jura-radius);background:var(--jura-primary-lt)">
+                <div style="display:flex;align-items:center;gap:.85rem">
+                  <div style="width:3rem;height:2rem;background:var(--jura-surface);border:1px solid var(--jura-border);border-radius:var(--jura-radius-sm);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.7rem;color:var(--jura-primary)">VISA</div>
+                  <div>
+                    <div style="font-weight:600;color:var(--jura-text);font-size:.9rem">Visa ending in 4242</div>
+                    <div style="font-size:.8rem;color:var(--jura-text-muted)">Expires 09/2028 · Sarah Lindström</div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:.75rem">
+                  <span class="jura-badge jura-badge-primary">Default</span>
+                  <button class="jura-btn jura-btn-ghost jura-btn-sm">Edit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Invoices table -->
+          <div class="jura-card" style="padding:0;overflow:hidden">
+            <div style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--jura-border);display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <h2 class="jura-card-title">Invoices</h2>
+                <p class="jura-card-subtitle" style="margin-top:.15rem">Complete billing history for this account</p>
+              </div>
+            </div>
+            <div class="jura-table-wrap">
+              <table class="jura-table">
+                <thead>
+                  <tr>
+                    <th>Invoice</th>
+                    <th>Date</th>
+                    <th>Period</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th style="text-align:right">Download</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2026-05</span></td>
+                    <td style="color:var(--jura-text-muted)">May 1, 2026</td>
+                    <td style="color:var(--jura-text-muted)">May 2026</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2026-04</span></td>
+                    <td style="color:var(--jura-text-muted)">Apr 1, 2026</td>
+                    <td style="color:var(--jura-text-muted)">April 2026</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2026-03</span></td>
+                    <td style="color:var(--jura-text-muted)">Mar 1, 2026</td>
+                    <td style="color:var(--jura-text-muted)">March 2026</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2026-02</span></td>
+                    <td style="color:var(--jura-text-muted)">Feb 1, 2026</td>
+                    <td style="color:var(--jura-text-muted)">February 2026</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2026-01</span></td>
+                    <td style="color:var(--jura-text-muted)">Jan 1, 2026</td>
+                    <td style="color:var(--jura-text-muted)">January 2026</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2025-12</span></td>
+                    <td style="color:var(--jura-text-muted)">Dec 1, 2025</td>
+                    <td style="color:var(--jura-text-muted)">December 2025</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2025-11</span></td>
+                    <td style="color:var(--jura-text-muted)">Nov 1, 2025</td>
+                    <td style="color:var(--jura-text-muted)">November 2025</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-warning">Pending</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;font-weight:600;color:var(--jura-text)">#INV-2025-10</span></td>
+                    <td style="color:var(--jura-text-muted)">Oct 1, 2025</td>
+                    <td style="color:var(--jura-text-muted)">October 2025</td>
+                    <td style="font-weight:600">$29.00</td>
+                    <td><span class="jura-badge jura-badge-success">Paid</span></td>
+                    <td style="text-align:right">
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        PDF
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div style="padding:1rem 1.5rem;border-top:1px solid var(--jura-border);display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:.85rem;color:var(--jura-text-muted)">Showing 8 of <strong style="color:var(--jura-text)">20</strong> invoices</span>
+              <button class="jura-btn jura-btn-ghost jura-btn-sm">Load more invoices</button>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/js/demo.js"></script>
+  </body>
+</html>
