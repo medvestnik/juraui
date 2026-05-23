@@ -3,72 +3,422 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jura UI — Admin list example</title>
+    <title>Jura UI — Users</title>
     <link rel="stylesheet" href="../assets/css/jura-ui.css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
   </head>
   <body class="jura-app">
+
+    <div class="demo-exam-bar">
+      <div class="demo-exam-bar-left">
+        <a href="index.html">← Examples</a>
+        <span class="demo-exam-bar-sep">/</span>
+        <span style="font-weight:700;color:var(--jura-text)">Users</span>
+      </div>
+      <div class="demo-exam-bar-right">
+        <div class="demo-themes">
+          <button title="Indigo"  data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"   data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"    data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"  data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"   data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"   data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a href="../index.html">Jura UI</a>
+      </div>
+    </div>
+
     <div class="jura-layout">
+
+      <!-- Sidebar -->
       <aside class="jura-sidebar">
-        <h2>Jura UI</h2>
+        <a class="jura-sidebar-brand" href="../index.html">
+          <span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--jura-primary);display:block;flex-shrink:0"></span>
+          Jura UI
+        </a>
+        <span class="jura-sidebar-label">Main</span>
         <nav>
-          <a href="dashboard.html">Dashboard</a>
-          <a class="is-active" href="admin-list.html">Users</a>
-          <a href="components.html">Components</a>
-          <a href="auth.html">Auth</a>
-          <a href="../index.html">Back home</a>
+          <a href="dashboard.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="analytics.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Analytics
+          </a>
+          <a href="admin-list.html" class="is-active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Users
+          </a>
+          <a href="billing.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Billing
+          </a>
+        </nav>
+        <span class="jura-sidebar-label">Account</span>
+        <nav>
+          <a href="inbox.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Inbox
+            <span class="jura-badge jura-badge-primary" style="margin-left:auto">3</span>
+          </a>
+          <a href="settings.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Settings
+          </a>
         </nav>
       </aside>
+
+      <!-- Main content -->
       <main class="jura-main">
-        <header class="jura-topbar">
-          <div>
-            <button class="jura-btn jura-mobile-toggle" data-jura-sidebar-toggle>Menu</button>
-            <h1 style="margin:0.5rem 0 0;">Users</h1>
+        <div class="jura-topbar">
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <button class="jura-btn jura-btn-ghost jura-btn-icon jura-mobile-toggle" data-jura-sidebar-toggle aria-label="Toggle sidebar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <h1 class="jura-topbar-title">Users</h1>
           </div>
-          <button class="jura-btn jura-btn-primary">Add user</button>
-        </header>
+          <div class="jura-topbar-actions">
+            <button class="jura-btn jura-btn-primary jura-btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Add user
+            </button>
+          </div>
+        </div>
 
-        <section class="jura-card">
+        <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem">
+
+          <!-- Summary stats -->
           <div class="jura-grid jura-grid-3">
-            <label class="jura-form-group">
-              Search
-              <input class="jura-input" placeholder="Search by email or name" />
-            </label>
-            <label class="jura-form-group">
-              Status
-              <select class="jura-select"><option>All statuses</option><option>Active</option><option>Pending</option><option>Blocked</option></select>
-            </label>
-            <label class="jura-form-group">
-              Role
-              <select class="jura-select"><option>All roles</option><option>Admin</option><option>Manager</option><option>Support</option></select>
-            </label>
-          </div>
-        </section>
-
-        <section class="jura-card" style="margin-top: 1rem;">
-          <div class="jura-table-wrap">
-            <table class="jura-table">
-              <thead><tr><th>User</th><th>Role</th><th>Status</th><th>Last login</th><th>Actions</th></tr></thead>
-              <tbody>
-                <tr><td>Olivia Stone<br/><small>olivia@juraui.io</small></td><td>Admin</td><td><span class="jura-badge jura-badge-success">Active</span></td><td>2 hours ago</td><td><button class="jura-btn">Edit</button> <button class="jura-btn jura-btn-danger">Delete</button></td></tr>
-                <tr><td>Liam Park<br/><small>liam@juraui.io</small></td><td>Support</td><td><span class="jura-badge jura-badge-warning">Pending</span></td><td>Yesterday</td><td><button class="jura-btn">Edit</button> <button class="jura-btn jura-btn-danger">Delete</button></td></tr>
-                <tr><td>Emma Cole<br/><small>emma@juraui.io</small></td><td>Manager</td><td><span class="jura-badge jura-badge-danger">Blocked</span></td><td>5 days ago</td><td><button class="jura-btn">Edit</button> <button class="jura-btn jura-btn-danger">Delete</button></td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="jura-topbar" style="margin-top: 1rem; margin-bottom: 0;">
-            <small style="color:var(--jura-text-muted)">Showing 1–3 of 38 users</small>
-            <div class="jura-topbar-actions">
-              <button class="jura-btn">Previous</button>
-              <button class="jura-btn jura-btn-primary">1</button>
-              <button class="jura-btn">2</button>
-              <button class="jura-btn">3</button>
-              <button class="jura-btn">Next</button>
+            <div class="jura-card">
+              <div class="jura-card-subtitle">Total Users</div>
+              <div class="jura-stat-value" style="margin-top:.25rem">1,284</div>
+              <div class="jura-stat-label" style="margin-top:.2rem">across all plans</div>
+            </div>
+            <div class="jura-card jura-card-accent jura-card-accent-success">
+              <div class="jura-card-subtitle">Active</div>
+              <div class="jura-stat-value" style="margin-top:.25rem">1,021</div>
+              <div class="jura-stat-label" style="margin-top:.2rem;color:var(--jura-success)">79.5% of total</div>
+            </div>
+            <div class="jura-card jura-card-accent jura-card-accent-warning">
+              <div class="jura-card-subtitle">Pending</div>
+              <div class="jura-stat-value" style="margin-top:.25rem">263</div>
+              <div class="jura-stat-label" style="margin-top:.2rem;color:var(--jura-warning)">awaiting verification</div>
             </div>
           </div>
-        </section>
+
+          <!-- Filter card -->
+          <div class="jura-card">
+            <h2 class="jura-card-title" style="margin-bottom:1rem">Filter Users</h2>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-end">
+              <div class="jura-form-group" style="flex:1;min-width:200px;margin:0">
+                <label style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);display:block;margin-bottom:.35rem">Search</label>
+                <input class="jura-input" type="search" placeholder="Name, email or ID…" />
+              </div>
+              <div class="jura-form-group" style="min-width:160px;margin:0">
+                <label style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);display:block;margin-bottom:.35rem">Status</label>
+                <select class="jura-select">
+                  <option value="">All statuses</option>
+                  <option value="active">Active</option>
+                  <option value="pending">Pending</option>
+                  <option value="blocked">Blocked</option>
+                </select>
+              </div>
+              <div class="jura-form-group" style="min-width:160px;margin:0">
+                <label style="font-size:.82rem;font-weight:600;color:var(--jura-text-muted);display:block;margin-bottom:.35rem">Role</label>
+                <select class="jura-select">
+                  <option value="">All roles</option>
+                  <option value="admin">Admin</option>
+                  <option value="editor">Editor</option>
+                  <option value="viewer">Viewer</option>
+                  <option value="billing">Billing</option>
+                </select>
+              </div>
+              <button class="jura-btn jura-btn-primary" style="flex-shrink:0">Apply filters</button>
+              <button class="jura-btn jura-btn-ghost" style="flex-shrink:0">Reset</button>
+            </div>
+          </div>
+
+          <!-- Users table -->
+          <div class="jura-card" style="padding:0;overflow:hidden">
+            <div style="padding:1.25rem 1.5rem;border-bottom:1px solid var(--jura-border);display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <h2 class="jura-card-title">All Users</h2>
+                <p class="jura-card-subtitle" style="margin-top:.15rem">Showing 1–8 of 1,284 users</p>
+              </div>
+              <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export CSV
+              </button>
+            </div>
+            <div class="jura-table-wrap">
+              <table class="jura-table">
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Last active</th>
+                    <th style="text-align:right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#e0e7ff;color:#4338ca;font-weight:700">SL</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Sarah Lindström</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">sarah.lindstrom@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-primary jura-badge-outline">Admin</span></td>
+                    <td><span class="jura-badge jura-badge-success"><span class="jura-badge-dot"></span>Active</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">2 minutes ago</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Reset password</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Suspend</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#fce7f3;color:#be185d;font-weight:700">MK</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Marcus Keller</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">m.keller@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-info jura-badge-outline">Editor</span></td>
+                    <td><span class="jura-badge jura-badge-success"><span class="jura-badge-dot"></span>Active</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">41 minutes ago</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Reset password</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Suspend</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#d1fae5;color:#065f46;font-weight:700">AR</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Aiko Ramírez</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">aiko.ramirez@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-outline">Viewer</span></td>
+                    <td><span class="jura-badge jura-badge-warning">Pending</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">3 hours ago</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Reset password</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Suspend</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#fef3c7;color:#92400e;font-weight:700">TN</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Tom Nguyen</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">tom.nguyen@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-outline">Billing</span></td>
+                    <td><span class="jura-badge jura-badge-success"><span class="jura-badge-dot"></span>Active</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">Yesterday</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Reset password</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Suspend</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#ede9fe;color:#5b21b6;font-weight:700">PB</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Priya Bhatt</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">priya.bhatt@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-info jura-badge-outline">Editor</span></td>
+                    <td><span class="jura-badge jura-badge-danger">Blocked</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">May 18, 2026</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Unblock user</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Delete</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#cffafe;color:#164e63;font-weight:700">JC</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Jamie Chen</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">jamie.chen@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-outline">Viewer</span></td>
+                    <td><span class="jura-badge jura-badge-success"><span class="jura-badge-dot"></span>Active</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">1 hour ago</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Reset password</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Suspend</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#fce7f3;color:#9d174d;font-weight:700">DV</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Diego Vargas</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">d.vargas@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-primary jura-badge-outline">Admin</span></td>
+                    <td><span class="jura-badge jura-badge-warning">Pending</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">May 20, 2026</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Approve account</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Reject</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <div class="jura-avatar" style="background:#ecfdf5;color:#047857;font-weight:700">OP</div>
+                        <div>
+                          <div style="font-weight:600;color:var(--jura-text)">Olivia Park</div>
+                          <div style="font-size:.8rem;color:var(--jura-text-muted)">olivia.park@example.com</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="jura-badge jura-badge-info jura-badge-outline">Editor</span></td>
+                    <td><span class="jura-badge jura-badge-success"><span class="jura-badge-dot"></span>Active</span></td>
+                    <td style="color:var(--jura-text-muted);font-size:.87rem">5 minutes ago</td>
+                    <td style="text-align:right">
+                      <div style="display:flex;justify-content:flex-end;gap:.5rem;align-items:center">
+                        <div class="jura-dropdown">
+                          <button class="jura-btn jura-btn-ghost jura-btn-sm" data-jura-dropdown>Edit ▾</button>
+                          <div class="jura-dropdown-menu" style="right:0;left:auto">
+                            <button class="jura-dropdown-item">View profile</button>
+                            <button class="jura-dropdown-item">Edit user</button>
+                            <button class="jura-dropdown-item">Reset password</button>
+                            <div class="jura-dropdown-divider"></div>
+                            <button class="jura-dropdown-item jura-dropdown-item-danger">Suspend</button>
+                          </div>
+                        </div>
+                        <button class="jura-btn jura-btn-danger jura-btn-sm">Delete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div style="padding:1rem 1.5rem;border-top:1px solid var(--jura-border);display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:.85rem;color:var(--jura-text-muted)">Showing 1–8 of <strong style="color:var(--jura-text)">1,284</strong> users</span>
+              <div style="display:flex;gap:.35rem">
+                <button class="jura-btn jura-btn-ghost jura-btn-sm" disabled style="opacity:.4">← Prev</button>
+                <button class="jura-btn jura-btn-primary jura-btn-sm">1</button>
+                <button class="jura-btn jura-btn-ghost jura-btn-sm">2</button>
+                <button class="jura-btn jura-btn-ghost jura-btn-sm">3</button>
+                <span style="display:flex;align-items:center;padding:0 .4rem;color:var(--jura-text-muted)">…</span>
+                <button class="jura-btn jura-btn-ghost jura-btn-sm">161</button>
+                <button class="jura-btn jura-btn-ghost jura-btn-sm">Next →</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </main>
     </div>
+
     <script src="../assets/js/demo.js"></script>
   </body>
 </html>

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura UI — Settings</title>
+    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+  </head>
+  <body class="jura-app">
+
+    <div class="demo-exam-bar">
+      <div class="demo-exam-bar-left">
+        <a href="index.html">← Examples</a>
+        <span class="demo-exam-bar-sep">/</span>
+        <span style="font-weight:700;color:var(--jura-text)">Settings</span>
+      </div>
+      <div class="demo-exam-bar-right">
+        <div class="demo-themes">
+          <button title="Indigo"  data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"   data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"    data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"  data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"   data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"   data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a href="../index.html">Jura UI</a>
+      </div>
+    </div>
+
+    <div class="jura-layout">
+
+      <!-- Sidebar -->
+      <aside class="jura-sidebar">
+        <a class="jura-sidebar-brand" href="../index.html">
+          <span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--jura-primary);display:block;flex-shrink:0"></span>
+          Jura UI
+        </a>
+        <span class="jura-sidebar-label">Main</span>
+        <nav>
+          <a href="dashboard.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="analytics.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Analytics
+          </a>
+          <a href="admin-list.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Users
+          </a>
+          <a href="billing.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Billing
+          </a>
+        </nav>
+        <span class="jura-sidebar-label">Account</span>
+        <nav>
+          <a href="inbox.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Inbox
+            <span class="jura-badge jura-badge-primary" style="margin-left:auto">3</span>
+          </a>
+          <a href="settings.html" class="is-active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Settings
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="jura-main">
+        <div class="jura-topbar">
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <button class="jura-btn jura-btn-ghost jura-btn-icon jura-mobile-toggle" data-jura-sidebar-toggle aria-label="Toggle sidebar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <h1 class="jura-topbar-title">Settings</h1>
+          </div>
+        </div>
+
+        <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem">
+
+          <!-- Tabs -->
+          <div data-jura-tabs-scope>
+            <div class="jura-tabs jura-tabs-pill" data-jura-tabs style="margin-bottom:1.5rem">
+              <button class="jura-tab is-active" data-jura-tab="tab-profile">Profile</button>
+              <button class="jura-tab" data-jura-tab="tab-notifications">Notifications</button>
+              <button class="jura-tab" data-jura-tab="tab-security">Security</button>
+              <button class="jura-tab" data-jura-tab="tab-api">API Keys</button>
+            </div>
+
+            <!-- PROFILE TAB -->
+            <div id="tab-profile" class="jura-tab-panel is-active">
+
+              <!-- Avatar section -->
+              <div class="jura-card" style="margin-bottom:1.5rem">
+                <h2 class="jura-card-title" style="margin-bottom:1rem">Profile Picture</h2>
+                <div style="display:flex;align-items:center;gap:1.25rem">
+                  <div class="jura-avatar jura-avatar-xl" style="background:#e0e7ff;color:#4338ca;font-weight:800;font-size:1.35rem">SL</div>
+                  <div>
+                    <div style="display:flex;gap:.5rem;margin-bottom:.5rem">
+                      <button class="jura-btn jura-btn-primary jura-btn-sm">Change avatar</button>
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">Remove</button>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--jura-text-muted);margin:0">JPG, PNG or GIF. Max size 2MB.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Profile form -->
+              <div class="jura-card">
+                <h2 class="jura-card-title" style="margin-bottom:1.25rem">Personal Information</h2>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                  <div class="jura-form-group" style="margin:0">
+                    <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem" for="settings-name">Full name</label>
+                    <input id="settings-name" class="jura-input" type="text" value="Sarah Lindström" />
+                  </div>
+                  <div class="jura-form-group" style="margin:0">
+                    <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem" for="settings-email">Email address</label>
+                    <input id="settings-email" class="jura-input" type="email" value="sarah.lindstrom@example.com" />
+                  </div>
+                  <div class="jura-form-group" style="margin:0">
+                    <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem" for="settings-title">Job title</label>
+                    <input id="settings-title" class="jura-input" type="text" value="Head of Product" />
+                  </div>
+                  <div class="jura-form-group" style="margin:0">
+                    <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem" for="settings-company">Company</label>
+                    <input id="settings-company" class="jura-input" type="text" value="Streamline Inc." />
+                  </div>
+                  <div class="jura-form-group" style="margin:0;grid-column:1/-1">
+                    <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem" for="settings-bio">Bio</label>
+                    <textarea id="settings-bio" class="jura-textarea" rows="3" placeholder="A short bio about yourself…">Building products people love. Former designer, now pretending to be a PM. Based in Stockholm.</textarea>
+                    <p class="jura-form-hint">Shown on your public profile. Max 200 characters.</p>
+                  </div>
+                  <div class="jura-form-group" style="margin:0">
+                    <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem" for="settings-timezone">Timezone</label>
+                    <select id="settings-timezone" class="jura-select">
+                      <option>UTC+01:00 — Stockholm</option>
+                      <option>UTC+00:00 — London</option>
+                      <option>UTC-05:00 — New York</option>
+                      <option>UTC-08:00 — Los Angeles</option>
+                      <option>UTC+09:00 — Tokyo</option>
+                      <option>UTC+08:00 — Singapore</option>
+                    </select>
+                  </div>
+                  <div class="jura-form-group" style="margin:0">
+                    <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem" for="settings-lang">Language</label>
+                    <select id="settings-lang" class="jura-select">
+                      <option>English (US)</option>
+                      <option>English (UK)</option>
+                      <option>Svenska</option>
+                      <option>Deutsch</option>
+                      <option>Français</option>
+                      <option>日本語</option>
+                    </select>
+                  </div>
+                </div>
+                <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--jura-border);display:flex;gap:.5rem">
+                  <button class="jura-btn jura-btn-primary">Save changes</button>
+                  <button class="jura-btn jura-btn-ghost">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- NOTIFICATIONS TAB -->
+            <div id="tab-notifications" class="jura-tab-panel">
+              <div class="jura-card">
+                <h2 class="jura-card-title" style="margin-bottom:.35rem">Email Notifications</h2>
+                <p class="jura-card-subtitle" style="margin-bottom:1.5rem">Control which emails you receive from Jura UI.</p>
+
+                <div style="display:flex;flex-direction:column;gap:0">
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--jura-border)">
+                    <div>
+                      <div style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Product updates</div>
+                      <div style="font-size:.82rem;color:var(--jura-text-muted);margin-top:.1rem">News about features, releases, and improvements</div>
+                    </div>
+                    <label class="jura-toggle">
+                      <input type="checkbox" checked />
+                      <span class="jura-toggle-track"></span>
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--jura-border)">
+                    <div>
+                      <div style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Account activity</div>
+                      <div style="font-size:.82rem;color:var(--jura-text-muted);margin-top:.1rem">Sign-ins, password changes, and security events</div>
+                    </div>
+                    <label class="jura-toggle">
+                      <input type="checkbox" checked />
+                      <span class="jura-toggle-track"></span>
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--jura-border)">
+                    <div>
+                      <div style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Weekly digest</div>
+                      <div style="font-size:.82rem;color:var(--jura-text-muted);margin-top:.1rem">A summary of your account activity every Monday</div>
+                    </div>
+                    <label class="jura-toggle">
+                      <input type="checkbox" checked />
+                      <span class="jura-toggle-track"></span>
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--jura-border)">
+                    <div>
+                      <div style="font-weight:600;font-size:.9rem;color:var(--jura-text)">New team member</div>
+                      <div style="font-size:.82rem;color:var(--jura-text-muted);margin-top:.1rem">When someone joins your organization</div>
+                    </div>
+                    <label class="jura-toggle">
+                      <input type="checkbox" />
+                      <span class="jura-toggle-track"></span>
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--jura-border)">
+                    <div>
+                      <div style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Billing alerts</div>
+                      <div style="font-size:.82rem;color:var(--jura-text-muted);margin-top:.1rem">Upcoming charges, failed payments, and invoices</div>
+                    </div>
+                    <label class="jura-toggle">
+                      <input type="checkbox" checked />
+                      <span class="jura-toggle-track"></span>
+                    </label>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0">
+                    <div>
+                      <div style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Marketing emails</div>
+                      <div style="font-size:.82rem;color:var(--jura-text-muted);margin-top:.1rem">Tips, tutorials, and offers from the Jura UI team</div>
+                    </div>
+                    <label class="jura-toggle">
+                      <input type="checkbox" />
+                      <span class="jura-toggle-track"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--jura-border)">
+                  <button class="jura-btn jura-btn-primary">Save preferences</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECURITY TAB -->
+            <div id="tab-security" class="jura-tab-panel">
+              <div style="display:flex;flex-direction:column;gap:1.5rem">
+                <!-- Change password -->
+                <div class="jura-card">
+                  <h2 class="jura-card-title" style="margin-bottom:.35rem">Change Password</h2>
+                  <p class="jura-card-subtitle" style="margin-bottom:1.25rem">Use a strong, unique password for this account.</p>
+                  <div style="display:flex;flex-direction:column;gap:1rem;max-width:440px">
+                    <div class="jura-form-group" style="margin:0">
+                      <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem">Current password</label>
+                      <input class="jura-input" type="password" placeholder="••••••••••" />
+                    </div>
+                    <div class="jura-form-group" style="margin:0">
+                      <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem">New password</label>
+                      <input class="jura-input" type="password" placeholder="At least 12 characters" />
+                      <p class="jura-form-hint">Must be at least 12 characters and include a number and symbol.</p>
+                    </div>
+                    <div class="jura-form-group" style="margin:0">
+                      <label style="font-size:.82rem;font-weight:600;color:var(--jura-text);display:block;margin-bottom:.4rem">Confirm new password</label>
+                      <input class="jura-input" type="password" placeholder="Repeat new password" />
+                    </div>
+                    <button class="jura-btn jura-btn-primary" style="align-self:flex-start">Update password</button>
+                  </div>
+                </div>
+
+                <!-- 2FA -->
+                <div class="jura-card">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                    <div>
+                      <h2 class="jura-card-title" style="margin-bottom:.35rem">Two-Factor Authentication</h2>
+                      <p class="jura-card-subtitle" style="margin-bottom:1rem">Add an extra layer of security to your account.</p>
+                      <span class="jura-badge jura-badge-danger">Not enabled</span>
+                    </div>
+                    <label class="jura-toggle">
+                      <input type="checkbox" />
+                      <span class="jura-toggle-track"></span>
+                    </label>
+                  </div>
+                  <div class="jura-alert jura-alert-warning" style="margin-top:1rem">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    We strongly recommend enabling 2FA to protect your account from unauthorized access.
+                  </div>
+                </div>
+
+                <!-- Sessions -->
+                <div class="jura-card">
+                  <h2 class="jura-card-title" style="margin-bottom:.35rem">Active Sessions</h2>
+                  <p class="jura-card-subtitle" style="margin-bottom:1.25rem">Devices currently signed into your account.</p>
+                  <div style="display:flex;flex-direction:column;gap:.75rem">
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem;background:var(--jura-surface-2);border-radius:var(--jura-radius)">
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        <div>
+                          <div style="font-weight:600;font-size:.87rem;color:var(--jura-text)">MacBook Pro — Chrome</div>
+                          <div style="font-size:.78rem;color:var(--jura-text-muted)">Stockholm, Sweden · Active now</div>
+                        </div>
+                      </div>
+                      <span class="jura-badge jura-badge-success jura-badge-outline">Current</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem;background:var(--jura-surface-2);border-radius:var(--jura-radius)">
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                        <div>
+                          <div style="font-weight:600;font-size:.87rem;color:var(--jura-text)">iPhone 15 Pro — Safari</div>
+                          <div style="font-size:.78rem;color:var(--jura-text-muted)">Stockholm, Sweden · 2 hours ago</div>
+                        </div>
+                      </div>
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">Revoke</button>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem;background:var(--jura-surface-2);border-radius:var(--jura-radius)">
+                      <div style="display:flex;align-items:center;gap:.75rem">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        <div>
+                          <div style="font-weight:600;font-size:.87rem;color:var(--jura-text)">Windows PC — Firefox</div>
+                          <div style="font-size:.78rem;color:var(--jura-text-muted)">Berlin, Germany · 3 days ago</div>
+                        </div>
+                      </div>
+                      <button class="jura-btn jura-btn-ghost jura-btn-sm">Revoke</button>
+                    </div>
+                  </div>
+                  <div style="margin-top:1rem">
+                    <button class="jura-btn jura-btn-danger jura-btn-sm">Revoke all other sessions</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- API KEYS TAB -->
+            <div id="tab-api" class="jura-tab-panel">
+              <div class="jura-card">
+                <div class="jura-card-header" style="margin-bottom:1rem">
+                  <div>
+                    <h2 class="jura-card-title">API Keys</h2>
+                    <p class="jura-card-subtitle" style="margin-top:.15rem">Use these keys to authenticate with the Jura UI API.</p>
+                  </div>
+                  <button class="jura-btn jura-btn-primary jura-btn-sm">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    New API key
+                  </button>
+                </div>
+
+                <div class="jura-alert jura-alert-info" style="margin-bottom:1.25rem">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Keep your API keys secret. Never commit them to version control or share them publicly.
+                </div>
+
+                <div class="jura-table-wrap">
+                  <table class="jura-table">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Key</th>
+                        <th>Created</th>
+                        <th>Last used</th>
+                        <th style="text-align:right">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div style="font-weight:600;color:var(--jura-text)">Production</div>
+                          <div style="font-size:.78rem;color:var(--jura-text-muted)">Full access</div>
+                        </td>
+                        <td>
+                          <code style="font-size:.82rem;background:var(--jura-surface-2);padding:.2rem .5rem;border-radius:var(--jura-radius-sm);color:var(--jura-text-muted)">sk_live_••••••••4f2a</code>
+                        </td>
+                        <td style="color:var(--jura-text-muted);font-size:.85rem">Jan 12, 2026</td>
+                        <td style="color:var(--jura-text-muted);font-size:.85rem">2 hours ago</td>
+                        <td style="text-align:right">
+                          <div style="display:flex;justify-content:flex-end;gap:.4rem">
+                            <button class="jura-btn jura-btn-ghost jura-btn-sm" title="Copy key">
+                              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                              Copy
+                            </button>
+                            <button class="jura-btn jura-btn-danger jura-btn-sm">Revoke</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div style="font-weight:600;color:var(--jura-text)">Staging</div>
+                          <div style="font-size:.78rem;color:var(--jura-text-muted)">Read only</div>
+                        </td>
+                        <td>
+                          <code style="font-size:.82rem;background:var(--jura-surface-2);padding:.2rem .5rem;border-radius:var(--jura-radius-sm);color:var(--jura-text-muted)">sk_test_••••••••9b1c</code>
+                        </td>
+                        <td style="color:var(--jura-text-muted);font-size:.85rem">Mar 4, 2026</td>
+                        <td style="color:var(--jura-text-muted);font-size:.85rem">Yesterday</td>
+                        <td style="text-align:right">
+                          <div style="display:flex;justify-content:flex-end;gap:.4rem">
+                            <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                              Copy
+                            </button>
+                            <button class="jura-btn jura-btn-danger jura-btn-sm">Revoke</button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div style="font-weight:600;color:var(--jura-text)">CI/CD Pipeline</div>
+                          <div style="font-size:.78rem;color:var(--jura-text-muted)">Deploy access</div>
+                        </td>
+                        <td>
+                          <code style="font-size:.82rem;background:var(--jura-surface-2);padding:.2rem .5rem;border-radius:var(--jura-radius-sm);color:var(--jura-text-muted)">sk_live_••••••••c73e</code>
+                        </td>
+                        <td style="color:var(--jura-text-muted);font-size:.85rem">Apr 22, 2026</td>
+                        <td style="color:var(--jura-text-muted);font-size:.85rem">1 day ago</td>
+                        <td style="text-align:right">
+                          <div style="display:flex;justify-content:flex-end;gap:.4rem">
+                            <button class="jura-btn jura-btn-ghost jura-btn-sm">
+                              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                              Copy
+                            </button>
+                            <button class="jura-btn jura-btn-danger jura-btn-sm">Revoke</button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/js/demo.js"></script>
+  </body>
+</html>

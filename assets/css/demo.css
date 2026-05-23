@@ -392,8 +392,151 @@
 .demo-footer a:hover { color: var(--jura-primary); text-decoration: none; }
 
 /* ----------------------------------------------------------------
+   Example page demo bar (shown on each example, hidden in iframes)
+   ---------------------------------------------------------------- */
+.demo-exam-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(248,250,252,.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--jura-border);
+  padding: .45rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: .8rem;
+}
+.demo-exam-bar-left,
+.demo-exam-bar-right { display: flex; align-items: center; gap: .65rem; }
+.demo-exam-bar a { color: var(--jura-text-muted); font-weight: 600; text-decoration: none; }
+.demo-exam-bar a:hover { color: var(--jura-primary); }
+.demo-exam-bar-sep { color: var(--jura-border-strong); }
+
+/* ----------------------------------------------------------------
+   Examples gallery grid (examples/index.html)
+   ---------------------------------------------------------------- */
+.demo-examples-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.demo-ex-card {
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius);
+  overflow: hidden;
+  transition: box-shadow .15s, transform .15s, border-color .15s;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.demo-ex-card:hover {
+  box-shadow: var(--jura-shadow);
+  transform: translateY(-3px);
+  border-color: var(--jura-primary);
+  text-decoration: none;
+}
+
+/* Iframe preview */
+.demo-ex-preview {
+  height: 185px;
+  overflow: hidden;
+  background: var(--jura-bg);
+  border-bottom: 1px solid var(--jura-border);
+  position: relative;
+}
+.demo-ex-iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1000px;
+  height: 685px;
+  border: none;
+  transform: scale(0.27);
+  transform-origin: top left;
+  pointer-events: none;
+  display: block;
+}
+
+/* Card info */
+.demo-ex-info { padding: .9rem 1.1rem 1rem; }
+.demo-ex-category {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--jura-text-subtle);
+  margin-bottom: .3rem;
+  display: block;
+}
+.demo-ex-title {
+  font-size: .95rem;
+  font-weight: 700;
+  margin: 0 0 .3rem;
+  color: var(--jura-text);
+  letter-spacing: -.015em;
+}
+.demo-ex-desc {
+  font-size: .79rem;
+  color: var(--jura-text-muted);
+  margin: 0 0 .8rem;
+  line-height: 1.5;
+}
+.demo-ex-footer { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.demo-ex-tags   { display: flex; gap: .3rem; flex-wrap: wrap; }
+.demo-ex-tag {
+  font-size: .67rem;
+  padding: .14rem .48rem;
+  border-radius: var(--jura-radius-full);
+  background: var(--jura-surface-2);
+  color: var(--jura-text-subtle);
+  font-weight: 600;
+}
+.demo-ex-link {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--jura-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  white-space: nowrap;
+}
+
+/* Analytics bar chart */
+.demo-chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: .4rem;
+  height: 130px;
+}
+.demo-chart-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+.demo-chart-bar {
+  width: 100%;
+  background: var(--jura-primary);
+  border-radius: 5px 5px 0 0;
+  opacity: .85;
+  transition: height .3s var(--jura-ease), opacity .15s;
+}
+.demo-chart-bar:hover { opacity: 1; }
+.demo-chart-label { font-size: .72rem; color: var(--jura-text-subtle); font-weight: 600; }
+
+/* ----------------------------------------------------------------
    Responsive
    ---------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .demo-examples-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 960px) {
   .demo-hero { padding: 3rem 0 2rem; }
   .demo-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -403,10 +546,10 @@
   .demo-pricing,
   .demo-auth { grid-template-columns: 1fr; }
 }
-
 @media (max-width: 640px) {
-  .demo-feature-grid { grid-template-columns: 1fr; }
-  .demo-hero-title   { font-size: 2.3rem; }
-  .demo-themes       { display: none; }
+  .demo-feature-grid    { grid-template-columns: 1fr; }
+  .demo-examples-grid   { grid-template-columns: 1fr; }
+  .demo-hero-title      { font-size: 2.3rem; }
+  .demo-themes          { display: none; }
   .demo-hero-mockup-wrap { display: none; }
 }

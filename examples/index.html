@@ -1,35 +1,220 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jura UI — Examples</title>
-    <link rel="stylesheet" href="../assets/css/jura-ui.css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
-  </head>
-  <body>
-    <header class="demo-nav">
-      <div class="demo-container demo-nav-inner">
-        <a class="demo-brand" href="../index.html">Jura UI</a>
-        <nav class="demo-links">
-          <a class="jura-btn" href="../docs/getting-started.md">Getting started</a>
-          <a class="jura-btn jura-btn-primary" href="../index.html">Back to home</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jura UI — Examples</title>
+  <link rel="stylesheet" href="../assets/css/jura-ui.css" />
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+</head>
+<body>
 
-    <main class="demo-container jura-section">
-      <h1 class="demo-page-title">Examples</h1>
-      <p class="demo-lead">Starter pages that show how Jura UI works for dashboards, CRM panels, auth flows and public product websites.</p>
-      <div class="demo-example-grid">
-        <article class="demo-card"><h3>Dashboard</h3><p>Sidebar layout, stats and activity table.</p><a href="dashboard.html">Open example</a></article>
-        <article class="demo-card"><h3>Admin list</h3><p>User management table with filters and pagination.</p><a href="admin-list.html">Open example</a></article>
-        <article class="demo-card"><h3>Auth screen</h3><p>Login UI with benefit panel and responsive behavior.</p><a href="auth.html">Open example</a></article>
-        <article class="demo-card"><h3>Landing page</h3><p>Marketing-style page to present public products/services.</p><a href="landing.html">Open example</a></article>
-        <article class="demo-card"><h3>Components overview</h3><p>Catalog of buttons, badges, forms, tabs and more.</p><a href="components.html">Open example</a></article>
-      </div>
-    </main>
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <header class="demo-nav">
+    <div class="demo-container demo-nav-inner">
+      <a class="demo-brand" href="../index.html">
+        <span class="demo-brand-dot"></span>
+        Jura UI
+      </a>
+      <nav class="demo-links">
+        <!-- Theme picker -->
+        <div class="demo-themes" role="group" aria-label="Colour theme">
+          <button title="Indigo"  data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"   data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"    data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"  data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"   data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"   data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a class="jura-btn" href="components.html">Components</a>
+        <a class="jura-btn jura-btn-primary" href="../index.html">Home</a>
+      </nav>
+    </div>
+  </header>
 
-    <footer class="demo-footer demo-container"><p><a href="../index.html">← Back to Jura UI homepage</a></p></footer>
-  </body>
+  <!-- ── Hero ────────────────────────────────────────────────── -->
+  <section class="demo-container" style="padding-top:3rem;padding-bottom:2rem">
+    <span class="demo-section-label">Templates</span>
+    <h1 class="demo-page-title" style="margin-bottom:.5rem">Examples</h1>
+    <p class="demo-lead">Starter pages for dashboards, admin panels, auth flows and public product websites. Switch the colour theme above to see every preview update live.</p>
+  </section>
+
+  <!-- ── Gallery ─────────────────────────────────────────────── -->
+  <main class="demo-container" style="padding-bottom:4rem">
+    <div class="demo-examples-grid">
+
+      <!-- 1. Dashboard -->
+      <a class="demo-ex-card" href="dashboard.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="dashboard.html" loading="lazy" title="Dashboard preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Admin</span>
+          <div class="demo-ex-title">Dashboard</div>
+          <div class="demo-ex-desc">Stats, activity overview, progress goals and recent orders table.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Sidebar</span>
+              <span class="demo-ex-tag">Charts</span>
+              <span class="demo-ex-tag">Table</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. Analytics -->
+      <a class="demo-ex-card" href="analytics.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="analytics.html" loading="lazy" title="Analytics preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Admin</span>
+          <div class="demo-ex-title">Analytics</div>
+          <div class="demo-ex-desc">Traffic stats, bar charts for weekly sessions and revenue channels.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Charts</span>
+              <span class="demo-ex-tag">Stats</span>
+              <span class="demo-ex-tag">Table</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. User management -->
+      <a class="demo-ex-card" href="admin-list.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="admin-list.html" loading="lazy" title="Users preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Admin</span>
+          <div class="demo-ex-title">User management</div>
+          <div class="demo-ex-desc">Team members table with filters, role badges and pagination.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Table</span>
+              <span class="demo-ex-tag">Filters</span>
+              <span class="demo-ex-tag">Avatars</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. Settings -->
+      <a class="demo-ex-card" href="settings.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="settings.html" loading="lazy" title="Settings preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Admin</span>
+          <div class="demo-ex-title">Settings</div>
+          <div class="demo-ex-desc">Account profile, notification preferences, security and API keys.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Tabs</span>
+              <span class="demo-ex-tag">Forms</span>
+              <span class="demo-ex-tag">Toggles</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. Inbox -->
+      <a class="demo-ex-card" href="inbox.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="inbox.html" loading="lazy" title="Inbox preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Admin</span>
+          <div class="demo-ex-title">Inbox</div>
+          <div class="demo-ex-desc">Two-panel email inbox with message list and full message detail view.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Split panel</span>
+              <span class="demo-ex-tag">Messages</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. Billing -->
+      <a class="demo-ex-card" href="billing.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="billing.html" loading="lazy" title="Billing preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Admin</span>
+          <div class="demo-ex-title">Billing</div>
+          <div class="demo-ex-desc">Subscription plan, payment methods and downloadable invoice list.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Invoices</span>
+              <span class="demo-ex-tag">Plan</span>
+              <span class="demo-ex-tag">Payments</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 7. Auth -->
+      <a class="demo-ex-card" href="auth.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="auth.html" loading="lazy" title="Auth preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Auth</span>
+          <div class="demo-ex-title">Sign in</div>
+          <div class="demo-ex-desc">Login screen with brand panel, email/password form and SSO button.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Auth</span>
+              <span class="demo-ex-tag">Split</span>
+              <span class="demo-ex-tag">Form</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- 8. Landing -->
+      <a class="demo-ex-card" href="landing.html">
+        <div class="demo-ex-preview">
+          <iframe class="demo-ex-iframe" src="landing.html" loading="lazy" title="Landing preview"></iframe>
+        </div>
+        <div class="demo-ex-info">
+          <span class="demo-ex-category">Marketing</span>
+          <div class="demo-ex-title">Landing page</div>
+          <div class="demo-ex-desc">Hero, features grid, testimonials and pricing cards for public pages.</div>
+          <div class="demo-ex-footer">
+            <div class="demo-ex-tags">
+              <span class="demo-ex-tag">Hero</span>
+              <span class="demo-ex-tag">Pricing</span>
+              <span class="demo-ex-tag">Marketing</span>
+            </div>
+            <span class="demo-ex-link">Open →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="demo-footer demo-container">
+    <p>
+      <strong>Jura UI</strong> · MIT License ·
+      <a href="../index.html">Home</a> ·
+      <a href="components.html">Components</a> ·
+      <a href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="../assets/js/demo.js"></script>
+</body>
 </html>

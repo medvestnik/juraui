@@ -3,63 +3,323 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jura UI — Dashboard example</title>
+    <title>Jura UI — Dashboard</title>
     <link rel="stylesheet" href="../assets/css/jura-ui.css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
   </head>
   <body class="jura-app">
+
+    <div class="demo-exam-bar">
+      <div class="demo-exam-bar-left">
+        <a href="index.html">← Examples</a>
+        <span class="demo-exam-bar-sep">/</span>
+        <span style="font-weight:700;color:var(--jura-text)">Dashboard</span>
+      </div>
+      <div class="demo-exam-bar-right">
+        <div class="demo-themes">
+          <button title="Indigo"  data-jura-color-theme="indigo"  class="demo-theme-swatch is-active" style="background:#4f46e5"></button>
+          <button title="Ocean"   data-jura-color-theme="ocean"   class="demo-theme-swatch" style="background:#0891b2"></button>
+          <button title="Emerald" data-jura-color-theme="emerald" class="demo-theme-swatch" style="background:#059669"></button>
+          <button title="Rose"    data-jura-color-theme="rose"    class="demo-theme-swatch" style="background:#e11d48"></button>
+          <button title="Violet"  data-jura-color-theme="violet"  class="demo-theme-swatch" style="background:#7c3aed"></button>
+          <button title="Amber"   data-jura-color-theme="amber"   class="demo-theme-swatch" style="background:#d97706"></button>
+          <button title="Slate"   data-jura-color-theme="slate"   class="demo-theme-swatch" style="background:#475569"></button>
+        </div>
+        <a href="../index.html">Jura UI</a>
+      </div>
+    </div>
+
     <div class="jura-layout">
+
+      <!-- Sidebar -->
       <aside class="jura-sidebar">
-        <h2>Jura UI</h2>
+        <a class="jura-sidebar-brand" href="../index.html">
+          <span style="width:.5rem;height:.5rem;border-radius:50%;background:var(--jura-primary);display:block;flex-shrink:0"></span>
+          Jura UI
+        </a>
+        <span class="jura-sidebar-label">Main</span>
         <nav>
-          <a class="is-active" href="dashboard.html">Dashboard</a>
-          <a href="admin-list.html">Users</a>
-          <a href="components.html">Components</a>
-          <a href="landing.html">Landing</a>
-          <a href="../index.html">Back home</a>
+          <a href="dashboard.html" class="is-active">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="analytics.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Analytics
+          </a>
+          <a href="admin-list.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Users
+          </a>
+          <a href="billing.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            Billing
+          </a>
+        </nav>
+        <span class="jura-sidebar-label">Account</span>
+        <nav>
+          <a href="inbox.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Inbox
+            <span class="jura-badge jura-badge-primary" style="margin-left:auto">3</span>
+          </a>
+          <a href="settings.html">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Settings
+          </a>
         </nav>
       </aside>
+
+      <!-- Main content -->
       <main class="jura-main">
-        <header class="jura-topbar">
-          <div>
-            <button class="jura-btn jura-mobile-toggle" data-jura-sidebar-toggle>Menu</button>
-            <h1 style="margin:0.5rem 0 0;">Dashboard</h1>
+        <div class="jura-topbar">
+          <div style="display:flex;align-items:center;gap:.75rem">
+            <button class="jura-btn jura-btn-ghost jura-btn-icon jura-mobile-toggle" data-jura-sidebar-toggle aria-label="Toggle sidebar">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <h1 class="jura-topbar-title">Dashboard</h1>
           </div>
-          <div class="jura-topbar-actions"><button class="jura-btn">Export</button><button class="jura-btn jura-btn-primary">Create report</button></div>
-        </header>
-
-        <section class="jura-grid jura-grid-4">
-          <article class="jura-card jura-stat"><div>Revenue</div><strong>$48,230</strong><span class="jura-badge jura-badge-success">+8.4%</span></article>
-          <article class="jura-card jura-stat"><div>Users</div><strong>2,140</strong><span class="jura-badge">+124 today</span></article>
-          <article class="jura-card jura-stat"><div>Orders</div><strong>684</strong><span class="jura-badge jura-badge-warning">42 pending</span></article>
-          <article class="jura-card jura-stat"><div>Conversion</div><strong>4.3%</strong><span class="jura-badge jura-badge-danger">-0.4%</span></article>
-        </section>
-
-        <section class="jura-card" style="margin-top: 1rem;">
-          <div class="jura-card-header"><h2 class="jura-card-title">Activity overview</h2><span class="jura-badge">Last 7 days</span></div>
-          <p class="demo-lead">Traffic and team activity are stable. Most new orders come from returning users and enterprise plans.</p>
-          <div class="jura-grid jura-grid-3">
-            <article class="jura-card"><strong>14,220</strong><div>Sessions</div></article>
-            <article class="jura-card"><strong>3m 12s</strong><div>Avg. session duration</div></article>
-            <article class="jura-card"><strong>62%</strong><div>Returning visitors</div></article>
+          <div class="jura-topbar-actions">
+            <button class="jura-btn jura-btn-ghost jura-btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export
+            </button>
+            <button class="jura-btn jura-btn-primary jura-btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Create report
+            </button>
           </div>
-        </section>
+        </div>
 
-        <section class="jura-card" style="margin-top: 1rem;">
-          <div class="jura-card-header"><h2 class="jura-card-title">Recent orders</h2><button class="jura-btn">View all</button></div>
-          <div class="jura-table-wrap">
-            <table class="jura-table">
-              <thead><tr><th>Order ID</th><th>Customer</th><th>Status</th><th>Total</th><th>Action</th></tr></thead>
-              <tbody>
-                <tr><td>#8012</td><td>Atlas Medical</td><td><span class="jura-badge jura-badge-success">Paid</span></td><td>$2,340</td><td><button class="jura-btn">Open</button></td></tr>
-                <tr><td>#8011</td><td>Nova CRM</td><td><span class="jura-badge jura-badge-warning">Pending</span></td><td>$580</td><td><button class="jura-btn">Open</button></td></tr>
-                <tr><td>#8010</td><td>Skyline Labs</td><td><span class="jura-badge jura-badge-danger">Cancelled</span></td><td>$190</td><td><button class="jura-btn">Open</button></td></tr>
-              </tbody>
-            </table>
+        <div style="padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem">
+
+          <!-- Stat cards -->
+          <div class="jura-grid jura-grid-4">
+            <div class="jura-card jura-card-accent">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Total Revenue</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div class="jura-stat-value">$48,230</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-success);font-weight:600;font-size:.8rem">+8.4%</span>
+                <span>vs last month</span>
+              </div>
+            </div>
+            <div class="jura-card jura-card-accent jura-card-accent-success">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Total Users</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="jura-stat-value">2,140</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-success);font-weight:600;font-size:.8rem">+124</span>
+                <span>new today</span>
+              </div>
+            </div>
+            <div class="jura-card jura-card-accent jura-card-accent-warning">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Orders</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </div>
+              <div class="jura-stat-value">684</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-warning);font-weight:600;font-size:.8rem">42</span>
+                <span>pending fulfillment</span>
+              </div>
+            </div>
+            <div class="jura-card jura-card-accent jura-card-accent-danger">
+              <div class="jura-card-header" style="margin-bottom:.5rem">
+                <span class="jura-card-subtitle">Conversion Rate</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--jura-text-muted)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="jura-stat-value">4.3%</div>
+              <div class="jura-stat-label" style="display:flex;align-items:center;gap:.35rem;margin-top:.25rem">
+                <span style="color:var(--jura-danger);font-weight:600;font-size:.8rem">-0.4%</span>
+                <span>vs last month</span>
+              </div>
+            </div>
           </div>
-        </section>
+
+          <!-- Activity Overview -->
+          <div class="jura-card">
+            <div class="jura-card-header">
+              <div>
+                <h2 class="jura-card-title">Activity Overview</h2>
+                <p class="jura-card-subtitle">Last 30 days of user activity</p>
+              </div>
+              <span class="jura-badge jura-badge-success">Live</span>
+            </div>
+            <div class="jura-grid jura-grid-3" style="margin-top:1rem">
+              <div style="padding:1rem;background:var(--jura-surface-2);border-radius:var(--jura-radius);text-align:center">
+                <div style="font-size:1.75rem;font-weight:700;color:var(--jura-text)">14,220</div>
+                <div style="font-size:.8rem;color:var(--jura-text-muted);margin-top:.25rem;font-weight:500">Sessions</div>
+                <div style="margin-top:.5rem">
+                  <span class="jura-badge jura-badge-success jura-badge-outline">+12.3% vs prior period</span>
+                </div>
+              </div>
+              <div style="padding:1rem;background:var(--jura-surface-2);border-radius:var(--jura-radius);text-align:center">
+                <div style="font-size:1.75rem;font-weight:700;color:var(--jura-text)">3m 12s</div>
+                <div style="font-size:.8rem;color:var(--jura-text-muted);margin-top:.25rem;font-weight:500">Avg. Session Duration</div>
+                <div style="margin-top:.5rem">
+                  <span class="jura-badge jura-badge-info jura-badge-outline">+0.4s vs prior period</span>
+                </div>
+              </div>
+              <div style="padding:1rem;background:var(--jura-surface-2);border-radius:var(--jura-radius);text-align:center">
+                <div style="font-size:1.75rem;font-weight:700;color:var(--jura-text)">62%</div>
+                <div style="font-size:.8rem;color:var(--jura-text-muted);margin-top:.25rem;font-weight:500">Returning Users</div>
+                <div style="margin-top:.5rem">
+                  <span class="jura-badge jura-badge-warning jura-badge-outline">-1.8% vs prior period</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monthly Goal Progress -->
+          <div class="jura-card">
+            <div class="jura-card-header">
+              <div>
+                <h2 class="jura-card-title">Monthly Goals</h2>
+                <p class="jura-card-subtitle">May 2026 — 23 of 31 days complete</p>
+              </div>
+              <button class="jura-btn jura-btn-ghost jura-btn-sm">View all goals</button>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:1.25rem;margin-top:1.25rem">
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+                  <div>
+                    <span style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Revenue target</span>
+                    <span style="color:var(--jura-text-muted);font-size:.8rem;margin-left:.5rem">$48,230 of $60,000</span>
+                  </div>
+                  <span style="font-weight:700;font-size:.9rem;color:var(--jura-primary)">80%</span>
+                </div>
+                <div class="jura-progress">
+                  <div class="jura-progress-bar" style="width:80%"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+                  <div>
+                    <span style="font-weight:600;font-size:.9rem;color:var(--jura-text)">New user sign-ups</span>
+                    <span style="color:var(--jura-text-muted);font-size:.8rem;margin-left:.5rem">2,140 of 2,500</span>
+                  </div>
+                  <span style="font-weight:700;font-size:.9rem;color:var(--jura-success)">86%</span>
+                </div>
+                <div class="jura-progress jura-progress-success">
+                  <div class="jura-progress-bar" style="width:86%"></div>
+                </div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+                  <div>
+                    <span style="font-weight:600;font-size:.9rem;color:var(--jura-text)">Orders fulfilled</span>
+                    <span style="color:var(--jura-text-muted);font-size:.8rem;margin-left:.5rem">642 of 1,000</span>
+                  </div>
+                  <span style="font-weight:700;font-size:.9rem;color:var(--jura-warning)">64%</span>
+                </div>
+                <div class="jura-progress jura-progress-warning">
+                  <div class="jura-progress-bar" style="width:64%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Orders -->
+          <div class="jura-card">
+            <div class="jura-card-header">
+              <div>
+                <h2 class="jura-card-title">Recent Orders</h2>
+                <p class="jura-card-subtitle">Latest transactions across all channels</p>
+              </div>
+              <a href="#" class="jura-btn jura-btn-ghost jura-btn-sm">View all orders</a>
+            </div>
+            <div class="jura-table-wrap" style="margin-top:1rem">
+              <table class="jura-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;color:var(--jura-text-muted)">#ORD-7841</span></td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div class="jura-avatar jura-avatar-sm" style="background:#e0e7ff;color:#4f46e5">SL</div>
+                        <span style="font-weight:500">Sarah Lindström</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">May 23, 2026</td>
+                    <td><span class="jura-badge jura-badge-success">Completed</span></td>
+                    <td style="font-weight:600">$129.00</td>
+                    <td><button class="jura-btn jura-btn-ghost jura-btn-sm">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;color:var(--jura-text-muted)">#ORD-7840</span></td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div class="jura-avatar jura-avatar-sm" style="background:#fce7f3;color:#be185d">MK</div>
+                        <span style="font-weight:500">Marcus Keller</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">May 23, 2026</td>
+                    <td><span class="jura-badge jura-badge-warning">Pending</span></td>
+                    <td style="font-weight:600">$74.50</td>
+                    <td><button class="jura-btn jura-btn-ghost jura-btn-sm">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;color:var(--jura-text-muted)">#ORD-7839</span></td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div class="jura-avatar jura-avatar-sm" style="background:#d1fae5;color:#065f46">AR</div>
+                        <span style="font-weight:500">Aiko Ramírez</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">May 22, 2026</td>
+                    <td><span class="jura-badge jura-badge-success">Completed</span></td>
+                    <td style="font-weight:600">$249.99</td>
+                    <td><button class="jura-btn jura-btn-ghost jura-btn-sm">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;color:var(--jura-text-muted)">#ORD-7838</span></td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div class="jura-avatar jura-avatar-sm" style="background:#fef3c7;color:#92400e">TN</div>
+                        <span style="font-weight:500">Tom Nguyen</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">May 22, 2026</td>
+                    <td><span class="jura-badge jura-badge-danger">Refunded</span></td>
+                    <td style="font-weight:600">$39.00</td>
+                    <td><button class="jura-btn jura-btn-ghost jura-btn-sm">View</button></td>
+                  </tr>
+                  <tr>
+                    <td><span style="font-family:monospace;font-size:.85rem;color:var(--jura-text-muted)">#ORD-7837</span></td>
+                    <td>
+                      <div style="display:flex;align-items:center;gap:.6rem">
+                        <div class="jura-avatar jura-avatar-sm" style="background:#ede9fe;color:#5b21b6">PB</div>
+                        <span style="font-weight:500">Priya Bhatt</span>
+                      </div>
+                    </td>
+                    <td style="color:var(--jura-text-muted)">May 21, 2026</td>
+                    <td><span class="jura-badge jura-badge-info">Processing</span></td>
+                    <td style="font-weight:600">$184.00</td>
+                    <td><button class="jura-btn jura-btn-ghost jura-btn-sm">View</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
       </main>
     </div>
+
     <script src="../assets/js/demo.js"></script>
   </body>
 </html>
