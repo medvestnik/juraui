@@ -2,6 +2,11 @@
 (function () {
   'use strict';
 
+  /* ── Hide demo bar when inside a preview iframe ─────────────── */
+  if (window.top !== window.self) {
+    document.querySelector('.demo-exam-bar')?.remove();
+  }
+
   /* ── Sidebar toggle ─────────────────────────────────────────── */
   const layouts = document.querySelectorAll('.jura-layout');
   document.querySelectorAll('[data-jura-sidebar-toggle]').forEach((btn) => {
@@ -72,6 +77,16 @@
     } else {
       html.setAttribute('data-jura-theme', name);
     }
+    /* Sync theme to all preview iframes (examples index page) */
+    document.querySelectorAll('.demo-ex-iframe').forEach((iframe) => {
+      try {
+        const iDoc = iframe.contentDocument?.documentElement;
+        if (iDoc) {
+          if (!name || name === 'indigo') iDoc.removeAttribute('data-jura-theme');
+          else iDoc.setAttribute('data-jura-theme', name);
+        }
+      } catch (_) {}
+    });
   }
 
   const saved = localStorage.getItem(THEME_KEY) || 'indigo';
@@ -80,7 +95,6 @@
   document.querySelectorAll('[data-jura-color-theme]').forEach((swatch) => {
     const t = swatch.dataset.juraColorTheme;
     swatch.classList.toggle('is-active', t === saved);
-
     swatch.addEventListener('click', () => {
       document.querySelectorAll('[data-jura-color-theme]').forEach((s) =>
         s.classList.remove('is-active')
@@ -88,6 +102,17 @@
       swatch.classList.add('is-active');
       applyColorTheme(t);
       localStorage.setItem(THEME_KEY, t);
+    });
+  });
+
+  /* Apply stored theme to iframes once they finish loading */
+  document.querySelectorAll('.demo-ex-iframe').forEach((iframe) => {
+    iframe.addEventListener('load', () => {
+      const t = localStorage.getItem(THEME_KEY) || 'indigo';
+      try {
+        const iDoc = iframe.contentDocument?.documentElement;
+        if (iDoc && t !== 'indigo') iDoc.setAttribute('data-jura-theme', t);
+      } catch (_) {}
     });
   });
 })();
