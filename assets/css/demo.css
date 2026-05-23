@@ -97,6 +97,60 @@
   padding: 5rem 0 3.5rem;
 }
 
+/* Two-column hero layout */
+.demo-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* Right-side browser mockup */
+.demo-hero-mockup-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.demo-hero-mockup {
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: 14px;
+  box-shadow: var(--jura-shadow-lg);
+  overflow: hidden;
+  width: 100%;
+  max-width: 460px;
+  transition: box-shadow .3s;
+}
+.demo-hero-mockup:hover { box-shadow: 0 16px 56px rgba(15,23,42,.14); }
+
+.demo-hero-mockup-bar {
+  background: var(--jura-surface-2);
+  border-bottom: 1px solid var(--jura-border);
+  padding: .55rem .85rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.demo-hero-mockup-dot {
+  width: .5rem; height: .5rem;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+.demo-hero-mockup-url {
+  flex: 1;
+  text-align: center;
+  font-size: .7rem;
+  color: var(--jura-text-subtle);
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: 5px;
+  padding: .18rem .5rem;
+  font-family: ui-monospace, monospace;
+  margin: 0 .4rem;
+}
+.demo-hero-mockup-content { padding: .9rem; }
+
 .demo-hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -146,7 +200,7 @@
 /* ----------------------------------------------------------------
    Section headers
    ---------------------------------------------------------------- */
-.demo-section-header { margin-bottom: 2rem; }
+.demo-section-header { margin-bottom: 2rem; padding-top: .5rem; }
 
 .demo-section-label {
   font-size: .75rem;
@@ -342,6 +396,8 @@
    ---------------------------------------------------------------- */
 @media (max-width: 960px) {
   .demo-hero { padding: 3rem 0 2rem; }
+  .demo-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .demo-hero-mockup-wrap { justify-content: center; }
   .demo-feature-grid { grid-template-columns: 1fr 1fr; }
   .demo-example-grid,
   .demo-pricing,
@@ -352,4 +408,5 @@
   .demo-feature-grid { grid-template-columns: 1fr; }
   .demo-hero-title   { font-size: 2.3rem; }
   .demo-themes       { display: none; }
+  .demo-hero-mockup-wrap { display: none; }
 }
