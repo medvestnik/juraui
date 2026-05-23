@@ -37,45 +37,127 @@
 
   <!-- ── Hero ─────────────────────────────────────────────────── -->
   <section class="demo-hero demo-container">
-    <div class="demo-hero-eyebrow">
-      <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
-      First public preview · v0.2
-    </div>
-    <h1 class="demo-hero-title">
-      Ship beautiful<br>
-      <span>admin interfaces</span><br>
-      faster.
-    </h1>
-    <p class="demo-hero-lead">
-      Lightweight UI kit for dashboards, admin panels and SaaS interfaces.
-      No build step, no dependencies — just clean HTML&nbsp;&amp;&nbsp;CSS.
-    </p>
-    <div class="demo-hero-actions">
-      <a class="jura-btn jura-btn-primary jura-btn-lg" href="examples/index.html">View examples</a>
-      <a class="jura-btn jura-btn-lg" href="examples/components.html">Components</a>
-      <a class="jura-btn jura-btn-ghost jura-btn-lg" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-        GitHub
-      </a>
-    </div>
-    <div class="demo-hero-stats">
-      <div class="demo-hero-stat">
-        <strong>&lt; 8 KB</strong>
-        <span>CSS (gzipped)</span>
+    <div class="demo-hero-inner">
+
+      <!-- Left: copy -->
+      <div class="demo-hero-copy">
+        <div class="demo-hero-eyebrow">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
+          First public preview · v0.2
+        </div>
+        <h1 class="demo-hero-title">
+          Ship beautiful<br>
+          <span>admin interfaces</span><br>
+          faster.
+        </h1>
+        <p class="demo-hero-lead">
+          Lightweight UI kit for dashboards, admin panels and SaaS interfaces.
+          No build step, no dependencies — just clean HTML&nbsp;&amp;&nbsp;CSS.
+        </p>
+        <div class="demo-hero-actions">
+          <a class="jura-btn jura-btn-primary jura-btn-lg" href="examples/index.html">View examples</a>
+          <a class="jura-btn jura-btn-lg" href="examples/components.html">Components</a>
+          <a class="jura-btn jura-btn-ghost jura-btn-lg" href="https://github.com/medvestnik/juraui" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            GitHub
+          </a>
+        </div>
+        <div class="demo-hero-stats">
+          <div class="demo-hero-stat">
+            <strong>&lt; 8 KB</strong>
+            <span>CSS (gzipped)</span>
+          </div>
+          <div class="demo-hero-stat">
+            <strong>0</strong>
+            <span>dependencies</span>
+          </div>
+          <div class="demo-hero-stat">
+            <strong>7</strong>
+            <span>colour themes</span>
+          </div>
+          <div class="demo-hero-stat">
+            <strong>MIT</strong>
+            <span>open source</span>
+          </div>
+        </div>
       </div>
-      <div class="demo-hero-stat">
-        <strong>0</strong>
-        <span>dependencies</span>
+
+      <!-- Right: live mini-dashboard mockup (colours follow the theme picker) -->
+      <div class="demo-hero-mockup-wrap">
+        <div class="demo-hero-mockup">
+          <!-- Browser chrome bar -->
+          <div class="demo-hero-mockup-bar">
+            <span class="demo-hero-mockup-dot" style="background:#ff5f57"></span>
+            <span class="demo-hero-mockup-dot" style="background:#fec12d"></span>
+            <span class="demo-hero-mockup-dot" style="background:#28c840"></span>
+            <div class="demo-hero-mockup-url">dashboard.app</div>
+          </div>
+
+          <!-- Mini dashboard content -->
+          <div class="demo-hero-mockup-content">
+
+            <!-- Topbar -->
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
+              <div style="font-weight:800;font-size:.8rem;letter-spacing:-.02em">Overview</div>
+              <div style="display:flex;gap:.35rem">
+                <button class="jura-btn jura-btn-sm" style="font-size:.65rem;padding:.28rem .55rem">Export</button>
+                <button class="jura-btn jura-btn-primary jura-btn-sm" style="font-size:.65rem;padding:.28rem .55rem">+ New</button>
+              </div>
+            </div>
+
+            <!-- Stat cards -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.65rem">
+              <div class="jura-card" style="padding:.65rem">
+                <div style="font-size:.63rem;color:var(--jura-text-muted);margin-bottom:.2rem">Revenue</div>
+                <div style="font-size:1.15rem;font-weight:800;letter-spacing:-.04em;line-height:1">$48,290</div>
+                <span class="jura-badge jura-badge-success" style="font-size:.58rem;padding:.1rem .35rem;margin-top:.35rem">+8.2%</span>
+              </div>
+              <div class="jura-card" style="padding:.65rem">
+                <div style="font-size:.63rem;color:var(--jura-text-muted);margin-bottom:.2rem">Active users</div>
+                <div style="font-size:1.15rem;font-weight:800;letter-spacing:-.04em;line-height:1">2,840</div>
+                <span class="jura-badge jura-badge-primary" style="font-size:.58rem;padding:.1rem .35rem;margin-top:.35rem">Live</span>
+              </div>
+            </div>
+
+            <!-- Progress rows -->
+            <div class="jura-card" style="padding:.7rem;margin-bottom:.65rem">
+              <div style="font-size:.7rem;font-weight:700;margin-bottom:.65rem">Performance</div>
+              <div style="display:grid;gap:.55rem">
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:.63rem;margin-bottom:.3rem;color:var(--jura-text-muted)"><span>Storage</span><span>74%</span></div>
+                  <div class="jura-progress" style="height:.3rem"><div class="jura-progress-bar" style="width:74%"></div></div>
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:.63rem;margin-bottom:.3rem;color:var(--jura-text-muted)"><span>Bandwidth</span><span>38%</span></div>
+                  <div class="jura-progress jura-progress-warning" style="height:.3rem"><div class="jura-progress-bar" style="width:38%"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini table -->
+            <div class="jura-card" style="padding:.7rem">
+              <div style="font-size:.7rem;font-weight:700;margin-bottom:.55rem">Recent orders</div>
+              <div style="display:grid;gap:0">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:.65rem;padding:.32rem .45rem;border-radius:5px;background:var(--jura-surface-2)">
+                  <span style="font-weight:600;color:var(--jura-text)">#1042 Nordic Health</span>
+                  <span class="jura-badge jura-badge-success" style="font-size:.57rem;padding:.08rem .35rem">Paid</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:.65rem;padding:.32rem .45rem">
+                  <span style="font-weight:600;color:var(--jura-text)">#1041 Blue Orbit</span>
+                  <span class="jura-badge jura-badge-warning" style="font-size:.57rem;padding:.08rem .35rem">Processing</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:.65rem;padding:.32rem .45rem;border-radius:5px;background:var(--jura-surface-2)">
+                  <span style="font-weight:600;color:var(--jura-text)">#1040 Aster Lab</span>
+                  <span class="jura-badge jura-badge-danger" style="font-size:.57rem;padding:.08rem .35rem">Refunded</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /mockup-content -->
+        </div><!-- /mockup -->
       </div>
-      <div class="demo-hero-stat">
-        <strong>7</strong>
-        <span>colour themes</span>
-      </div>
-      <div class="demo-hero-stat">
-        <strong>MIT</strong>
-        <span>open source</span>
-      </div>
-    </div>
+
+    </div><!-- /hero-inner -->
   </section>
 
   <!-- ── Live Preview ──────────────────────────────────────────── -->
