@@ -1,0 +1,66 @@
+name: Create GitHub Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - package.json
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version from package.json
+        id: pkg
+        run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag already exists
+        id: tag_check
+        run: |
+          if git ls-remote --tags origin "refs/tags/v${{ steps.pkg.outputs.version }}" | grep -q .; then
+            echo "exists=true"  >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create tag
+        if: steps.tag_check.outputs.exists == 'false'
+        run: |
+          git config user.email "action@github.com"
+          git config user.name  "GitHub Action"
+          git tag -a "v${{ steps.pkg.outputs.version }}" -m "Release v${{ steps.pkg.outputs.version }}"
+          git push origin "v${{ steps.pkg.outputs.version }}"
+
+      - name: Extract release notes from CHANGELOG.md
+        if: steps.tag_check.outputs.exists == 'false'
+        id: notes
+        run: |
+          VERSION="${{ steps.pkg.outputs.version }}"
+          # Extract the block for this version (between its header and the next ## header)
+          awk "/^## \[?${VERSION}\]?/{found=1; next} found && /^## /{exit} found{print}" CHANGELOG.md > release_notes.md
+          if [ ! -s release_notes.md ]; then
+            echo "See CHANGELOG.md for details." > release_notes.md
+          fi
+
+      - name: Publish GitHub Release
+        if: steps.tag_check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ steps.pkg.outputs.version }}"
+          gh release create "v${VERSION}" \
+            --title "Jura UI v${VERSION}" \
+            --notes-file release_notes.md \
+            assets/css/jura-ui-core.css \
+            assets/css/jura-ui.css \
+            assets/css/jura-ui-public.css \
+            assets/js/jura-ui.js

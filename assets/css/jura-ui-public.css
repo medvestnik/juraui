@@ -1,0 +1,387 @@
+/* ================================================================
+   Jura UI Public — v0.3.0
+   Public-site add-ons: container · navbar · accordion · toast ·
+   tooltip · pagination · breadcrumbs
+   Requires jura-ui-core.css or jura-ui.css
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. Container
+   ---------------------------------------------------------------- */
+.jura-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.jura-container-sm { max-width: 48rem; }
+.jura-container-lg { max-width: 96rem; }
+
+/* ----------------------------------------------------------------
+   2. Public Navbar
+   ---------------------------------------------------------------- */
+.jura-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(248,250,252,.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--jura-border);
+}
+[data-theme="dark"] .jura-navbar { background: rgba(15,23,42,.92); }
+
+.jura-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .85rem 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.jura-navbar-brand {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--jura-text);
+  text-decoration: none;
+  letter-spacing: -.025em;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.jura-navbar-brand:hover { text-decoration: none; }
+
+.jura-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.jura-navbar-link {
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--jura-text-muted);
+  text-decoration: none;
+  transition: color var(--jura-dur) var(--jura-ease);
+  padding: .25rem 0;
+  border-bottom: 2px solid transparent;
+}
+.jura-navbar-link:hover { color: var(--jura-text); text-decoration: none; }
+.jura-navbar-link.is-active { color: var(--jura-primary); border-bottom-color: var(--jura-primary); }
+
+.jura-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+/* Hamburger button */
+.jura-navbar-hamburger {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--jura-text);
+  padding: .35rem;
+  border-radius: var(--jura-radius-sm);
+  transition: background var(--jura-dur) var(--jura-ease);
+}
+.jura-navbar-hamburger:hover { background: var(--jura-surface-2); }
+
+@media (max-width: 768px) {
+  .jura-navbar-links,
+  .jura-navbar-actions { display: none; }
+  .jura-navbar-hamburger { display: flex; }
+
+  .jura-navbar.nav-open .jura-navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .25rem;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--jura-surface);
+    border-bottom: 1px solid var(--jura-border);
+    padding: .75rem 1.25rem 1rem;
+    box-shadow: var(--jura-shadow);
+  }
+  .jura-navbar.nav-open .jura-navbar-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: calc(100% + var(--links-h, 160px));
+    /* simpler: actions are inside the .jura-navbar-links on mobile */
+  }
+}
+
+/* ----------------------------------------------------------------
+   3. Breadcrumbs
+   ---------------------------------------------------------------- */
+.jura-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .875rem;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.jura-breadcrumb-item { display: flex; align-items: center; gap: .4rem; color: var(--jura-text-muted); }
+.jura-breadcrumb-item a { color: var(--jura-text-muted); text-decoration: none; transition: color var(--jura-dur) var(--jura-ease); }
+.jura-breadcrumb-item a:hover { color: var(--jura-text); text-decoration: none; }
+.jura-breadcrumb-item:last-child { color: var(--jura-text); font-weight: 600; }
+.jura-breadcrumb-item:last-child a { color: var(--jura-text); pointer-events: none; }
+.jura-breadcrumb-sep { color: var(--jura-text-subtle); }
+
+/* ----------------------------------------------------------------
+   4. Pagination
+   ---------------------------------------------------------------- */
+.jura-pagination {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  flex-wrap: wrap;
+}
+.jura-page-btn {
+  min-width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius-sm);
+  background: var(--jura-surface);
+  color: var(--jura-text-muted);
+  font: 500 .875rem/1 var(--jura-font);
+  cursor: pointer;
+  padding: 0 .6rem;
+  text-decoration: none;
+  transition: background var(--jura-dur) var(--jura-ease),
+              border-color var(--jura-dur) var(--jura-ease),
+              color var(--jura-dur) var(--jura-ease);
+}
+.jura-page-btn:hover { background: var(--jura-surface-2); color: var(--jura-text); border-color: var(--jura-border-strong); text-decoration: none; }
+.jura-page-btn.is-active {
+  background: var(--jura-primary); border-color: var(--jura-primary);
+  color: var(--jura-primary-fg); font-weight: 700;
+}
+.jura-page-btn:disabled,
+.jura-page-btn[disabled] { opacity: .4; pointer-events: none; }
+.jura-page-dots { padding: 0 .25rem; color: var(--jura-text-muted); }
+
+/* ----------------------------------------------------------------
+   5. Accordion
+   ---------------------------------------------------------------- */
+.jura-accordion { display: grid; gap: .5rem; }
+
+.jura-accordion-item {
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius);
+  overflow: hidden;
+  background: var(--jura-surface);
+}
+
+.jura-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: 600 .95rem/1.4 var(--jura-font);
+  color: var(--jura-text);
+  text-align: left;
+  transition: background var(--jura-dur) var(--jura-ease),
+              color var(--jura-dur) var(--jura-ease);
+}
+.jura-accordion-trigger:hover { background: var(--jura-surface-2); }
+.jura-accordion-trigger:focus-visible { outline: 2.5px solid var(--jura-primary-ring); outline-offset: -2px; }
+
+.jura-accordion-icon {
+  width: 1rem; height: 1rem;
+  color: var(--jura-text-muted);
+  flex-shrink: 0;
+  transition: transform .22s var(--jura-ease);
+}
+.jura-accordion-item.is-open .jura-accordion-icon { transform: rotate(180deg); }
+.jura-accordion-item.is-open > .jura-accordion-trigger { color: var(--jura-primary); }
+
+.jura-accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .25s var(--jura-ease);
+}
+.jura-accordion-item.is-open .jura-accordion-body { grid-template-rows: 1fr; }
+
+.jura-accordion-content {
+  overflow: hidden;
+  font-size: .9rem;
+  color: var(--jura-text-muted);
+  line-height: 1.7;
+}
+.jura-accordion-content-inner {
+  padding: 0 1.25rem 1.1rem;
+  border-top: 1px solid var(--jura-border);
+  padding-top: .9rem;
+  margin-top: 0;
+}
+
+/* Flush variant (no gap, no separate borders) */
+.jura-accordion-flush { gap: 0; }
+.jura-accordion-flush .jura-accordion-item {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+.jura-accordion-flush .jura-accordion-item:first-child { border-top: 1px solid var(--jura-border); }
+.jura-accordion-flush .jura-accordion-item:last-child { border-bottom: 1px solid var(--jura-border); }
+
+/* ----------------------------------------------------------------
+   6. Toast Notifications
+   ---------------------------------------------------------------- */
+.jura-toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  pointer-events: none;
+  max-width: 24rem;
+  width: calc(100vw - 3rem);
+}
+
+.jura-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  padding: .85rem 1.1rem;
+  background: #0f172a;
+  color: #f1f5f9;
+  border-radius: var(--jura-radius);
+  box-shadow: var(--jura-shadow-lg);
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateX(1.5rem);
+  transition: opacity .2s var(--jura-ease), transform .2s var(--jura-ease);
+}
+.jura-toast.is-visible { opacity: 1; transform: translateX(0); }
+
+.jura-toast-success { background: var(--jura-success-fg); }
+.jura-toast-danger  { background: #7f1d1d; }
+.jura-toast-warning { background: var(--jura-warning-fg); }
+.jura-toast-info    { background: var(--jura-info-fg); }
+
+.jura-toast-icon { flex-shrink: 0; margin-top: .05rem; }
+.jura-toast-close {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: none;
+  border: 0;
+  color: currentColor;
+  opacity: .6;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  font-size: 1.1rem;
+}
+.jura-toast-close:hover { opacity: 1; }
+
+@media (max-width: 480px) {
+  .jura-toast-container { bottom: 1rem; right: 1rem; width: calc(100vw - 2rem); }
+}
+
+/* ----------------------------------------------------------------
+   7. Tooltip
+   ---------------------------------------------------------------- */
+[data-jura-tooltip] { position: relative; }
+
+.jura-tooltip-bubble {
+  position: absolute;
+  bottom: calc(100% + .45rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #f1f5f9;
+  font-size: .78rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: .3rem .65rem;
+  border-radius: var(--jura-radius-sm);
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s var(--jura-ease), transform .15s var(--jura-ease);
+  transform: translateX(-50%) translateY(.25rem);
+  z-index: 80;
+}
+.jura-tooltip-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #0f172a;
+}
+
+/* Show on hover/focus */
+[data-jura-tooltip]:hover .jura-tooltip-bubble,
+[data-jura-tooltip]:focus-within .jura-tooltip-bubble {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Placement variants */
+[data-jura-tooltip-placement="bottom"] .jura-tooltip-bubble {
+  top: calc(100% + .45rem);
+  bottom: auto;
+  transform: translateX(-50%) translateY(-.25rem);
+}
+[data-jura-tooltip-placement="bottom"] .jura-tooltip-bubble::after {
+  top: auto; bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: #0f172a;
+}
+[data-jura-tooltip-placement="bottom"]:hover .jura-tooltip-bubble,
+[data-jura-tooltip-placement="bottom"]:focus-within .jura-tooltip-bubble {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ----------------------------------------------------------------
+   8. Cookie Notice
+   ---------------------------------------------------------------- */
+.jura-cookie {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 150;
+  width: min(44rem, calc(100vw - 2rem));
+  background: var(--jura-surface);
+  border: 1px solid var(--jura-border);
+  border-radius: var(--jura-radius-lg);
+  box-shadow: var(--jura-shadow-lg);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: .875rem;
+  color: var(--jura-text-muted);
+}
+.jura-cookie-text { flex: 1; min-width: 14rem; line-height: 1.55; }
+.jura-cookie-actions { display: flex; gap: .5rem; flex-shrink: 0; }
+.jura-cookie[hidden] { display: none; }
