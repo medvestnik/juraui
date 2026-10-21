@@ -1,0 +1,481 @@
+/* ================================================================
+   Jura UI Glass — v0.3.0
+   Liquid glass design layer. Load AFTER jura-ui.css.
+   Activate: <html data-jura-theme="glass">
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. Design Tokens — override for glass
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] {
+  --jura-bg:            transparent;
+  --jura-surface:       rgba(255,255,255,.11);
+  --jura-surface-2:     rgba(255,255,255,.07);
+  --jura-surface-muted: rgba(255,255,255,.09);
+  --jura-text:          #ffffff;
+  --jura-text-muted:    rgba(255,255,255,.68);
+  --jura-text-subtle:   rgba(255,255,255,.40);
+  --jura-border:        rgba(255,255,255,.20);
+  --jura-border-strong: rgba(255,255,255,.34);
+
+  /* Primary — soft violet-pink */
+  --jura-primary:       #c084fc;
+  --jura-primary-dk:    #a855f7;
+  --jura-primary-lt:    rgba(192,132,252,.20);
+  --jura-primary-ring:  rgba(192,132,252,.32);
+  --jura-primary-fg:    #ffffff;
+
+  /* Semantic — translucent pastels */
+  --jura-success:    #34d399; --jura-success-bg:  rgba(52,211,153,.18); --jura-success-fg:  #6ee7b7;
+  --jura-warning:    #fbbf24; --jura-warning-bg:  rgba(251,191,36,.18); --jura-warning-fg:  #fcd34d;
+  --jura-danger:     #f87171; --jura-danger-bg:   rgba(248,113,113,.18); --jura-danger-fg:   #fca5a5;
+  --jura-info:       #38bdf8; --jura-info-bg:     rgba(56,189,248,.18); --jura-info-fg:     #7dd3fc;
+
+  /* Glass shadows: depth + inner highlight */
+  --jura-shadow-xs: 0 1px 4px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.12);
+  --jura-shadow-sm: 0 2px 14px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.14);
+  --jura-shadow:    0 8px 32px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.16);
+  --jura-shadow-lg: 0 20px 64px rgba(0,0,0,.40), inset 0 1px 0 rgba(255,255,255,.20);
+}
+
+/* ----------------------------------------------------------------
+   2. Body — Aurora gradient background
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] body {
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 40%, rgba(139,92,246,.52) 0%, transparent 55%),
+    radial-gradient(ellipse 65% 50% at 82% 15%, rgba(236,72,153,.48) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 60% at 60% 88%, rgba(59,130,246,.48) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 92% 72%, rgba(16,185,129,.32) 0%, transparent 45%),
+    radial-gradient(ellipse 40% 35% at 40% 10%, rgba(245,158,11,.24) 0%, transparent 45%),
+    linear-gradient(148deg, #07051a 0%, #10092e 45%, #080e22 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+[data-jura-theme="glass"] ::-webkit-scrollbar { width: 6px; height: 6px; }
+[data-jura-theme="glass"] ::-webkit-scrollbar-track { background: rgba(255,255,255,.04); }
+[data-jura-theme="glass"] ::-webkit-scrollbar-thumb {
+  background: rgba(192,132,252,.40);
+  border-radius: 3px;
+}
+[data-jura-theme="glass"] ::-webkit-scrollbar-thumb:hover { background: rgba(192,132,252,.60); }
+
+/* ----------------------------------------------------------------
+   3. Glass surface mixin (shared rules)
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-card,
+[data-jura-theme="glass"] .jura-alert,
+[data-jura-theme="glass"] .jura-modal {
+  backdrop-filter: blur(24px) saturate(190%) brightness(1.04);
+  -webkit-backdrop-filter: blur(24px) saturate(190%) brightness(1.04);
+  background: linear-gradient(
+    148deg,
+    rgba(255,255,255,.15) 0%,
+    rgba(255,255,255,.08) 100%
+  );
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,.30),
+    inset 0 1.5px 0 rgba(255,255,255,.24),
+    inset 0 -1px 0 rgba(0,0,0,.14);
+}
+
+/* ----------------------------------------------------------------
+   4. Cards
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-card-hover:hover {
+  background: linear-gradient(148deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.13) 100%);
+  border-color: rgba(255,255,255,.32);
+  box-shadow:
+    0 14px 50px rgba(0,0,0,.38),
+    0 0 0 1px rgba(192,132,252,.35),
+    inset 0 1.5px 0 rgba(255,255,255,.30);
+  transform: translateY(-3px);
+}
+
+/* Iridescent left-border via gradient */
+[data-jura-theme="glass"] .jura-card-accent {
+  border-left: none;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, #c084fc, #f472b6, #60a5fa) 1 0 0 0;
+}
+[data-jura-theme="glass"] .jura-card-accent-success {
+  border-left: 3px solid rgba(52,211,153,.75);
+}
+[data-jura-theme="glass"] .jura-card-accent-warning {
+  border-left: 3px solid rgba(251,191,36,.75);
+}
+[data-jura-theme="glass"] .jura-card-accent-danger {
+  border-left: 3px solid rgba(248,113,113,.75);
+}
+
+/* ----------------------------------------------------------------
+   5. Sidebar
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-sidebar {
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.09) 0%,
+    rgba(255,255,255,.05) 100%
+  );
+  border-right: 1px solid rgba(255,255,255,.13);
+}
+
+[data-jura-theme="glass"] .jura-sidebar-brand { color: #ffffff; }
+[data-jura-theme="glass"] .jura-sidebar-label { color: rgba(255,255,255,.32); }
+
+[data-jura-theme="glass"] .jura-sidebar a {
+  color: rgba(255,255,255,.60);
+}
+[data-jura-theme="glass"] .jura-sidebar a:hover {
+  background: rgba(255,255,255,.10);
+  color: #ffffff;
+  text-decoration: none;
+}
+[data-jura-theme="glass"] .jura-sidebar a.is-active {
+  background: rgba(192,132,252,.22);
+  color: #e9d5ff;
+}
+
+/* ----------------------------------------------------------------
+   6. Topbar
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-topbar-title { color: #ffffff; }
+
+/* ----------------------------------------------------------------
+   7. Buttons
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-btn {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  color: rgba(255,255,255,.88);
+  box-shadow: 0 2px 10px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.18);
+  text-decoration: none;
+}
+[data-jura-theme="glass"] .jura-btn:hover {
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.34);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.24);
+  text-decoration: none;
+}
+
+[data-jura-theme="glass"] .jura-btn-primary {
+  background: linear-gradient(135deg, rgba(192,132,252,.70), rgba(168,85,247,.80));
+  border-color: rgba(192,132,252,.50);
+  color: #ffffff;
+  box-shadow:
+    0 4px 22px rgba(139,92,246,.48),
+    inset 0 1px 0 rgba(255,255,255,.26);
+}
+[data-jura-theme="glass"] .jura-btn-primary:hover {
+  background: linear-gradient(135deg, rgba(216,180,254,.76), rgba(192,132,252,.86));
+  box-shadow: 0 6px 30px rgba(139,92,246,.62), inset 0 1px 0 rgba(255,255,255,.32);
+}
+
+[data-jura-theme="glass"] .jura-btn-ghost {
+  background: transparent;
+  border-color: transparent;
+  color: rgba(255,255,255,.62);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+[data-jura-theme="glass"] .jura-btn-ghost:hover {
+  background: rgba(255,255,255,.10);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+[data-jura-theme="glass"] .jura-btn-secondary {
+  background: rgba(192,132,252,.18);
+  border-color: rgba(192,132,252,.30);
+  color: #e9d5ff;
+}
+[data-jura-theme="glass"] .jura-btn-secondary:hover {
+  background: rgba(192,132,252,.28);
+  filter: none;
+}
+
+[data-jura-theme="glass"] .jura-btn-danger {
+  background: rgba(248,113,113,.20);
+  border-color: rgba(248,113,113,.30);
+  color: #fca5a5;
+}
+
+/* ----------------------------------------------------------------
+   8. Form Controls
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-input,
+[data-jura-theme="glass"] .jura-select,
+[data-jura-theme="glass"] .jura-textarea {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.20);
+  color: #ffffff;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.22), inset 0 -1px 0 rgba(255,255,255,.06);
+}
+[data-jura-theme="glass"] .jura-input::placeholder,
+[data-jura-theme="glass"] .jura-textarea::placeholder { color: rgba(255,255,255,.36); }
+[data-jura-theme="glass"] .jura-input:focus,
+[data-jura-theme="glass"] .jura-select:focus,
+[data-jura-theme="glass"] .jura-textarea:focus {
+  border-color: rgba(192,132,252,.70);
+  box-shadow: 0 0 0 3px rgba(192,132,252,.24), inset 0 1px 3px rgba(0,0,0,.18);
+}
+
+/* Toggle checked */
+[data-jura-theme="glass"] .jura-toggle-track { background: rgba(255,255,255,.25); }
+[data-jura-theme="glass"] .jura-toggle input:checked + .jura-toggle-track {
+  background: linear-gradient(90deg, #c084fc, #a855f7);
+}
+
+/* Checkbox */
+[data-jura-theme="glass"] .jura-checkbox input[type="checkbox"] {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.28);
+}
+[data-jura-theme="glass"] .jura-checkbox input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  border-color: #c084fc;
+}
+
+/* Radio */
+[data-jura-theme="glass"] .jura-radio input[type="radio"] {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.28);
+}
+[data-jura-theme="glass"] .jura-radio input[type="radio"]:checked { border-color: #c084fc; }
+[data-jura-theme="glass"] .jura-radio input[type="radio"]:checked::after { background: #c084fc; }
+
+/* ----------------------------------------------------------------
+   9. Badges
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-badge {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.12);
+  color: rgba(255,255,255,.80);
+  border: 1px solid rgba(255,255,255,.16);
+}
+[data-jura-theme="glass"] .jura-badge-primary { background: rgba(192,132,252,.26); color: #e9d5ff; border-color: rgba(192,132,252,.38); }
+[data-jura-theme="glass"] .jura-badge-success { background: rgba(52,211,153,.22);  color: #6ee7b7; border-color: rgba(52,211,153,.35); }
+[data-jura-theme="glass"] .jura-badge-warning { background: rgba(251,191,36,.22);  color: #fcd34d; border-color: rgba(251,191,36,.35); }
+[data-jura-theme="glass"] .jura-badge-danger  { background: rgba(248,113,113,.22); color: #fca5a5; border-color: rgba(248,113,113,.35); }
+[data-jura-theme="glass"] .jura-badge-info    { background: rgba(56,189,248,.22);  color: #7dd3fc; border-color: rgba(56,189,248,.35); }
+
+/* ----------------------------------------------------------------
+   10. Alerts
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-alert {
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.16);
+  color: rgba(255,255,255,.80);
+}
+[data-jura-theme="glass"] .jura-alert-success { background: rgba(52,211,153,.14);  border-color: rgba(52,211,153,.28);  color: #6ee7b7; }
+[data-jura-theme="glass"] .jura-alert-warning { background: rgba(251,191,36,.14);  border-color: rgba(251,191,36,.28);  color: #fcd34d; }
+[data-jura-theme="glass"] .jura-alert-danger  { background: rgba(248,113,113,.14); border-color: rgba(248,113,113,.28); color: #fca5a5; }
+[data-jura-theme="glass"] .jura-alert-info    { background: rgba(56,189,248,.14);  border-color: rgba(56,189,248,.28);  color: #7dd3fc; }
+
+/* ----------------------------------------------------------------
+   11. Table
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-table th {
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.50);
+  border-bottom-color: rgba(255,255,255,.12);
+}
+[data-jura-theme="glass"] .jura-table td {
+  border-bottom-color: rgba(255,255,255,.08);
+}
+[data-jura-theme="glass"] .jura-table tbody tr:hover { background: rgba(255,255,255,.06); }
+
+/* ----------------------------------------------------------------
+   12. Tabs
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-tabs { border-bottom-color: rgba(255,255,255,.14); }
+[data-jura-theme="glass"] .jura-tab { color: rgba(255,255,255,.52); }
+[data-jura-theme="glass"] .jura-tab:hover { color: rgba(255,255,255,.85); }
+[data-jura-theme="glass"] .jura-tab.is-active { color: #e9d5ff; }
+[data-jura-theme="glass"] .jura-tab.is-active::after { background: linear-gradient(90deg, #c084fc, #e879f9); }
+
+[data-jura-theme="glass"] .jura-tabs-pill { background: rgba(255,255,255,.08); border: none; }
+[data-jura-theme="glass"] .jura-tabs-pill .jura-tab { color: rgba(255,255,255,.55); }
+[data-jura-theme="glass"] .jura-tabs-pill .jura-tab.is-active {
+  background: rgba(255,255,255,.16);
+  color: #ffffff;
+  box-shadow: 0 1px 6px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.18);
+}
+[data-jura-theme="glass"] .jura-tabs-pill .jura-tab.is-active::after { display: none; }
+
+/* ----------------------------------------------------------------
+   13. Progress
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-progress { background: rgba(255,255,255,.12); }
+[data-jura-theme="glass"] .jura-progress-bar {
+  background: linear-gradient(90deg, #a78bfa, #c084fc, #e879f9);
+}
+[data-jura-theme="glass"] .jura-progress-success .jura-progress-bar { background: linear-gradient(90deg, #34d399, #6ee7b7); }
+[data-jura-theme="glass"] .jura-progress-warning .jura-progress-bar { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+[data-jura-theme="glass"] .jura-progress-danger  .jura-progress-bar { background: linear-gradient(90deg, #ef4444, #f87171); }
+
+/* ----------------------------------------------------------------
+   14. Dropdown
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-dropdown-menu {
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  background: rgba(12,9,30,.82);
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 16px 48px rgba(0,0,0,.50), inset 0 1px 0 rgba(255,255,255,.10);
+}
+[data-jura-theme="glass"] .jura-dropdown-item { color: rgba(255,255,255,.78); }
+[data-jura-theme="glass"] .jura-dropdown-item:hover { background: rgba(255,255,255,.10); color: #ffffff; }
+[data-jura-theme="glass"] .jura-dropdown-item-danger { color: #fca5a5; }
+[data-jura-theme="glass"] .jura-dropdown-item-danger:hover { background: rgba(248,113,113,.16); }
+[data-jura-theme="glass"] .jura-dropdown-divider { background: rgba(255,255,255,.10); }
+
+/* ----------------------------------------------------------------
+   15. Modal
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-modal-backdrop {
+  background: rgba(5,2,20,.62);
+}
+[data-jura-theme="glass"] .jura-modal {
+  backdrop-filter: blur(36px) saturate(200%);
+  -webkit-backdrop-filter: blur(36px) saturate(200%);
+  background: linear-gradient(148deg, rgba(255,255,255,.17), rgba(255,255,255,.09));
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow:
+    0 28px 80px rgba(0,0,0,.55),
+    inset 0 1.5px 0 rgba(255,255,255,.28),
+    0 0 0 1px rgba(192,132,252,.14);
+}
+[data-jura-theme="glass"] .jura-modal-title { color: #ffffff; }
+
+/* ----------------------------------------------------------------
+   16. Skeleton & Spinner
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.08) 25%,
+    rgba(255,255,255,.16) 50%,
+    rgba(255,255,255,.08) 75%
+  );
+  background-size: 200% 100%;
+}
+[data-jura-theme="glass"] .jura-spinner {
+  border-color: rgba(255,255,255,.18);
+  border-top-color: #c084fc;
+}
+
+/* ----------------------------------------------------------------
+   17. Empty state
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-empty {
+  border-color: rgba(255,255,255,.14);
+  color: rgba(255,255,255,.55);
+}
+[data-jura-theme="glass"] .jura-empty-title { color: rgba(255,255,255,.85); }
+
+/* ----------------------------------------------------------------
+   18. Grid divider
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .jura-divider { background: rgba(255,255,255,.12); }
+
+/* ----------------------------------------------------------------
+   19. Links
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] a { color: #c084fc; }
+[data-jura-theme="glass"] a:hover { color: #e9d5ff; }
+
+/* ----------------------------------------------------------------
+   20. Public components (jura-ui-public.css glass overrides)
+   ---------------------------------------------------------------- */
+
+/* Navbar */
+[data-jura-theme="glass"] .jura-navbar {
+  background: rgba(10,8,28,.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom-color: rgba(255,255,255,.13);
+}
+[data-jura-theme="glass"] .jura-navbar-brand { color: #ffffff; }
+[data-jura-theme="glass"] .jura-navbar-link { color: rgba(255,255,255,.58); }
+[data-jura-theme="glass"] .jura-navbar-link:hover { color: #ffffff; }
+[data-jura-theme="glass"] .jura-navbar-link.is-active { color: #e9d5ff; border-bottom-color: #c084fc; }
+[data-jura-theme="glass"] .jura-navbar.nav-open .jura-navbar-links {
+  background: rgba(10,8,28,.92);
+  border-bottom-color: rgba(255,255,255,.10);
+}
+
+/* Accordion */
+[data-jura-theme="glass"] .jura-accordion-item {
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.14);
+}
+[data-jura-theme="glass"] .jura-accordion-trigger { color: rgba(255,255,255,.80); }
+[data-jura-theme="glass"] .jura-accordion-trigger:hover { background: rgba(255,255,255,.08); }
+[data-jura-theme="glass"] .jura-accordion-item.is-open > .jura-accordion-trigger { color: #e9d5ff; }
+[data-jura-theme="glass"] .jura-accordion-icon { color: rgba(255,255,255,.45); }
+[data-jura-theme="glass"] .jura-accordion-content-inner { border-top-color: rgba(255,255,255,.10); }
+[data-jura-theme="glass"] .jura-accordion-content { color: rgba(255,255,255,.60); }
+
+/* Pagination */
+[data-jura-theme="glass"] .jura-page-btn {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.16);
+  color: rgba(255,255,255,.65);
+}
+[data-jura-theme="glass"] .jura-page-btn:hover { background: rgba(255,255,255,.16); color: #ffffff; border-color: rgba(255,255,255,.28); }
+[data-jura-theme="glass"] .jura-page-btn.is-active {
+  background: linear-gradient(135deg, rgba(192,132,252,.75), rgba(168,85,247,.85));
+  border-color: rgba(192,132,252,.55);
+  color: #ffffff;
+}
+
+/* Breadcrumb */
+[data-jura-theme="glass"] .jura-breadcrumb-item { color: rgba(255,255,255,.52); }
+[data-jura-theme="glass"] .jura-breadcrumb-item a { color: rgba(255,255,255,.52); }
+[data-jura-theme="glass"] .jura-breadcrumb-item a:hover { color: rgba(255,255,255,.85); }
+[data-jura-theme="glass"] .jura-breadcrumb-item:last-child { color: rgba(255,255,255,.90); }
+[data-jura-theme="glass"] .jura-breadcrumb-sep { color: rgba(255,255,255,.28); }
+
+/* Toast */
+[data-jura-theme="glass"] .jura-toast {
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  background: rgba(12,9,30,.88);
+  border: 1px solid rgba(255,255,255,.16);
+  color: rgba(255,255,255,.90);
+  box-shadow: 0 12px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.12);
+}
+[data-jura-theme="glass"] .jura-toast-success { background: rgba(5,50,38,.85); border-color: rgba(52,211,153,.30); }
+[data-jura-theme="glass"] .jura-toast-danger  { background: rgba(50,10,10,.85); border-color: rgba(248,113,113,.30); }
+[data-jura-theme="glass"] .jura-toast-warning { background: rgba(50,36,5,.85);  border-color: rgba(251,191,36,.30); }
+[data-jura-theme="glass"] .jura-toast-info    { background: rgba(5,30,50,.85);  border-color: rgba(56,189,248,.30); }
+
+/* ----------------------------------------------------------------
+   21. Demo exam bar glass treatment
+   ---------------------------------------------------------------- */
+[data-jura-theme="glass"] .demo-exam-bar {
+  background: rgba(10,8,28,.78) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom-color: rgba(255,255,255,.12) !important;
+  color: rgba(255,255,255,.80);
+}
+[data-jura-theme="glass"] .demo-exam-bar a { color: rgba(255,255,255,.65); }
+[data-jura-theme="glass"] .demo-exam-bar a:hover { color: #ffffff; }
+[data-jura-theme="glass"] .demo-exam-bar-sep { color: rgba(255,255,255,.25); }
