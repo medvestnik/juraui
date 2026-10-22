@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 2026-10-21
+
+### Added
+
+**Liquid Glass design variant (`jura-ui-glass.css`)**
+- New optional overlay stylesheet — drop it after `jura-ui.css` and set `data-jura-theme="glass"` on `<html>`
+- Aurora body background composed of five layered radial gradients over a deep-space dark base — no images required
+- Glass surface treatment on cards, modals, alerts, sidebar, and all interactive components via `backdrop-filter: blur(24px) saturate(190%)`
+- New primary palette: violet-pink (`#c084fc` / `#a855f7`) with iridescent accents
+- Iridescent progress bar and animated aurora-glow CTA button
+- Glass swatch added to all demo pages (iridescent gradient chip)
+- Purple custom scrollbar matching the glass palette
+
 ## [0.3.0] - 2026-07-11
 
 ### Added
